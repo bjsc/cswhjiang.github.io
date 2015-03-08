@@ -73,10 +73,14 @@ B_1(n,\mathcal{F})$$。这个界定了估计的误差和实际的误差的差距
 如果观测到的数据和未来的数据不是来自同一个分布，记 $$ P_S $$ 和 $$ P_T $$，但是他们有很强的相关性，即分布的某种意义下的距离很小。我们的目标是建立此种背景下的统计学习理论。我们的目标是确定$$ R_T(\hat{f}) - R_T^*$$，其中$$\hat{f}$$ 是在source domain上由算法得到的函数。这里我们用 $$ R_T(f)= \mathbb{E}_{P_T}[l(f(X),Y)]$$ 表示在target domain上面的真实误差。我们先定义 $$f_{S}^* = \textrm{argmin}_{f \in \mathcal{F}} \mathbb{E}_{P_S}[l(f(X),Y)]$$ 和 $$f_{T}^* = \textrm{argmin}_{f \in \mathcal{F}} \mathbb{E}_{P_T}[l(f(X),Y)]$$。
 类似的我们有如下的分解
 
+test \\(\alpha \\)
+
 \\[
-a = \sum_{i=1}^n \xi_i \\\\\\\\
+a = \sum_{i=1}^n \xi_i \\\\
 b = \sum_{i}a_i
 \\]
+
+$$ \begin{align} A & = B \\ & = C \end{align} $$
 
 \\]
 \\begin{align}
