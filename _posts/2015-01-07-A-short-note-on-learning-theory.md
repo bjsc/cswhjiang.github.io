@@ -9,7 +9,9 @@ comments: True
 ## 所用符号
 首先介绍所用到的符号和概念。输入空间 $$\mathcal{X}$$ 和输出空间 $$\mathcal{Y}$$，我们假设$$ (X,Y) \in \mathcal{X} \times \mathcal{Y}$$ 是来自未知分布$$ P$$的随机变量。因此我们观察到 $$n$$ 个 从 $$ P$$ 中独立同分布的采样 $$ (X_i,Y_i)$$。我们的目标是从候选集合 $$\mathcal{F}$$ 里面找到一个函数 $$ f: \mathcal{X} \rightarrow \mathcal{Y}$$ 使得 $$f$$ 能很好的预测 $$Y$$。
 
-为了评价 $$f$$ 的好坏，我们用损失函数 $$l$$（或者称为风险函数）来定义对于 $$f$$ 的风险（或称为损失）$$ R(f) = \mathbb{E}[ l(f(X), Y)]$$。对于分类问题损失函数为 $$ { l(f(X), Y) = \mathbf{1}_{f(X) \neq Y} }$$，对于回归问题损失函数 $$ l$$ 一般为 $$ l(f(X),Y ) = (f(X)-Y)^2$$。我们用 $$\hat{f}$$ 来表示学习算法从观察到的$$ n$$个训练样本得到的函数，即：$$ \hat{f} = \textrm{argmin}_{f \in \mathcal{F}} \sum_{i=1}^n l(f(x_i), y_i)$$，用 $$ f^{*}$$来表示候选集合 $$
+为了评价 $$f$$ 的好坏，我们用损失函数 $$l$$（或者称为风险函数）来定义对于 $$f$$ 的风险（或称为损失）$$ R(f) = \mathbb{E}[ l(f(X), Y)]$$。对于分类问题损失函数为 $$ { l(f(X), Y) = \mathbf{1}_{f(X) \neq Y} }$$，对于回归问题损失函数 $$ l$$ 一般为 $$ l(f(X),Y ) = (f(X)-Y)^2$$。我们用 $$\hat{f}$$ 来表示学习算法从观察到的$$ n$$个训练样本得到的函数，即：
+$$ \hat{f} = \textrm{argmin}_{f \in \mathcal{F}} \sum_{i=1}^n l(f(x_i), y_i)$$
+，用 $$ f^{*}$$来表示候选集合 $$
 \mathcal{F}$$中最优的函数，即$$ f^{*} = \textrm{argmin}_{f \in \mathcal{F}} \mathbb{E}[ l(f(X), Y)]$$。用$$ R(f) = \mathbb{E}[l(f(X),Y)] $$表示函数$$ f$$ 的真正的loss或者称为真正的risk(true loss or true risk)，它是在整个的 $$ P$$ 的support上的期望；$$ \hat{R}(f) = \frac{1}{n}\sum_{i=1}^n l(f(X_i),Y_i)$$
 表示在已经观察到的样本上面的损失。自然的我们可以理解 $$ R(f_n)$$， $$ R(f^{*})$$，$$ \hat{R}(f_n)$$，$$ R_n(f^{*})$$ 的意义。 显然我们有如下的关系成立 $$ R^* < R(f^*) \leq R(f_n)$$。注意$$ R(f_n)$$ 是随机变量，因为它依赖观察到的样本。
 
@@ -58,7 +60,7 @@ B_1(n,\mathcal{F})$$。这个界定了估计的误差和实际的误差的差距
 
 
 ## 关于 Domain Adaptation
-如果观测到的数据和未来的数据不是来自同一个分布，记 $$ P_S $$ 和 $$ P_T $$，但是他们有很强的相关性，即分布的某种意义下的距离很小。我们的目标是建立此种背景下的统计学习理论。我们的目标是确定$$ R_T(\hat{f}) - R_T^*$$，其中$$\hat{f}$$ 是在source domain上由算法得到的函数。这里我们用 $$ R_T(f)= \mathbb{E}_{P_T}[l(f(X),Y)]$$ 表示在target domain上面的真实误差。我们先定义 $$f_{S}^* = \textrm{argmin}_{f \in \mathcal{F}} \mathbb{E}_{P_S}[l(f(X),Y)]$$ 和 $$f_{T}^* = \textrm{argmin}_{f \in \mathcal{F}} \mathbb{E}_{P_T}[l(f(X),Y)]$$。类似的我们有如下的分解
+如果观测到的数据和未来的数据不是来自同一个分布，记 $$ P_S $$ 和 $$ P_T $$，但是他们有很强的相关性，即分布的某种意义下的距离很小。我们的目标是建立此种背景下的统计学习理论。我们的目标是确定 $$ R_T(\hat{f}) - R_T^*$$，其中 $$\hat{f}$$ 是在 source domain 上由算法得到的函数。这里我们用 $$ R_T(f)= \mathbb{E}_{P_T}[l(f(X),Y)]$$ 表示在target domain上面的真实误差。我们先定义 $$f_{S}^* = \textrm{argmin}_{f \in \mathcal{F}} \mathbb{E}_{P_S}[l(f(X),Y)]$$ 和 $$f_{T}^* = \textrm{argmin}_{f \in \mathcal{F}} \mathbb{E}_{P_T}[l(f(X),Y)]$$。类似的我们有如下的分解
 
 $$
 \begin{align}
