@@ -14,9 +14,9 @@ comments: True
 $$ { l(f(X), Y) = \mathbf{1}_{f(X) \neq Y} },$$
 
 对于回归问题损失函数 
-$$ l$$ 一般为 $$ l(f(X),Y ) = (f(X)-Y)^2$$
+$$ l$$ 一般为 $$ l(f(X),Y ) = (f(X)-Y)^2$$。
 
-。我们用 $$\hat{f}$$ 来表示学习算法从观察到的$$ n$$个训练样本得到的函数，即：
+我们用 $$\hat{f}$$ 来表示学习算法从观察到的$$ n$$个训练样本得到的函数，即：
 
 $$ \hat{f} = \textrm{argmin}_{f \in \mathcal{F}} \sum_{i=1}^n l(f(x_i), y_i) ,$$
 
