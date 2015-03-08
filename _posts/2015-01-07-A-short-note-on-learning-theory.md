@@ -78,24 +78,15 @@ a = \sum_{i=1}^n \xi_i
 \\]
 
 \\]
-\begin{align}
- & R_T(\hat{f}) - R_T^*  \nonumber \\
- = &  (R_T(\hat{f}) - R_T(f_T^*)) + (R_T(f_T^*)- R_T^*) \nonumber \\
+\\begin{align}
+ & R_T(\hat{f}) - R_T^*   \\\\
+ = &  (R_T(\hat{f}) - R_T(f_T^*)) + (R_T(f_T^*)- R_T^*)  \\\\
  = & (R_T(\hat{f}) - R_S(f_T^*)) + (R_S(f_T^*) - R_T(f_T^*)) + (R_T(f_T^*)- R_T^*) 
 %  = & (R_T(\hat{f}) - R_S(\hat{f}) ) + (R_S(\hat{f})  - R_S(f_T^*)) + (R_S(f_T^*) - R_T(f_T^*)) +
 % (R_T(f_T^*)- R_T^*) 
-\end{align}
+\\end{align}
 \\]
 
-$
-\begin{align}
- & R_T(\hat{f}) - R_T^*  \nonumber \\
- = &  (R_T(\hat{f}) - R_T(f_T^*)) + (R_T(f_T^*)- R_T^*) \nonumber \\
- = & (R_T(\hat{f}) - R_S(f_T^*)) + (R_S(f_T^*) - R_T(f_T^*)) + (R_T(f_T^*)- R_T^*) 
-%  = & (R_T(\hat{f}) - R_S(\hat{f}) ) + (R_S(\hat{f})  - R_S(f_T^*)) + (R_S(f_T^*) - R_T(f_T^*)) +
-% (R_T(f_T^*)- R_T^*) 
-\end{align}
-$
 在此种分解下，我们需要给出 $$R_T(\hat{f}) $$ 的界。我们分解
 
 \\]
