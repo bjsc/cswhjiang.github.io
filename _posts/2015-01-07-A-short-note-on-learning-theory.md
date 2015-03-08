@@ -79,7 +79,8 @@ B_1(n,\mathcal{F})$$。这个界定了估计的误差和实际的误差的差距
  = & (R_T(\hat{f}) - R_S(f_T^*)) + (R_S(f_T^*) - R_T(f_T^*)) + (R_T(f_T^*)- R_T^*) 
 %  = & (R_T(\hat{f}) - R_S(\hat{f}) ) + (R_S(\hat{f})  - R_S(f_T^*)) + (R_S(f_T^*) - R_T(f_T^*)) +
 % (R_T(f_T^*)- R_T^*) 
-\end{align}\\]
+\end{align}
+\\]
 
 在此种分解下，我们需要给出 $$R_T(\hat{f}) $$ 的界。我们分解
 
@@ -88,6 +89,7 @@ B_1(n,\mathcal{F})$$。这个界定了估计的误差和实际的误差的差距
 = & (R_T(\hat{f}) - R_S(\hat{f})) + R_S(\hat{f})  \nonumber \\
 = &  (R_T(\hat{f}) - R_S(\hat{f})) + (R_S(\hat{f}) - \hat{R}_{S}(\hat{f})) + \hat{R}_{S}(\hat{f}) \\
 = &  (R_T(\hat{f})  - \hat{R}_{S}(\hat{f})) + \hat{R}_{S}(\hat{f})
-\end{align}\\]
+\end{align}
+\\]
 
 $$ \hat{R}_{S}(\hat{f})$$ 通常是目标函数的一部分，$$(R_S(\hat{f}) - \hat{R}_{S}(\hat{f})) $$从经典的统计学习理论也容易计算，所以我们要求 $$(R_T(\hat{f}) - R_S(\hat{f}))$$ 的界。
