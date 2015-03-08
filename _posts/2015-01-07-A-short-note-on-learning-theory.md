@@ -81,7 +81,7 @@ B_1(n,\mathcal{F})$$。这个界定了估计的误差和实际的误差的差距
 3. 相对于贝叶斯误差的错误界： $$ R(\hat{f}) \leq R^* + B_3(n,\mathcal{F})$$。这个界其实是我们真正关心的关心的误差界。
 
 
-关于 Domain Adaptation：如果观测到的数据和未来的数据不是来自同一个分布，记 $$ P_S $$ 和 $$ P_T $$，但是他们有很强的相关性，即分布的某种意义下的距离很小。我们的目标是建立此种背景下的统计学习理论。我们的目标是确定 $$ R_T(\hat{f}) - R_T^*$$，其中 $$\hat{f}$$ 是在 source domain 上由算法得到的函数。这里我们用 $$ R_T(f)= \mathbb{E}_{P_T}[l(f(X),Y)]$$ 表示在target domain上面的真实误差。我们先定义 $$f_{S}^* = \textrm{argmin}_{f \in \mathcal{F}} \mathbb{E}_{P_S}[l(f(X),Y)]$$ 和 $$f_{T}^* = \textrm{argmin}_{f \in \mathcal{F}} \mathbb{E}_{P_T}[l(f(X),Y)]$$。类似的我们有如下的分解
+关于 Domain Adaptation：如果观测到的数据（training set 或者 source dommain）和未来的数据 （testing set 或者 target domain）不是来自同一个分布，记 $$ P_S $$ 和 $$ P_T $$，但是他们有很强的相关性，即分布的某种意义下的距离很小。我们的目标是建立此种背景下的统计学习理论。我们的目标是确定 $$ R_T(\hat{f}) - R_T^*$$，其中 $$\hat{f}$$ 是在 source domain 上由算法得到的函数。这里我们用 $$ R_T(f)= \mathbb{E}_{P_T}[l(f(X),Y)]$$ 表示在target domain上面的真实误差。我们先定义 $$f_{S}^* = \textrm{argmin}_{f \in \mathcal{F}} \mathbb{E}_{P_S}[l(f(X),Y)]$$ 和 $$f_{T}^* = \textrm{argmin}_{f \in \mathcal{F}} \mathbb{E}_{P_T}[l(f(X),Y)]$$。类似的我们有如下的分解
 
 $$
 \begin{align}
@@ -104,7 +104,13 @@ $$
 \end{align}
 $$
 
-$$ \hat{R}_{S}(\hat{f})$$ 通常是目标函数的一部分，$$(R_S(\hat{f}) - \hat{R}_{S}(\hat{f})) $$从经典的统计学习理论也容易计算，所以我们要求 $$(R_T(\hat{f}) - R_S(\hat{f}))$$ 的界。
+$$ \hat{R}_{S}(\hat{f})$$ 通常是目标函数的一部分，$$(R_S(\hat{f}) - \hat{R}_{S}(\hat{f})) $$从经典的统计学习理论也容易计算，所以我们要求 $$(R_T(\hat{f}) - R_S(\hat{f}))$$ 的界。对于 domain adaptation 通常假设 covariate shift 是个不合理的假设，因为通常在 source domain 和 target domain 之间有个不小的 margin。 其实 Domain Adaptation 成功的等价条件是：
+
+1. $$ P_S $$ 的距离 $$ P_T $$ 接近。
+
+2. 存在一个分类器在观测到的数据和未来的数据上分类误差都不大。
+
+
 
 
 
