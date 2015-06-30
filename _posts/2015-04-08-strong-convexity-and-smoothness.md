@@ -47,20 +47,28 @@ $$\alpha$$-strong convexity 可以由以下的条件推出：
 
 
 ## $$ \beta$$-smoothness
-如果一个连续可微的函数 $$ f(x)$$  是 $$ \beta$$-smooth 如果它的梯度 $$ \nabla f(x)$$ 是 $$ \beta$$-Lipschitz 的，即 $$ \|\nabla f(x) - \nabla f(y)\| \leq \beta \|x -y\|$$。
+
+如果一个连续可微的函数 $$ f(x)$$ 的梯度 $$ \nabla f(x)$$ 是 $$ \beta$$-Lipschitz 的，即 
+
+$$ \|\nabla f(x) - \nabla f(y)\| \leq \beta \|x -y\|$$
+
+我们称 $$ f(x)$$  是 $$ \beta$$-smooth 的。
 
 $$ \beta$$-smooth 的函数可以由一下的条件推出来，其中 $$ \mu \in [0, 1]$$并且 $$f$$ 是凸函数，
-1. $$ 0 \leq f(y) - f(x) - \nabla f(x)^T (y-x) \leq \frac{\beta}{2} \|x-y\|_2^2$$ 。
 
-2. $$ f(x) + \nabla f(x)^T (y-x) + \frac{1}{2\beta}\|\nabla f(x) - \nabla f(y)\|^2 \leq f(y)$$。
+1. $$ 0 \leq f(y) - f(x) - \nabla f(x)^T (y-x) \leq \frac{\beta}{2} \|x-y\|_2^2$$ .
 
-3. $$\frac{1}{\beta} \nabla f(x) - \nabla f(y\|^2 \leq \left(\nabla f(x) - \nabla f(y)\right)^T(x-y)$$。
+2. $$ f(x) + \nabla f(x)^T (y-x) + \frac{1}{2\beta}\|\nabla f(x) - \nabla f(y)\|^2 \leq f(y)$$.
 
-4. $$\left(\nabla f(x) - \nabla f(y)\right)^T(x-y) \leq \beta \|x-y\|^2$$。
+3. $$\frac{1}{\beta} \nabla f(x) - \nabla f(y\|^2 \leq \left(\nabla f(x) - \nabla f(y)\right)^T(x-y)$$.
 
-5. $$\mu f(x) + (1-\mu)f(y) \geq f(\mu x + (1-\mu)y) + \frac{\mu(1-\mu)}{2\beta} \| \nabla f(x) - \nabla f(x)\|^2 $$。
-6. $$\mu f(x) + (1-\mu)f(y) \leq f(\mu x + (1-\mu)y) + \frac{\mu(1-\mu)}{2\beta} \| x-y\|^2  $$。
-7. $$ 0 \preceq \nabla^2f(x)\preceq \beta I $$。
+4. $$\left(\nabla f(x) - \nabla f(y)\right)^T(x-y) \leq \beta \|x-y\|^2$$.
+
+5. $$\mu f(x) + (1-\mu)f(y) \geq f(\mu x + (1-\mu)y) + \frac{\mu(1-\mu)}{2\beta} \| \nabla f(x) - \nabla f(x)\|^2 $$.
+
+6. $$\mu f(x) + (1-\mu)f(y) \leq f(\mu x + (1-\mu)y) + \frac{\mu(1-\mu)}{2\beta} \| x-y\|^2  $$.
+
+7. $$ 0 \preceq \nabla^2f(x)\preceq \beta I $$.
 
 
 如果 $$f(x) $$ 是 $$ \alpha$$-stongly convex，那么有 $$ \left(\nabla f(x) - \nabla f(y)\right)^T(x-y) \geq \frac{\alpha\beta}{\alpha + \beta} \|x-y\|^2 + \frac{1}{\alpha + \beta} \| \nabla f(x) - \nabla f(x)\|^2$$， 并且 $$\frac{\beta}{\alpha} $$ 叫做函数的条件数 (condition number) ，对在 $$ f(x)$$ 上的梯度下降的速度有很大影响。
