@@ -57,7 +57,7 @@ $$ \|\nabla f(x) - \nabla f(y)\| \leq \beta \|x -y\|$$
 
 2. $$ f(x) + \nabla f(x)^T (y-x) + \frac{1}{2\beta}\|\nabla f(x) - \nabla f(y)\|^2 \leq f(y)$$.
 
-3. $$\frac{1}{\beta} \nabla f(x) - \nabla f(y\|^2 \leq \left(\nabla f(x) - \nabla f(y)\right)^T(x-y)$$.
+3. $$\frac{1}{\beta}  \|\nabla f(x) - \nabla f(y)\|^2 \leq \left(\nabla f(x) - \nabla f(y)\right)^T(x-y)$$.
 
 4. $$\left(\nabla f(x) - \nabla f(y)\right)^T(x-y) \leq \beta \|x-y\|^2$$.
 
