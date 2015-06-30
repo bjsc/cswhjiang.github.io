@@ -28,11 +28,9 @@ $$\alpha$$-strong convexity 有如下的性质：
 1. 如果 $$ f_1(x)$$ 和 $$ f_2(x)$$ 分别是 $$ \mu_{1}$$-strongly convex 和 $$ \mu_{2}$$-strongly convex，那么 $$ f(x) = \alpha f_1(x) + \beta f_2(x)$$ 是 $$ (\alpha \mu_1 + \beta \mu_2)$$-strongly convex 的。
 
 2. 如果 $$ f(x) $$是 $$ \alpha$$-stongly convex 的，那么 
-
 $$ f(y) \leq f(x) + \nabla f(x)^T(y-x) + \frac{1}{2\alpha} \|\nabla f(x) - \nabla f(y)\|^2 $$.
 
 3. 如果 $$ f(x) $$是 $$ \alpha$$-stongly convex 的，那么 
-
 $$\left(\nabla f(x) - \nabla f(y)\right)^T(x-y) \leq \frac{1}{\alpha} \|\nabla f(x) - \nabla f(y)\|^2$$.
 
 
