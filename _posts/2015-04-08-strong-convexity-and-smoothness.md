@@ -10,15 +10,15 @@ comments: True
 
 一个函数 $$ f: \mathcal{X} \mapsto \mathbb{R} $$ 是 $$ \alpha$$-strong convex 需要满足以下的条件：
 
-$$ f(x) - f(y) \leq \nabla f(x)^T(x-y) - \frac{\alpha}{2}\|x-y\|_2^2$$
+$$ f(x) - f(y) \leq \nabla f(x)^T(x-y) - \frac{\alpha}{2}\|x-y\|_2^2,$$
 
 其实此定义对不可微分的函数也成立，只要把导数换成 subgradient。$$f(y) $$在 $$ x$$出的二阶近似为：
 
-$$ f(y) \approx f(x) + \nabla f(x)^T(y-x) + (y-x)^T\nabla^2f(x)(y-x)$$
+$$ f(y) \approx f(x) + \nabla f(x)^T(y-x) + (y-x)^T\nabla^2f(x)(y-x).$$
 
 $$ \alpha$$-strong convexity 的意思是要求 $$f(y)$$ 比当我们以 identity matrix 来近似做 Hessian matrix 的时候的近似值要大。也就是对于任意的$$y$$ 找到一个凸的二次的lower bound： 
 
-$$ f(x)  + \nabla f(x)^T(y-x) + \frac{\alpha}{2}\|x-y\|_2^2 $$
+$$ f(x)  + \nabla f(x)^T(y-x) + \frac{\alpha}{2}\|x-y\|_2^2 .$$
 
 $$\alpha$$可以看做函数 curvature 的一种度量。对于线性函数，$$\alpha$$为0。在优化中，大的 $$ \alpha$$会有更好的 convergence rate 。 因为大的 $$ \alpha$$ 表示曲率大，因此表示梯度下降的步长大。
 
@@ -70,9 +70,9 @@ $$ \|\nabla f(x) - \nabla f(y)\| \leq \beta \|x -y\|,$$
 
 如果 $$f(x) $$ 是 $$ \alpha$$-stongly convex，那么有：
 
-$$ \left(\nabla f(x) - \nabla f(y)\right)^T(x-y) \geq \frac{\alpha\beta}{\alpha + \beta} \|x-y\|^2 + \frac{1}{\alpha + \beta} \| \nabla f(x) - \nabla f(x)\|^2$$,
+$$ \left(\nabla f(x) - \nabla f(y)\right)^T(x-y) \geq \frac{\alpha\beta}{\alpha + \beta} \|x-y\|^2 + \frac{1}{\alpha + \beta} \| \nabla f(x) - \nabla f(x)\|^2.$$
 
-并且 $$Q = \frac{\beta}{\alpha} $$ 叫做函数的条件数 (condition number)。$$Q$$其实是函数 $$f(x) $$的 Hessian matrix 的条件数的上限。$$Q$$ 对在 $$ f(x)$$ 上的梯度下降的速度有很大影响， $$Q$$越小的目标函数越容易收敛。
+把这两个度量放一起定义函数的条件数 (condition number)为： $$Q = \frac{\beta}{\alpha} $$。$$Q$$其实是函数 $$f(x) $$的 Hessian matrix 的条件数的上限。$$Q$$ 对在 $$ f(x)$$ 上的梯度下降的速度有很大影响， $$Q$$越小的目标函数越容易收敛。
 
 
 
