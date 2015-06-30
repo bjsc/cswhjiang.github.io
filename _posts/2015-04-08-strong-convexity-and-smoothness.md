@@ -41,9 +41,7 @@ $$\alpha$$-strong convexity 可以由以下的条件推出：
 
 2. $$ \left(\nabla f(x) - \nabla f(y)\right)^T(x-y) \geq \alpha \|x-y\|^2 $$.
 
-3. $$ \mu \in [0,1]$$ 并且
-
- $$ \mu f(x) + (1-\mu) f(y) \geq f(\mu x + (1-\mu)y) + \mu (1-\mu) \frac{\alpha}{2} \|x-y\|^2$$.
+3. $$ \mu \in [0,1]$$ 并且 $$ \mu f(x) + (1-\mu) f(y) \geq f(\mu x + (1-\mu)y) + \mu (1-\mu) \frac{\alpha}{2} \|x-y\|^2$$.
 
 4. $$\nabla^2 f(x) \succeq \alpha I$$.
 
