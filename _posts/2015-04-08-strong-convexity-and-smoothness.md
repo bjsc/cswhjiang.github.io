@@ -34,7 +34,7 @@ $$ f(y) \leq f(x) + \nabla f(x)^T(y-x) + \frac{1}{2\alpha} \|\nabla f(x) - \nabl
 $$\left(\nabla f(x) - \nabla f(y)\right)^T(x-y) \leq \frac{1}{\alpha} \|\nabla f(x) - \nabla f(y)\|^2$$.
 
 
-$$\alpha$$-strong convexity 的函数可以推出以下等价的结论（$$ \mu \in [0,1]$$）：
+$$\alpha$$-strong convexity 的函数可以推出以下等价的结论（其中 $$ \mu \in [0,1]$$）：
 
 1. 函数 $$ x \mapsto f(x) - \frac{\alpha}{2}\|x\|_2^2$$  是凸函数。
 
