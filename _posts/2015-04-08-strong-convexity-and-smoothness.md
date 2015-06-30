@@ -9,9 +9,9 @@ comments: True
 ## $$ \alpha$$-strong Convexity
 
 一个函数 $$ f: \mathcal{X} \mapsto \mathbb{R} $$ 是 $$ \alpha$$-strong convex 需要满足以下的条件：
-$$
-f(x) - f(y) \leq \nabla f(x)^T(x-y) - \frac{\alpha}{2}\|x-y\|_2^2
-$$
+
+$$ f(x) - f(y) \leq \nabla f(x)^T(x-y) - \frac{\alpha}{2}\|x-y\|_2^2$$
+
 其实此定义对不可微分的函数也成立，只要把导数换成 subgradient。$$f(y) $$在 $$ x$$出的二阶近似为 $$ f(y) \approx f(x) + \nabla f(x)^T(y-x) + (y-x)^T\nabla^2f(x)(y-x)$$。 $$ \alpha$$-strong convexity 的意思是要求 f(y) 比当我们以 identity matrix 来近似做 Hessian matrix 的时候的近似值要大。也就是对于任意的$$y$$ 找到一个凸的二次的lower bound： $$ f(x)  + \nabla f(x)^T(y-x) + \frac{\alpha}{2}\|x-y\|_2^2 $$
 
 $$\alpha$$可以看做函数 curvature 的一种度量。对于线性函数，$$\alpha$$为0。在优化中，大的 $$ \alpha$$会有更好的 convergence rate 。 因为大的 $$ \alpha$$ 表示曲率大，因此表示梯度下降的步长大。
