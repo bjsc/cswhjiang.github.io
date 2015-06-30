@@ -49,9 +49,9 @@ $$\alpha$$-strong convexity 的函数可以推出以下等价的结论（其中 
 
 如果一个连续可微的函数 $$ f(x)$$ 的梯度 $$ \nabla f(x)$$ 是 $$ \beta$$-Lipschitz 的，即：
 
-$$ \|\nabla f(x) - \nabla f(y)\| \leq \beta \|x -y\|$$
+$$ \|\nabla f(x) - \nabla f(y)\| \leq \beta \|x -y\|$$，
 
-我们称 $$ f(x)$$  是 $$ \beta$$-smooth 的。给定一个$$ \beta$$-smooth 的函数可以推出以下的等价的结论（其中 $$ \mu \in [0, 1]$$ 并且 $$f$$ 是凸函数）：
+那么我们称 $$ f(x)$$  是 $$ \beta$$-smooth 的。给定一个$$ \beta$$-smooth 的函数可以推出以下的等价的结论（其中 $$ \mu \in [0, 1]$$ 并且 $$f$$ 是凸函数）：
 
 1. $$ 0 \leq f(y) - f(x) - \nabla f(x)^T (y-x) \leq \frac{\beta}{2} \|x-y\|_2^2$$ .
 
