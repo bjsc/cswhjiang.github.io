@@ -35,7 +35,7 @@ $$ f(y) \leq f(x) + \nabla f(x)^T(y-x) + \frac{1}{2\alpha} \|\nabla f(x) - \nabl
 
 $$\left(\nabla f(x) - \nabla f(y)\right)^T(x-y) \leq \frac{1}{\alpha} \|\nabla f(x) - \nabla f(y)\|^2$$
 
-$$\alpha$$-strong convexity 可以由以下的条件推出：
+$$\alpha$$-strong convexity 的函数可以推出以下等价的结论：
 
 1. 函数 $$ x \mapsto f(x) - \frac{\alpha}{2}\|x\|_2^2$$  是凸函数。
 
@@ -52,7 +52,7 @@ $$\alpha$$-strong convexity 可以由以下的条件推出：
 
 $$ \|\nabla f(x) - \nabla f(y)\| \leq \beta \|x -y\|$$
 
-我们称 $$ f(x)$$  是 $$ \beta$$-smooth 的。$$ \beta$$-smooth 的函数可以由以下的条件推出来（其中 $$ \mu \in [0, 1]$$ 并且 $$f$$ 是凸函数）：
+我们称 $$ f(x)$$  是 $$ \beta$$-smooth 的。给定一个$$ \beta$$-smooth 的函数可以推出以下的等价的结论（其中 $$ \mu \in [0, 1]$$ 并且 $$f$$ 是凸函数）：
 
 1. $$ 0 \leq f(y) - f(x) - \nabla f(x)^T (y-x) \leq \frac{\beta}{2} \|x-y\|_2^2$$ .
 
