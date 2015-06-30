@@ -1,6 +1,6 @@
 ---
 layout: post
-title: strong Convexity and Smoothness
+title: Strong Convexity and Smoothness
 comments: True
 ---
 
@@ -57,6 +57,5 @@ $$ \beta$$-smooth 的函数可以由一下的条件推出来，其中 $$ \mu \in
 
 
 ## Reference
-[1] Nesterov, Y. "Introductory lectures on convex optimization: a basic course. 2004."
-
-[2] Bubeck, Sébastien. "Theory of convex optimization for machine learning." arXiv preprint arXiv:1405.4980 (2014).
+1. Nesterov, Y. "Introductory lectures on convex optimization: a basic course. 2004."
+2. Bubeck, Sébastien. "Theory of convex optimization for machine learning." arXiv preprint arXiv:1405.4980 (2014).
