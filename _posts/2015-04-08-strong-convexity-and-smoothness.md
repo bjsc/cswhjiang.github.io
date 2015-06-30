@@ -29,11 +29,12 @@ $$\alpha$$-strong convexity 有如下的性质：
 
 2. 如果 $$ f(x) $$是 $$ \alpha$$-stongly convex 的，那么 
 
-$$ f(y) \leq f(x) + \nabla f(x)^T(y-x) + \frac{1}{2\alpha} \|\nabla f(x) - \nabla f(y)\|^2 $$
+$$ f(y) \leq f(x) + \nabla f(x)^T(y-x) + \frac{1}{2\alpha} \|\nabla f(x) - \nabla f(y)\|^2 $$.
 
 3. 如果 $$ f(x) $$是 $$ \alpha$$-stongly convex 的，那么 
 
-$$\left(\nabla f(x) - \nabla f(y)\right)^T(x-y) \leq \frac{1}{\alpha} \|\nabla f(x) - \nabla f(y)\|^2$$
+$$\left(\nabla f(x) - \nabla f(y)\right)^T(x-y) \leq \frac{1}{\alpha} \|\nabla f(x) - \nabla f(y)\|^2$$.
+
 
 $$\alpha$$-strong convexity 的函数可以推出以下等价的结论：
 
