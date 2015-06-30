@@ -70,7 +70,7 @@ $$ \|\nabla f(x) - \nabla f(y)\| \leq \beta \|x -y\|$$
 
 如果 $$f(x) $$ 是 $$ \alpha$$-stongly convex，那么有：
 
-$$ \left(\nabla f(x) - \nabla f(y)\right)^T(x-y) \geq \frac{\alpha\beta}{\alpha + \beta} \|x-y\|^2 + \frac{1}{\alpha + \beta} \| \nabla f(x) - \nabla f(x)\|^2$$
+$$ \left(\nabla f(x) - \nabla f(y)\right)^T(x-y) \geq \frac{\alpha\beta}{\alpha + \beta} \|x-y\|^2 + \frac{1}{\alpha + \beta} \| \nabla f(x) - \nabla f(x)\|^2$$,
 
 并且 $$Q = \frac{\beta}{\alpha} $$ 叫做函数的条件数 (condition number)。$$Q$$其实是函数 $$f(x) $$的 Hessian matrix 的条件数的上限。$$Q$$ 对在 $$ f(x)$$ 上的梯度下降的速度有很大影响， $$Q$$越小的目标函数越容易收敛。
 
