@@ -48,11 +48,11 @@ $$\alpha$$-strong convexity 可以由以下的条件推出：
 
 ## $$ \beta$$-smoothness
 
-如果一个连续可微的函数 $$ f(x)$$ 的梯度 $$ \nabla f(x)$$ 是 $$ \beta$$-Lipschitz 的，即 
+如果一个连续可微的函数 $$ f(x)$$ 的梯度 $$ \nabla f(x)$$ 是 $$ \beta$$-Lipschitz 的，即：
 
 $$ \|\nabla f(x) - \nabla f(y)\| \leq \beta \|x -y\|$$
 
-我们称 $$ f(x)$$  是 $$ \beta$$-smooth 的。$$ \beta$$-smooth 的函数可以由以下的条件推出来，其中 $$ \mu \in [0, 1]$$并且 $$f$$ 是凸函数，
+我们称 $$ f(x)$$  是 $$ \beta$$-smooth 的。$$ \beta$$-smooth 的函数可以由以下的条件推出来，其中 $$ \mu \in [0, 1]$$ 并且 $$f$$ 是凸函数，
 
 1. $$ 0 \leq f(y) - f(x) - \nabla f(x)^T (y-x) \leq \frac{\beta}{2} \|x-y\|_2^2$$ .
 
