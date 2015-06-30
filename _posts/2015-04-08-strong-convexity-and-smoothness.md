@@ -34,13 +34,13 @@ $$ f(y) \leq f(x) + \nabla f(x)^T(y-x) + \frac{1}{2\alpha} \|\nabla f(x) - \nabl
 $$\left(\nabla f(x) - \nabla f(y)\right)^T(x-y) \leq \frac{1}{\alpha} \|\nabla f(x) - \nabla f(y)\|^2$$.
 
 
-$$\alpha$$-strong convexity 的函数可以推出以下等价的结论：
+$$\alpha$$-strong convexity 的函数可以推出以下等价的结论（$$ \mu \in [0,1]$$）：
 
 1. 函数 $$ x \mapsto f(x) - \frac{\alpha}{2}\|x\|_2^2$$  是凸函数。
 
 2. $$ \left(\nabla f(x) - \nabla f(y)\right)^T(x-y) \geq \alpha \|x-y\|^2 $$.
 
-3. $$ \mu \in [0,1]$$ 并且 $$ \mu f(x) + (1-\mu) f(y) \geq f(\mu x + (1-\mu)y) + \mu (1-\mu) \frac{\alpha}{2} \|x-y\|^2$$.
+3. $$ \mu f(x) + (1-\mu) f(y) \geq f(\mu x + (1-\mu)y) + \mu (1-\mu) \frac{\alpha}{2} \|x-y\|^2$$.
 
 4. $$\nabla^2 f(x) \succeq \alpha I$$.
 
