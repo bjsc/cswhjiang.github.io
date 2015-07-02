@@ -45,7 +45,7 @@ $$
 x^{k+1} = F(x^k).
 $$
 
-但是如果 $$F$$ 是 nonexpansive， 此过程不一定收敛（即使 $$F$$ 的 fixed point set 是空集也不一定收敛）。但是如果我们定义另一个 operator $$ T = (1-\alpha) I + \alpha F$$（$$T$$ 和 $$F$$ 有相同的 fixed points），其中 $$ \alpha \in (0,1)，$$ T 会收敛到 T 的 fixed point，其实也就是 F 的 fixed point。这个迭代过程可以表示为：
+但是如果 $$F$$ 是 nonexpansive， 此过程不一定收敛（即使 $$F$$ 的 fixed point set 是空集也不一定收敛）。但是如果我们定义另一个 operator $$ T = (1-\alpha) I + \alpha F$$（$$T$$ 和 $$F$$ 有相同的 fixed points），其中 $$ \alpha \in (0,1)，$$  $$T$$ 会收敛到 $$T$$ 的 fixed point，其实也就是 $$F$$ 的 fixed point。这个迭代过程可以表示为：
 
 $$
 x^{k+1} = (1-\alpha) x^k + \alpha F(x^k).
@@ -60,7 +60,7 @@ $$
 \|\textrm{prox}_{f}(x) - \textrm{prox}_{f}(y)\|_{2}^2 \leq (x-y)^T(\textrm{prox}_{f}(x) - \textrm{prox}_{f}(y)).
 $$
 
-满足这个条件的 operator 被称为 firm nonexpensive operator。这样的 operator 是$$ \frac{1}{2}$$-averaged operator。总之，contraction 和 firmly nonexpensiveness 的operator 是 average operator的子集。 因此迭代地使用 proximal operator 会收敛到 fixed point。 
+满足这个条件的 operator 被称为 firm nonexpensive operator。这样的 operator 是$$ \frac{1}{2}$$-averaged operator。总之，contraction 和 firmly nonexpensiveness 的 operator 是 average operator的子集。 因此迭代地使用 proximal operator 会收敛到 fixed point。 
 
 
 ## Inperpretations of Proximal oOperator
