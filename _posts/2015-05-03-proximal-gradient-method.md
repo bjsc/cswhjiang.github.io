@@ -67,24 +67,24 @@ $$
 
 从 proximal operator 的定义可以看出， $$ \textrm{prox}_{\lambda f}(v)$$ 也是这个问题的解：
 
-$$x = v - \lambda \nabla f(x) .$$
+$$x = v - \lambda \nabla f(x) ,$$
 
 这并不是一个梯度的迭代步骤。可以从以下的角度理解 proximal operator。
 
 ### Moreau Envelope
-函数 $$ \lambda f$$ 的 Moreau envelope 定义如下
+函数 $$ \lambda f$$ 的 Moreau envelope 定义如下：
 
 $$
 M_{\lambda f}(v) = \inf_x \left( f(x) + \frac{1}{2\lambda }\|x-v\|_2^2 \right).
 $$
 
-二维的 Moreau Envelope 图形可以看[这里](http://oldweb.cecm.sfu.ca/projects/CCA/FCT/demo/HTML/)。Moreau Envelope 其实是 $$ f$$ 的光滑的近似版本。他们有着相同的最优解。根据 proximal operator 的定义，我们可以把 Moreau envelope 表示为
+二维的 Moreau Envelope 图形可以看[这里](http://oldweb.cecm.sfu.ca/projects/CCA/FCT/demo/HTML/)。Moreau Envelope 其实是 $$ f$$ 的光滑的近似版本。他们有着相同的最优解。根据 proximal operator 的定义，我们可以把 Moreau envelope 表示为：
 
 $$
 M_{\lambda f}(v) =  f(\textrm{prox}_{\lambda f}(v)) + \frac{1}{2\lambda }\|\textrm{prox}_{\lambda f}(v)-v\|_2^2.
 $$
 
-Moreau envelope 的导数可以表示为
+Moreau envelope 的导数可以表示为：
 
 $$
 \nabla M_{\lambda f}(v) = \frac{1}{\lambda } (v - \textrm{prox}_{\lambda f}(v)).
