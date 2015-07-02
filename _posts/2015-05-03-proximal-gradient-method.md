@@ -17,7 +17,7 @@ $$
 \textrm{prox}_{\lambda f}(v) = \textrm{argmin}_{x} \left( f(x) + \frac{1}{2\lambda} \|x-v\|_2^2\right).
 $$
 
-通常 $$ \textrm{prox}_{f}(v)$$ 也称作 v 的对于函数 f 的 proximal point。如果 $$x^*$$ 最小化函数 $$ f$$， 等价于 $$ x^* = \textrm{prox}_{f}(x^*)$$。这样的点叫做 $$ \textrm{prox}_{f}$$  的 fixed points。因此找函数的 minimizer 就和 operator  的 fixed points 相关联了。以此需要了解一下 operator 的东西。
+通常 $$ \textrm{prox}_{f}(v)$$ 也称作 $$v$$ 的对于函数 $$f$$ 的 proximal point。如果 $$x^*$$ 最小化函数 $$ f$$， 等价于 $$ x^* = \textrm{prox}_{f}(x^*)$$。这样的点叫做 $$ \textrm{prox}_{f}$$  的 fixed points。因此找函数的 minimizer 就和 operator  的 fixed points 相关联了。以此需要了解一下 operator 的东西。
 
 
 ## Proximal Operator and Fixed Points
