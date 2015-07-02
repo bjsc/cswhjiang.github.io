@@ -45,7 +45,7 @@ $$
 x^{k+1} = F(x^k).
 $$
 
-但是如果 $$F$$ 是 nonexpansive， 此过程不一定收敛（即使 $$F$$ 的 fixed point set 是空集也不一定收敛）。但是如果我们定义另一个 operator $$ T = (1-\alpha) I + \alpha F$$（$$T$$ 和 $$F$$ 有相同的 fixed points），其中 $$ \alpha \in (0,1)，$$  $$T$$ 会收敛到 $$T$$ 的 fixed point，其实也就是 $$F$$ 的 fixed point。这个迭代过程可以表示为：
+但是如果 $$F$$ 是 nonexpansive， 此过程不一定收敛（即使 $$F$$ 的 fixed point set 是空集也不一定收敛）。但是如果我们定义另一个 operator $$ T = (1-\alpha) I + \alpha F$$ （$$T$$ 和 $$F$$ 有相同的 fixed points），其中 $$ \alpha \in (0,1)，$$  $$T$$ 会收敛到 $$T$$ 的 fixed point，其实也就是 $$F$$ 的 fixed point。这个迭代过程可以表示为：
 
 $$
 x^{k+1} = (1-\alpha) x^k + \alpha F(x^k).
@@ -54,7 +54,7 @@ $$
 这称作 $$F$$ 的 damped iteration。$$T$$ 称作 $$F$$的 $$ \alpha$$-averageed operators。
 
 
-由于 proximal operator 满足如下被称为 firmly nonexpensiveness 的条件：
+Proximal operator 满足如下被称为 firmly nonexpensiveness 的条件：
 
 $$
 \|\textrm{prox}_{f}(x) - \textrm{prox}_{f}(y)\|_{2}^2 \leq (x-y)^T(\textrm{prox}_{f}(x) - \textrm{prox}_{f}(y)).
