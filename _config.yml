@@ -1,3 +1,5 @@
+markdown: kramdown
+
 # Permalinks
 permalink:        pretty
 relative_permalinks: true
@@ -24,4 +26,4 @@ pages_list:
   Archive: '/archive'
   Feed: '/atom.xml'
 
-markdown: kramdown
+
