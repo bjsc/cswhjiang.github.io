@@ -31,10 +31,10 @@
   <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
 
 <!-- https://konklone.com/post/github-pages-now-supports-https-so-use-it-->
+<!-- http://stackoverflow.com/questions/4723213/detect-http-or-https-then-force-https-in-javascript -->
 <script type="text/javascript">
     var host = 'cswhjiang.github.io';
     if (window.location.host == host && window.location.protocol != 'https:') { 
-
 	window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
     }
     
