@@ -6,31 +6,37 @@ comments: True
 
 ## Proximal Operator
 对于凸函数 $$ f(x)$$， proximal operator 的定义为
+
 $$
-\textrm{prox}_{f}(v) = \textrm{argmin}_{x} \left( f(x) + \frac{1}{2} \|x-v\|_2^2\right)
+\textrm{prox}_{f}(v) = \textrm{argmin}_{x} \left( f(x) + \frac{1}{2} \|x-v\|_2^2\right).
 $$
-通常我们会遇到针对函数 $$ \lambda f$$ 的 proximal operator。相似的，它的定义为
+
+我们会遇到针对函数 $$ \lambda f$$ 的 proximal operator。相似的，它的定义为
+
 $$
 \textrm{prox}_{\lambda f}(v) = \textrm{argmin}_{x} \left( f(x) + \frac{1}{2\lambda} \|x-v\|_2^2\right)
 $$
 
 通常 $$ \textrm{prox}_{f}(v)$$ 也称作 v 的对于函数 f 的 proximal point。
 
-如果 $$x^*$$ 最小化函数 $$ f$$， 等价于 $$ x^* = \textrm{prox}_{f}(x^*)$$。这样的点叫做 $$ \textrm{prox}_{f}$$  的 fixed points。因此找函数的minimizer 就和 operator  的 fixed points 相关联了。以此需要了解一下 operator 的东西。
+如果 $$x^*$$ 最小化函数 $$ f$$， 等价于 $$ x^* = \textrm{prox}_{f}(x^*)$$。这样的点叫做 $$ \textrm{prox}_{f}$$  的 fixed points。因此找函数的 minimizer 就和 operator  的 fixed points 相关联了。以此需要了解一下 operator 的东西。
 
 
 ## Proximal Operator and Fixed Points
 这一节简要介绍  proximal operator 的 fixed points， 主要整理自 [Stanford EE364b 的 leture notes](http://stanford.edu/class/ee364b/lectures/monotone_slides.pdf)，目的是从 operator 的角度来解释为什么迭代地应用 proximal operator 能收敛到最优解。
 
 首先定义 relation R 是一个 $$ R^n \times R^n$$ 上的子集，然后定义 $$ R(x) = \{ y \mid (x,y) \in R\}$$， 一个 $$ R^n $$ 上的 relation F 是 monotone 如果它满足
+
 $$
 (u-v)^T(x-y) \geq 0 \ \textrm{for all $$ (x,u), (y,v) \in F$$ }
 $$
 
 Relation $$ F$$ 有 Lipschitz 常数 $$ L$$， 如果它满足如下的条件
+
 $$
 \|F(x) - F(y)\|_2 \leq L\|x-y\|_2 \ \textrm{for all $$ x,y \in \textrm{dom} F$$ }
 $$
+
 如果 $$ L=1$$, F 称作 nonexpansive，如果 $$ L < 1$$ 那么 F 是一个 contraction。如果 F 是 nonexpansive 的，那么它的 fixed point 集合是凸集。如果 F 是 contraction， 那么他有一个 fixed points， 并且可以由如下的迭代来找到：
 $$
 x^{k+1} = F(x^k)
