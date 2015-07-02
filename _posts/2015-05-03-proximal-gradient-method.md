@@ -161,7 +161,7 @@ $$
 q_{\lambda} (x,y) = \hat{f}_{\lambda}(x,y)  + g(x).
 $$
 
-显然， $$ q_{\lambda} (x,y)$$  是 $$ f(x)+g(x)$$ 的 majorization。我们的问题可以用如下的迭代步骤来解
+显然， $$ q_{\lambda} (x,y)$$  是 $$ f(x)+g(x)$$ 的 majorization。因此我们的问题可以用如下的迭代步骤来解
 
 $$
 x^{k+1} = \textrm{argmin}_{x} q_{\lambda}(x,x^k).
@@ -173,11 +173,13 @@ $$
 x^{k+1} = \textrm{prox}_{\lambda^k g} (x^k - \lambda^k \nabla f(x^k)).
 $$
 
-上面的方法的 convergence rate 是 $$ O(1/k)$$，通过 nesterov's method 来加速到 $$ O(\frac{1}{k^2})$$。步骤如下：
+上面的方法的 convergence rate 是 $$ O(1/k)$$，通过 Nesterov's method 来加速到 $$ O(\frac{1}{k^2})$$。步骤如下：
 
 $$
-y^{k+1} = x^k + \omega^k(x^k - x^{k-1}) ,\\
-x^{k+1} = \textrm{prox}_{\lambda^k g} (y^k - \lambda^k \nabla f(y^k)).
+\begin{align}
+y^{k+1} &= x^k + \omega^k(x^k - x^{k-1}) ,\\
+x^{k+1} &= \textrm{prox}_{\lambda^k g} (y^k - \lambda^k \nabla f(y^k)).
+\end{align}
 $$
 
 其中 $$ \omega^k \in [0,1)$$，$$ \omega^k $$ 需要以特定的方法选出来。一个简单的方法是：$$ \omega^k = \frac{k}{k+3}$$。对于加速和非加速版本的 proximal gradient method 的 $$ \lambda $$ 都可以用 line search 的方法来找。
