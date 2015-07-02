@@ -30,12 +30,14 @@
   </script>
   <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
 
-<!-- https://coderabbi.github.io/posts/force-https-with-github-pages/-->
+<!-- https://konklone.com/post/github-pages-now-supports-https-so-use-it-->
 <script type="text/javascript">
     var host = 'cswhjiang.github.io';
     if (window.location.host == host && window.location.protocol != 'https:') { 
         window.location.protocol = 'https:';
+	window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
     }
+    
 </script>
 
 </head>
