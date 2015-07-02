@@ -90,7 +90,11 @@ $$
 \nabla M_{\lambda f}(v) = \frac{1}{\lambda } (v - \textrm{prox}_{\lambda f}(v)).
 $$
 
-因此， $$\textrm{prox}_{\lambda f}(v) = v - \lambda   \nabla M_{\lambda f}(v) $$。所以 proximal operator 可以看做是在其 Moreau envelope 上的梯度下降，步长为 $$ \lambda $$。
+因此， 
+
+$$\textrm{prox}_{\lambda f}(v) = v - \lambda   \nabla M_{\lambda f}(v) .$$
+
+所以 proximal operator 可以看做是在其 Moreau envelope 上的梯度下降，步长为 $$ \lambda $$。
 
 ### Modified Gradient Descent 
 我们考察 proximal operator 在 函数 $$ f$$ 的一阶和二阶近似上的行为。我们记其在 $$v$$ 附近的 一阶和二阶的近似为
