@@ -60,7 +60,7 @@ $$
 \|\textrm{prox}_{f}(x) - \textrm{prox}_{f}(y)\|_{2}^2 \leq (x-y)^T(\textrm{prox}_{f}(x) - \textrm{prox}_{f}(y)).
 $$
 
-满足这个条件的 operator 被称为 firm nonexpensive operator。这样的 operator 是$$ \frac{1}{2}$$-averaged operator。总之，contraction 和 firmly nonexpensiveness 的 operator 是 average operator 的子集。 因此迭代地使用 proximal operator 会收敛到 fixed point。 
+满足这个条件的 operator 被称为 firm nonexpensive operator。这样的 operator 是$$ \frac{1}{2}$$-averaged operator。总之，contraction 和 firmly nonexpensiveness 的 operator 是 averaged operator 的子集。 因此迭代地使用 proximal operator 会收敛到 fixed point。 
 
 
 ## Inperpretations of Proximal oOperator
