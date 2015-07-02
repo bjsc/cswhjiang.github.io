@@ -8,9 +8,12 @@ relative_permalinks: true
 title:            Wenhao Jiang's Blog
 tagline:          'The personal website of Wenhao Jiang'
 url:              https://cswhjiang.github.io
+
 paginate:         1
 baseurl:          /
-
+author:
+  name:           Wenhao Jiang
+  url:            https://twitter.com/cswhjiang
 
 
 # Custom vars
@@ -25,3 +28,6 @@ pages_list:
   Feed: '/atom.xml'
 
 
+JB :
+  version : 0.3.0
+  BASE_PATH : https://cswhjiang.github.io
