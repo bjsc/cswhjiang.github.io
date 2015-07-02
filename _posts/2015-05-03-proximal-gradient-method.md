@@ -78,7 +78,7 @@ $$
 M_{\lambda f}(v) = \inf_x \left( f(x) + \frac{1}{2\lambda }\|x-v\|_2^2 \right).
 $$
 
-二维的 Moreau Envelope 图形可以看[这里](http://oldweb.cecm.sfu.ca/projects/CCA/FCT/demo/HTML/)。Moreau Envelope 其实是 $$ f$$ 的光滑的近似版本。他们有着相同的最优解。根据 proximal operator 的定义，我们可以把 Moreau envelope 表示为：
+二维的 Moreau envelope 图形可以看[这里](http://oldweb.cecm.sfu.ca/projects/CCA/FCT/demo/HTML/)。Moreau envelope 其实是 $$ f$$ 的光滑的近似版本。他们有着相同的最优解。根据 proximal operator 的定义，我们可以把 Moreau envelope 表示为：
 
 $$
 M_{\lambda f}(v) =  f(\textrm{prox}_{\lambda f}(v)) + \frac{1}{2\lambda }\|\textrm{prox}_{\lambda f}(v)-v\|_2^2.
@@ -90,7 +90,7 @@ $$
 \nabla M_{\lambda f}(v) = \frac{1}{\lambda } (v - \textrm{prox}_{\lambda f}(v)).
 $$
 
-因此， $$\textrm{prox}_{\lambda f}(v) = v - \lambda   \nabla M_{\lambda f}(v) $$。所以 proximal operator 可以看做是在  Moreau Envelope 上的梯度下降，步长为 $$ \lambda $$。
+因此， $$\textrm{prox}_{\lambda f}(v) = v - \lambda   \nabla M_{\lambda f}(v) $$。所以 proximal operator 可以看做是在其 Moreau envelope 上的梯度下降，步长为 $$ \lambda $$。
 
 ### Modified Gradient Descent 
 我们考察 proximal operator 在 函数 $$ f$$ 的一阶和二阶近似上的行为。我们记其在 $$v$$ 附近的 一阶和二阶的近似为
