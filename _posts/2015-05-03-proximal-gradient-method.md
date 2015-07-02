@@ -109,8 +109,10 @@ $$
 我们可以求出 proximal operator 的解析解如下
 
 $$
-\textrm{prox}_{\lambda f_v^{(1)}} = v - \lambda \nabla f(v) \\
-\textrm{prox}_{\lambda f_v^{(2)}} = v - (\nabla^2 f(v) + \frac{1}{\lambda} I )^{-1} \nabla f(v) .
+\begin{align}
+\textrm{prox}_{\lambda f_v^{(1)}} &= v - \lambda \nabla f(v) \\
+\textrm{prox}_{\lambda f_v^{(2)}} &= v - (\nabla^2 f(v) + \frac{1}{\lambda} I )^{-1} \nabla f(v) .
+\end{align}
 $$
 
 因此，如果每一个步骤都用 $$ f $$ 的一阶的近似，那么 proximal operator 就是一个标准的梯度下降，如果每一个步骤用 $$ f$$ 的二阶近似，那么 proximal operator 是加了正则的牛顿迭代。如果 $$\lambda  \to 0 $$， $$ \textrm{prox}_{\lambda f_v^{(2)}} \approx v - \lambda \nabla f(v)  $$，此时相当于没有用到二阶的信息。
