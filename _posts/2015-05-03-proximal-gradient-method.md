@@ -140,7 +140,7 @@ $$
 x^{k+1} = \textrm{prox}_{\lambda^k g} (x^k - \lambda^k \nabla f(x^k)).
 $$
 
-这称为 proximal gradient method。 当 $$ f $$ 是 $$ L$$-smooth 的，当用固定的步长 $$ \lambda^k \in [0,L]$$的时候有convergence rate $$ O(1/k)$$。如果 $$ L $$ 不知道，可以用 line search 来找到合适的步长。
+这称为 proximal gradient method。 当 $$ f $$ 是 $$ L$$-smooth 的，并且用固定的步长 $$ \lambda^k \in [0,L]$$ 的时候有 convergence rate $$ O(1/k)$$。如果 $$ L $$ 不知道，可以用 line search 来找到合适的步长。
 
 
 这个过程可以用 majorization minimization (MM) 来理解。 用 MM 算法来找函数 $$ h(x)$$ 的最优解可以表示为如下的迭代过程
@@ -149,7 +149,7 @@ $$
 x^{k+1} = \textrm{argmin}_{x} \hat{h}(x, x^k),
 $$
 
-其中 $$ \hat{h}(x, x^k) $$ 是 $$ h(x)$$ 的 tight convex upper bound，也就是有 $$ \hat{h}(x, x^k) \geq h(x) $$ 并且 $$ \hat{h}(x^k, x^k) = h(x^k) $$ 成立。这样的 upper bound 叫 matorization，它不一定唯一。MM算法每一步都是在最小化matorization。 对于我们关心的问题，我们考虑函数 $$ f(x)$$的一个 matorization 
+其中凸函数 $$ \hat{h}(x, x^k) $$ 是 $$ h(x)$$ 的 tight upper bound，也就是有 $$ \hat{h}(x, x^k) \geq h(x) $$ 并且 $$ \hat{h}(x^k, x^k) = h(x^k) $$ 成立。这样的 upper bound 叫 matorization，它不一定唯一。MM算法每一步都是在最小化matorization。 对于我们关心的问题，我们考虑函数 $$ f(x)$$的一个 matorization 
 
 $$
 \hat{f}_{\lambda}(x,y) = f(y) + \nabla f(y)^T(x-y) + \frac{1}{2\lambda} \|x-y\|_2^2.
