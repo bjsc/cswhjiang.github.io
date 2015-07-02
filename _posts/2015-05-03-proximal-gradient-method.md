@@ -25,9 +25,9 @@ $$
 
 首先定义 relation R 是一个 $$ R^n \times R^n$$ 上的子集，然后定义 $$ R(x) = \{ y \mid (x,y) \in R\}$$， 一个 $$ R^n $$ 上的 relation F 是 monotone 如果它满足
 $$
-(u-v)^T(x-y) \geq 0  
+(u-v)^T(x-y) \geq 0 
 $$
-for all $$ (x,u), (y,v) \in F$$都成立。Relation $$ F$$ 有 Lipschitz 常数 $$ L$$， 如果它满足如下的条件
+对所有的 $$ (x,u), (y,v) \in F$$都成立。Relation $$ F$$ 有 Lipschitz 常数 $$ L$$， 如果它满足如下的条件
 
 $$
 \|F(x) - F(y)\|_2 \leq L\|x-y\|_2 \ \textrm{for all $$ x,y \in \textrm{dom} F$$ }
