@@ -23,16 +23,16 @@ $$
 ## Proximal Operator and Fixed Points
 这一节简要介绍  proximal operator 的 fixed points， 主要整理自 [Stanford EE364b 的 leture notes](http://stanford.edu/class/ee364b/lectures/monotone_slides.pdf)，目的是从 operator 的角度来解释为什么迭代地应用 proximal operator 能收敛到最优解。
 
-首先定义 relation R 是一个 $$ R^n \times R^n$$ 上的子集，然后定义 $$ R(x) = \{ y \mid (x,y) \in R\}$$， 一个 $$ R^n $$ 上的 relation F 是 monotone 如果对于对所有的 $$ (x,u), (y,v) \in F$$ 都满足如下的条件：
+首先定义 relation R 是一个 $$ R^n \times R^n$$ 上的子集，然后定义 $$ R(x) = \{ y \mid (x,y) \in R\}$$。 一个 $$ R^n $$ 上的 relation F 是 monotone 如果对于对所有的 $$ (x,u), (y,v) \in F$$ 都满足如下的条件：
 
 $$
 (u-v)^T(x-y) \geq 0 
 $$
 
-Relation $$ F$$ 有 Lipschitz 常数 $$ L$$， 如果它满足如下的条件
+我们称Relation $$ F$$ 有 Lipschitz 常数 $$ L$$， 如果对所有的 $$ x,y \in \textrm{dom} F$$ 满足如下的条件
 
 $$
-\|F(x) - F(y)\|_2 \leq L\|x-y\|_2 \ \textrm{for all $$ x,y \in \textrm{dom} F$$ }
+\|F(x) - F(y)\|_2 \leq L\|x-y\|_2 
 $$
 
 如果 $$ L=1$$, F 称作 nonexpansive，如果 $$ L < 1$$ 那么 F 是一个 contraction。如果 F 是 nonexpansive 的，那么它的 fixed point 集合是凸集。如果 F 是 contraction， 那么他有一个 fixed points， 并且可以由如下的迭代来找到：
