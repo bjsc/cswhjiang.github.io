@@ -60,7 +60,7 @@ $$
 \|\textrm{prox}_{f}(x) - \textrm{prox}_{f}(y)\|_{2}^2 \leq (x-y)^T(\textrm{prox}_{f}(x) - \textrm{prox}_{f}(y)).
 $$
 
-满足这个条件的 operator 被称为 firm nonexpensive operator。这样的 operator 是$$ \frac{1}{2}$$-averaged operator。总之，contraction 和 firmly nonexpensiveness 的 operator 是 average operator的子集。 因此迭代地使用 proximal operator 会收敛到 fixed point。 
+满足这个条件的 operator 被称为 firm nonexpensive operator。这样的 operator 是$$ \frac{1}{2}$$-averaged operator。总之，contraction 和 firmly nonexpensiveness 的 operator 是 average operator 的子集。 因此迭代地使用 proximal operator 会收敛到 fixed point。 
 
 
 ## Inperpretations of Proximal oOperator
@@ -97,11 +97,13 @@ $$\textrm{prox}_{\lambda f}(v) = v - \lambda   \nabla M_{\lambda f}(v) .$$
 所以 proximal operator 可以看做是在其 Moreau envelope 上的梯度下降，步长为 $$ \lambda $$。
 
 ### Modified Gradient Descent 
-我们考察 proximal operator 在 函数 $$ f$$ 的一阶和二阶近似上的行为。我们记其在 $$v$$ 附近的 一阶和二阶的近似为
+我们考察 proximal operator 在函数 $$ f$$ 的一阶和二阶近似上的行为。我们记其在 $$v$$ 附近的 一阶和二阶的近似为
 
 $$
-f_v^{(1)} = f(v) + \nabla f(v)^T (x-v) \\
-f_v^{(2)} = f(v) + \nabla f(v)^T (x-v) + \frac{1}{2}(x-v)^T \nabla^2 f(v) (x-v).
+\begin{align}
+f_v^{(1)} &= f(v) + \nabla f(v)^T (x-v) \\
+f_v^{(2)} &= f(v) + \nabla f(v)^T (x-v) + \frac{1}{2}(x-v)^T \nabla^2 f(v) (x-v).
+\end{align}
 $$
 
 我们可以求出 proximal operator 的解析解如下
