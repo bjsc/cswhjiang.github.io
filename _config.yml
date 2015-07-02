@@ -6,12 +6,11 @@ relative_permalinks: true
 
 # Setup
 title:            Wenhao Jiang's Blog
-tagline:          'The personal website of Wenhao Jiang'
+tagline:          The personal website of Wenhao Jiang
 url:              https://cswhjiang.github.io
 baseurl: 	  ""
 
 paginate:         1
-baseurl:          /
 author:
   name:           Wenhao Jiang
   url:            https://twitter.com/cswhjiang
