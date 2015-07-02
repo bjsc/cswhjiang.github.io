@@ -8,6 +8,7 @@ relative_permalinks: true
 title:            Wenhao Jiang's Blog
 tagline:          The personal website of Wenhao Jiang
 url:              https://cswhjiang.github.io
+enforce_ssl:      true
 
 paginate:         1
 baseurl:          /
