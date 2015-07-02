@@ -149,7 +149,7 @@ $$
 x^{k+1} = \textrm{argmin}_{x} \hat{h}(x, x^k),
 $$
 
-其中凸函数 $$ \hat{h}(x, x^k) $$ 是 $$ h(x)$$ 的 tight upper bound，也就是有 $$ \hat{h}(x, x^k) \geq h(x) $$ 并且 $$ \hat{h}(x^k, x^k) = h(x^k) $$ 成立。这样的 upper bound 叫 matorization，它不一定唯一。MM算法每一步都是在最小化matorization。 对于我们关心的问题，我们考虑函数 $$ f(x)$$的一个 matorization 
+其中凸函数 $$ \hat{h}(x, x^k) $$ 是 $$ h(x)$$ 的 tight upper bound，也就是有 $$ \hat{h}(x, x^k) \geq h(x) $$ 并且 $$ \hat{h}(x^k, x^k) = h(x^k) $$ 成立。这样的 upper bound 叫 matorization，它不一定唯一。MM 算法每一步都是在最小化 matorization。 对于我们关心的问题，我们考虑函数 $$ f(x)$$的一个 matorization ：
 
 $$
 \hat{f}_{\lambda}(x,y) = f(y) + \nabla f(y)^T(x-y) + \frac{1}{2\lambda} \|x-y\|_2^2.
