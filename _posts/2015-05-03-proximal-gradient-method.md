@@ -66,7 +66,9 @@ $$
 ## Inperpretations of Proximal oOperator
 
 从 proximal operator 的定义可以看出， $$ \textrm{prox}_{\lambda f}(v)$$ 也是这个问题的解：
-$$x = v - \lambda \nabla f(x) $$
+
+$$x = v - \lambda \nabla f(x) .$$
+
 这并不是一个梯度的迭代步骤。可以从以下的角度理解 proximal operator。
 
 ### Moreau Envelope
