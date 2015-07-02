@@ -182,7 +182,7 @@ x^{k+1} &= \textrm{prox}_{\lambda^k g} (y^k - \lambda^k \nabla f(y^k)).
 \end{align}
 $$
 
-其中 $$ \omega^k \in [0,1)$$，$$ \omega^k $$ 需要以特定的方法选出来。一个简单的方法是：$$ \omega^k = \frac{k}{k+3}$$。对于加速和非加速版本的 proximal gradient method 的 $$ \lambda $$ 都可以用 line search 的方法来找。
+其中 $$ \omega^k \in [0,1)$$，$$ \omega^k $$ 需要以特定的方法选出来。一个简单的方法是 $$ \omega^k = \frac{k}{k+3}$$。对于加速版本的 proximal gradient method 的 $$ \lambda $$ 也可以用 line search 的方法来找。
 
 # Reference
 1. Parikh, Neal, and Stephen Boyd. "Proximal algorithms." Foundations and Trends in optimization 1.3 (2013): 123-231.
