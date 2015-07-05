@@ -8,7 +8,7 @@ comments: True
 广义线性模型（Generalized linear models，不要和 General Linear Models 搞混）是 John Nelder 和 Robert Wedderburn 提出的 [1]。在给定一个训练数据集 $$D =\{(x_1,y_1), \cdots, (x_n,y_n) \}$$，要学习一个假设 $$h(x)$$ 能预测 $$y$$ 的值。在线性模型中 $$h(x) = x^T\beta$$。在广义线性模型中 $$h(x) = f(x^T \beta)$$，其中 $$f(\cdot)$$ 是非线性函数，称作激活函数（activation function），也称作响应函数（response function），它的反函数叫做连接函数（link function）。函数 $$f$$ 由给定 $$x$$ 时 $$y$$ 的分布决定。
 
 
-## Exponential Family Distribution
+## Exponential Family Distributions
 
 ### Formulations
 指数族分布是指有着如下形式的分布
@@ -20,10 +20,11 @@ $$
 $$
 
 其中
+
 - $$\eta$$ 叫做自然参数（也叫指数参数）
 - $$T(y)$$ 是充分统计量 （很多时候 $$T(y) = y$$，这时候的分布叫做经典形式（canonical form），这时候的 $$\eta$$ 叫做经典参数）。
 - $$a(\eta)$$ 是 log-partition function (也叫 normalization factor, cumulant generating function) 。它使得 $$p(y; \eta)$$ 是个分布。
--  $$b(y)$$ non-negative base measure (in many cases it is equal to 1).
+- $$b(y)$$ non-negative base measure (in many cases it is equal to 1).
 
 
 当给定 $$T, a, b$$ 的时候，参数 $$\eta$$ 就确定了一族的分布，不同的 $$\eta$$ 就定义了在这一族中不同的分布。 很多分布都是指数族分布，比如
@@ -31,7 +32,7 @@ Gaussian, multionmial, exponential, Dirichlet, Poisson, Gamma 等。不是指数
 
 ## properties
 
--   充分统计量 $T(y)$ 的维度由自然参数 $\eta$ 的个数决定。
+- 充分统计量 $T(y)$ 的维度由自然参数 $\eta$ 的个数决定。
 - 指数族分布的乘积依然是指数族分布，但是可能是没有归一化的。
 - $$a(\eta)$$ 称作累积发生函数（cumulant generating function，注意不是 Moment-Generating Function），　$$a(\eta)$$　有如下的性质：
 
