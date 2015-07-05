@@ -30,7 +30,7 @@ $$
 当给定 $$T, a, b$$ 的时候，参数 $$\eta$$ 就确定了一族的分布，不同的 $$\eta$$ 就定义了在这一族中不同的分布。 很多分布都是指数族分布，比如
 Gaussian, Multionmial, Dirichlet, Poisson, Gamma 分布等。不是指数族分布的分布包括: Cauchy, uniform 等。
 
-## properties
+## Properties
 
 - 充分统计量 $T(y)$ 的维度由自然参数 $\eta$ 的个数决定。
 - 指数族分布的乘积依然是指数族分布，但是可能是没有归一化的。
@@ -149,9 +149,9 @@ $$
 
 我们需要做下面假设（来自Andrew Ng的讲义）：
 
-- $$y|x;\theta \sim \textrm{ExponentialFamily}(\eta)$$。在给定 $$x$$ 和 $$\theta$$ 的时候，$$y$$ 服从指数族分布，这个指数族分布的参数是 $$\eta$$。
+- $$y\|x;\theta \sim \textrm{ExponentialFamily}(\eta)$$。在给定 $$x$$ 和 $$\theta$$ 的时候，$$y$$ 服从指数族分布，这个指数族分布的参数是 $$\eta$$。
 - 自然参数 $$\eta$$ 和输入是线性关系 $$\eta = x^T \beta$$（如果 $$\eta$$ 是向量，那么 $$\eta_i = x^T \beta_i$$）
-- 输出 $$h(x) = E_{y|x}[y] = \frac{d a(\eta)}{d \eta}$$。
+- 输出 $$h(x) = E_{y\|x}[y] = \frac{d a(\eta)}{d \eta}$$。
 
 
 
