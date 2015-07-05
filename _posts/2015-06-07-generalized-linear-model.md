@@ -7,6 +7,7 @@ comments: True
 
 广义线性模型（Generalized linear models，不要和 General Linear Models 搞混）是 John Nelder 和 Robert Wedderburn 提出的 [1]。在给定一个训练数据集 $$D =\{(x_1,y_1), \cdots, (x_n,y_n) \}$$，要学习一个假设 $$h(x)$$ 能预测 $$y$$ 的值。在线性模型中 $$h(x) = x^T\beta$$。在广义线性模型中 $$h(x) = f(x^T \beta)$$，其中 $$f(\cdot)$$ 是非线性函数，称作激活函数（activation function），也称作响应函数（response function），它的反函数叫做连接函数（link function）。函数 $$f$$ 由给定 $$x$$ 时 $$y$$ 的分布决定。
 
+- - -
 
 ## Exponential Family Distributions
 
@@ -29,6 +30,8 @@ $$
 
 当给定 $$T, a, b$$ 的时候，参数 $$\eta$$ 就确定了一族的分布，不同的 $$\eta$$ 就定义了在这一族中不同的分布。 很多分布都是指数族分布，比如
 Gaussian, Multionmial, Dirichlet, Poisson, Gamma 分布等。不是指数族分布的分布包括: Cauchy, uniform 等。
+
+- - -
 
 ## Properties
 
@@ -147,6 +150,8 @@ $$
 \end{align}
 $$
 
+- - -
+
 ##  Generalized linear models
 
 我们需要做下面假设（来自Andrew Ng的讲义）：
@@ -199,7 +204,7 @@ $$
 
 函数 $$g(\cdot)$$ 称作连接函数（也就是上面公式中的 $$\eta(\theta)$$）， $$g^{-1}(\cdot)$$ 称作响应函数（即一开始提到的　$$f(\cdot)$$， 也即是 $$\nabla_{\eta}a(\eta)$$）。连接函数是 $$\textrm{mean parameter} \mapsto \textrm{natural parameter}$$，而响应函数是 $$\textrm{natural parameter}　\mapsto  \textrm{mean parameter}$$。
 
-
+- - -
 
 ## Training
 
@@ -221,6 +226,8 @@ $$
  \beta_{t+1} =\beta_{t} - [H(l(\beta))]^{-1} \nabla_{\beta} l(\beta)
 \end{align}
 $$
+
+- - -
 
 ## Examples
 
@@ -260,6 +267,8 @@ x})
 $$
 这个目标函数和　$$y$$ 用　$${-1,+1}$$　做类标（即常见的 logistic loss）是等价的。
  
+- - -
+
 # Reference
 1. J. A. Nelder and R. W. M. Wedderburn. Generalized linear models. Journal of the Royal Statistical Society. Series A (General), 135(3):pp. 370–384, 1972.
 2. Stephen Senn and John Nelder. A conversation with john nelder. Statistical Science, 18(1):pp. 118–131, 2003.
