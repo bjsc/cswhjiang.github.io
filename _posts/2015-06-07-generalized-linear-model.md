@@ -194,9 +194,8 @@ $$
  E[y] &= \theta = g^{-1}(x^T \beta) \nonumber 
  \end{align}
  $$
-  函数 $$g(\cdot)$$ 称作连接函数（也就是上面公式中的 $$\eta(\theta)$$）， 
-$$g^{-1}(\cdot)$$ 称作响应函数（即一开始提到的　$$f(\cdot)$$， 也即是 $$\nabla_{\eta}a(\eta)$$）。连接函数是 $$\textrm{mean 
-parameter} \mapsto \textrm{natural parameter}$$, 而响应函数是 $$\textrm{natural parameter}　\mapsto  \textrm{mean parameter}$$。
+
+函数 $$g(\cdot)$$ 称作连接函数（也就是上面公式中的 $$\eta(\theta)$$）， $$g^{-1}(\cdot)$$ 称作响应函数（即一开始提到的　$$f(\cdot)$$， 也即是 $$\nabla_{\eta}a(\eta)$$）。连接函数是 $$\textrm{mean parameter} \mapsto \textrm{natural parameter}$$, 而响应函数是 $$\textrm{natural parameter}　\mapsto  \textrm{mean parameter}$$。
 
 
 
