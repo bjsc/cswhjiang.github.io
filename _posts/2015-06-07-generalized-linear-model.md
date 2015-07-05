@@ -9,9 +9,9 @@ comments: True
 
 - - -
 
-## Exponential Family Distributions
+# Exponential Family Distributions
 
-### Formulations
+## Formulations
 指数族分布是指有着如下形式的分布
 
 $$
@@ -31,7 +31,6 @@ $$
 当给定 $$T, a, b$$ 的时候，参数 $$\eta$$ 就确定了一族的分布，不同的 $$\eta$$ 就定义了在这一族中不同的分布。 很多分布都是指数族分布，比如
 Gaussian, Multionmial, Dirichlet, Poisson, Gamma 分布等。不是指数族分布的分布包括: Cauchy, uniform 等。
 
-- - -
 
 ## Properties
 
@@ -50,11 +49,11 @@ $$
 -  能使得 $$a(\eta) < \infty $$ 成立的 $$\eta$$ 的集合称作 natural parameter space.
 -  每个指数族分布都有共轭分布。
 
-- - -
+
 
 ## Examples
 
-### Gaussian distribution
+#### Gaussian distribution
 高斯分布的概率密度函数为
 
 $$
@@ -86,7 +85,7 @@ x^2\\
 $$
 
 
-### Multivariate Gaussian distribution
+#### Multivariate Gaussian distribution
 多变量高斯分布的概率密度函数为
 
 $$
@@ -109,7 +108,7 @@ xx^T\\
 \end{align}
 $$
 
-### Bernoulli distribution
+#### Bernoulli distribution
 Bernoulli distribution 可以写作如下的形式：
 
 $$
@@ -133,7 +132,7 @@ $$
 
 因此 $$ \phi = \frac{1}{1-e^{-\eta}}$$。
 
-### Multinomial distribution
+#### Multinomial distribution
 
 $$
  \begin{align}
@@ -152,7 +151,7 @@ $$
 
 - - -
 
-##  Generalized linear models
+#  Generalized linear models
 
 我们需要做下面假设（来自Andrew Ng的讲义）：
 
@@ -204,7 +203,6 @@ $$
 
 函数 $$g(\cdot)$$ 称作连接函数（也就是上面公式中的 $$\eta(\theta)$$）， $$g^{-1}(\cdot)$$ 称作响应函数（即一开始提到的　$$f(\cdot)$$， 也即是 $$\nabla_{\eta}a(\eta)$$）。连接函数是 $$\textrm{mean parameter} \mapsto \textrm{natural parameter}$$，而响应函数是 $$\textrm{natural parameter}　\mapsto  \textrm{mean parameter}$$。
 
-- - -
 
 ## Training
 
@@ -227,11 +225,10 @@ $$
 \end{align}
 $$
 
-- - -
 
-## Examples
+## Examples　of GLM
 
-### Ordinary Least Squares
+#### Ordinary Least Squares
 
 $$
 \begin{align}
@@ -248,7 +245,7 @@ $$
 \end{align}
 $$
 
-### Logistic Regression
+#### Logistic Regression
 
 $$
 y \mid x \sim \textrm{Bernoulli}(\phi)
