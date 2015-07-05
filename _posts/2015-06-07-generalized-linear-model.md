@@ -259,5 +259,6 @@ x})
 $$
  
 # Reference
-[1] J. A. Nelder and R. W. M. Wedderburn. Generalized linear models. Journal of the Royal Statistical Society. Series A (General), 135(3):pp. 370–384, 1972.
-[2] Stephen Senn and John Nelder. A conversation with john nelder. Statistical Science, 18(1):pp. 118–131, 2003.
+1. J. A. Nelder and R. W. M. Wedderburn. Generalized linear models. Journal of the Royal Statistical Society. Series A (General), 135(3):pp. 370–384, 1972.
+
+2. Stephen Senn and John Nelder. A conversation with john nelder. Statistical Science, 18(1):pp. 118–131, 2003.
