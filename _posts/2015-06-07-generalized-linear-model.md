@@ -46,8 +46,8 @@ $$
 - Log-partition function $$a(\eta)$$ 以及一阶导数都是凸函数。
 -  能使得 $$a(\eta) < \infty $$ 成立的 $$\eta$$ 的集合称作 natural parameter space.
 -  每个指数族分布都有共轭分布。
-
 - - -
+
 ## Examples
 
 ### Gaussian distribution
