@@ -251,12 +251,13 @@ log-likelihood 表示如下
 
 $$
 \begin{align}
-  l(\beta |D)  &= \log \left( \Pi_{i}  \exp\left\{ y_i\cdot \beta^T x_i  + \log(\frac{e^{-\beta^T x}}{1+e^{-\beta^T 
+  l(\beta \mid　D)  &= \log \left( \Pi_{i}  \exp\left\{ y_i\cdot \beta^T x_i  + \log(\frac{e^{-\beta^T x}}{1+e^{-\beta^T 
 x}})\right\}  \right) \\
 &= \sum_i y_i\cdot \beta^T x_i  -  \log (1+e^{\beta^T 
 x})
 \end{align}
 $$
+这个目标函数和　$$y$$ 用　$${-1,+1}$$　做类标（即常见的 logistic loss）是等价的。
  
 # Reference
 1. J. A. Nelder and R. W. M. Wedderburn. Generalized linear models. Journal of the Royal Statistical Society. Series A (General), 135(3):pp. 370–384, 1972.
