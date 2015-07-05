@@ -32,7 +32,7 @@ Gaussian, Multionmial, Dirichlet, Poisson, Gamma 分布等。不是指数族分�
 
 ## Properties
 
-- 充分统计量 $T(y)$ 的维度由自然参数 $\eta$ 的个数决定。
+- 充分统计量 $$T(y)$$ 的维度由自然参数 $$\eta$$ 的个数决定。
 - 指数族分布的乘积依然是指数族分布，但是可能是没有归一化的。
 - $$a(\eta)$$ 称作累积发生函数（cumulant generating function，注意不是 Moment-Generating Function），　$$a(\eta)$$　有如下的性质：
 
@@ -44,11 +44,11 @@ $$
 $$
 
 - Log-partition function $$a(\eta)$$ 以及一阶导数都是凸函数。
--  能使得 $a(\eta) < \infty $ 成立的 $\eta$ 的集合称作 natural parameter space.
+-  能使得 $$a(\eta) < \infty $$ 成立的 $$\eta$$ 的集合称作 natural parameter space.
 -  每个指数族分布都有共轭分布。
 
 
-## examples
+## Examples
 
 ### Gaussian distribution
 高斯分布的概率密度函数为
@@ -245,7 +245,7 @@ $$
 $$
 y \mid x \sim \textrm{Bernoulli}(\phi)
 $$
-根据　$$\eta =  \log(\frac{\phi}{1-\phi}) = \beta^T x $$，可以得到 $$\phi = \frac{1}{1+e^{-\beta^T x}}$$
+根据　$$\eta =  \log(\frac{\phi}{1-\phi}) = \beta^T x $$，可以得到 $$\phi = \frac{1}{1+e^{-\beta^T x}}$$ 也就是　$$h(x)$$。
 
 log-likelihood 表示如下
 
