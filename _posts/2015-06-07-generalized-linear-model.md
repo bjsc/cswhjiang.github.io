@@ -149,7 +149,7 @@ $$
 
 我们需要做下面假设（来自Andrew Ng的讲义）：
 
-- $$y\midx ; \theta \sim \textrm{ExponentialFamily}(\eta)$$。在给定 $$x$$ 和 $$\theta$$ 的时候，$$y$$ 服从指数族分布，这个指数族分布的参数是 $$\eta$$。
+- $$y \mid x ; \theta \sim \textrm{ExponentialFamily}(\eta)$$。在给定 $$x$$ 和 $$\theta$$ 的时候，$$y$$ 服从指数族分布，这个指数族分布的参数是 $$\eta$$。
 - 自然参数 $$\eta$$ 和输入是线性关系 $$\eta = x^T \beta$$（如果 $$\eta$$ 是向量，那么 $$\eta_i = x^T \beta_i$$）
 - 输出 $$h(x) = E_{y \mid x}[y] = \frac{d a(\eta)}{d \eta}$$。
 
