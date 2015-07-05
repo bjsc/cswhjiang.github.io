@@ -9,9 +9,9 @@ comments: True
 
 - - -
 
-# Exponential Family Distributions
+## Exponential Family Distributions
 
-## Formulations
+### Formulations
 指数族分布是指有着如下形式的分布
 
 $$
@@ -32,7 +32,7 @@ $$
 Gaussian, Multionmial, Dirichlet, Poisson, Gamma 分布等。不是指数族分布的分布包括: Cauchy, uniform 等。
 
 
-## Properties
+### Properties
 
 - 充分统计量 $$T(y)$$ 的维度由自然参数 $$\eta$$ 的个数决定。
 - 指数族分布的乘积依然是指数族分布，但是可能是没有归一化的。
@@ -51,7 +51,7 @@ $$
 
 
 
-## Examples
+### Examples
 
 #### Gaussian distribution
 高斯分布的概率密度函数为
@@ -151,7 +151,7 @@ $$
 
 - - -
 
-#  Generalized linear models
+##  Generalized linear models
 
 我们需要做下面假设（来自Andrew Ng的讲义）：
 
@@ -204,7 +204,7 @@ $$
 函数 $$g(\cdot)$$ 称作连接函数（也就是上面公式中的 $$\eta(\theta)$$）， $$g^{-1}(\cdot)$$ 称作响应函数（即一开始提到的　$$f(\cdot)$$， 也即是 $$\nabla_{\eta}a(\eta)$$）。连接函数是 $$\textrm{mean parameter} \mapsto \textrm{natural parameter}$$，而响应函数是 $$\textrm{natural parameter}　\mapsto  \textrm{mean parameter}$$。
 
 
-## Training
+### Training
 
 在给定一个训练数据集 $$D = \{(x_1,y_1), \cdots, (x_n,y_n) \}$$，要计算在测试数据集上的 $$E_{y \mid x}[y]$$，我们需要估计 $$\beta$$。可以通过最大化 log-likelihood 来求解：
 
@@ -226,7 +226,7 @@ $$
 $$
 
 
-## Examples　of GLM
+### Examples　of GLM
 
 #### Ordinary Least Squares
 
@@ -266,6 +266,6 @@ $$
  
 - - -
 
-# Reference
+## Reference
 1. J. A. Nelder and R. W. M. Wedderburn. Generalized linear models. Journal of the Royal Statistical Society. Series A (General), 135(3):pp. 370–384, 1972.
 2. Stephen Senn and John Nelder. A conversation with john nelder. Statistical Science, 18(1):pp. 118–131, 2003.
