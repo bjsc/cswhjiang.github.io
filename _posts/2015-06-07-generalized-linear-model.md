@@ -126,7 +126,8 @@ $$
  b(y) &= 1 \nonumber 
 \end{align}
 $$
- 因此 $$ \phi = \frac{1}{1-e^{-\eta}}$$。
+
+因此 $$ \phi = \frac{1}{1-e^{-\eta}}$$。
 
 ### Multinomial distribution
 
