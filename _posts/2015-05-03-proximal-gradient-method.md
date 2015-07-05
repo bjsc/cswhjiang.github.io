@@ -20,7 +20,7 @@ $$
 通常 $$ \textrm{prox}_{f}(v)$$ 也称作 $$v$$ 的对于函数 $$f$$ 的 proximal point。如果 $$x^*$$ 最小化函数 $$ f$$， 等价于 $$ x^* = \textrm{prox}_{f}(x^*)$$。这样的点叫做 $$ \textrm{prox}_{f}$$  的 fixed points。因此找函数的 minimizer 就和 operator  的 fixed points 相关联了。以此需要了解一下 operator 的东西。
 
 
-## Proximal Operator and Fixed Points
+### Proximal Operator and Fixed Points
 这一节简要介绍  proximal operator 的 fixed points， 主要整理自 [Stanford EE364b 的 leture notes](http://stanford.edu/class/ee364b/lectures/monotone_slides.pdf)，目的是从 operator 的角度来解释为什么迭代地应用 proximal operator 能收敛到最优解。
 
 首先定义 relation R 是一个 $$ R^n \times R^n$$ 上的子集，然后定义
@@ -63,7 +63,7 @@ $$
 满足这个条件的 operator 被称为 firm nonexpensive operator。这样的 operator 是$$ \frac{1}{2}$$-averaged operator。总之，contraction 和 firmly nonexpensiveness 的 operator 是 averaged operator 的子集。 因此迭代地使用 proximal operator 会收敛到 fixed point。 
 
 
-## Inperpretations of Proximal oOperator
+### Inperpretations of Proximal oOperator
 
 从 proximal operator 的定义可以看出， $$ \textrm{prox}_{\lambda f}(v)$$ 也是这个问题的解：
 
@@ -71,7 +71,7 @@ $$x = v - \lambda \nabla f(x) ,$$
 
 这并不是一个梯度的迭代步骤。可以从以下的角度理解 proximal operator。
 
-### Moreau Envelope
+#### Moreau Envelope
 函数 $$ \lambda f$$ 的 Moreau envelope 定义如下：
 
 $$
@@ -96,7 +96,7 @@ $$\textrm{prox}_{\lambda f}(v) = v - \lambda   \nabla M_{\lambda f}(v) .$$
 
 所以 proximal operator 可以看做是在其 Moreau envelope 上的梯度下降，步长为 $$ \lambda $$。
 
-### Modified Gradient Descent 
+#### Modified Gradient Descent 
 我们考察 proximal operator 在函数 $$ f$$ 的一阶和二阶近似上的行为。我们记其在 $$v$$ 附近的 一阶和二阶的近似为
 
 $$
@@ -120,6 +120,7 @@ $$
 另外，从问题 $$ x = v - \lambda \nabla f(x) $$ 考虑，如果 $$\lambda  \to 0 $$， $$ x \approx v - \lambda \nabla f(v) $$，此时 $$ \textrm{prox}_{\lambda f} $$ 近似为 $$ f$$ 上的一个梯度下降的步骤。
 
 
+- - -
 
 ## Proximal Gradient Method
 对于凸函数 $$ f$$ 可以直接用如下的迭代
@@ -184,5 +185,7 @@ $$
 
 其中 $$ \omega^k \in [0,1)$$，$$ \omega^k $$ 需要以特定的方法选出来。一个简单的方法是 $$ \omega^k = \frac{k}{k+3}$$。对于加速版本的 proximal gradient method 的 $$ \lambda $$ 也可以用 line search 的方法来找。
 
-# Reference
+- - -
+
+## Reference
 1. Parikh, Neal, and Stephen Boyd. "Proximal algorithms." Foundations and Trends in optimization 1.3 (2013): 123-231.
