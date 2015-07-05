@@ -149,9 +149,9 @@ $$
 
 我们需要做下面假设（来自Andrew Ng的讲义）：
 
-- $$y\|x;\theta \sim \textrm{ExponentialFamily}(\eta)$$。在给定 $$x$$ 和 $$\theta$$ 的时候，$$y$$ 服从指数族分布，这个指数族分布的参数是 $$\eta$$。
+- $$y\midx ; \theta \sim \textrm{ExponentialFamily}(\eta)$$。在给定 $$x$$ 和 $$\theta$$ 的时候，$$y$$ 服从指数族分布，这个指数族分布的参数是 $$\eta$$。
 - 自然参数 $$\eta$$ 和输入是线性关系 $$\eta = x^T \beta$$（如果 $$\eta$$ 是向量，那么 $$\eta_i = x^T \beta_i$$）
-- 输出 $$h(x) = E_{y\|x}[y] = \frac{d a(\eta)}{d \eta}$$。
+- 输出 $$h(x) = E_{y \mid x}[y] = \frac{d a(\eta)}{d \eta}$$。
 
 
 
@@ -159,7 +159,7 @@ $$
 
 $$
 \begin{align}
-  p_{\beta}(y|x) = b(y)\exp\{ x^T \beta y - a(x^T \beta)\}.
+  p_{\beta}(y\mid x) = b(y)\exp\{ x^T \beta y - a(x^T \beta)\}.
 \end{align}
 $$
 
@@ -167,7 +167,7 @@ $$
 
 $$
 \begin{align}
- p_{B}(y|x) = b(y)\exp\{ y^T(B x)- a(B x)\}.
+ p_{B}(y \mid x) = b(y)\exp\{ y^T(B x)- a(B x)\}.
 \end{align}
 $$
 
@@ -206,7 +206,7 @@ parameter} \mapsto \textrm{natural parameter}$$, 而响应函数是 $$\textrm{na
 
 $$
 \begin{align}
- l(\beta|D) &= \log\left(  \Pi_{i=1}^{n} b(y_i)\exp\{ \eta_i^T y_i - a(\eta_i)\} \right) 
+ l(\beta \mid D) &= \log\left(  \Pi_{i=1}^{n} b(y_i)\exp\{ \eta_i^T y_i - a(\eta_i)\} \right) 
 \nonumber \\
 &= \log\left(  \Pi_{i=1}^{n} b(y_i)\exp\{ y_i (x_i^T \beta) - a(x_i^T \beta)\}  \right) \nonumber \\
 &= \sum \log (b(y_i)) + \beta^T \sum y_i x_i  - \sum a(\beta^T x_i) 
@@ -227,7 +227,7 @@ $$
 
 $$
 \begin{align}
-y|x \sim N(x^T \beta, \sigma^2)
+y \mid x \sim N(x^T \beta, \sigma^2)
 \end{align}
 $$
 
@@ -243,7 +243,7 @@ $$
 ### Logistic Regression
 
 $$
-y | x \sim \textrm{Bernoulli}(\phi)
+y \mid x \sim \textrm{Bernoulli}(\phi)
 $$
 根据　$$\eta =  \log(\frac{\phi}{1-\phi}) = \beta^T x $$，可以得到 $$\phi = \frac{1}{1+e^{-\beta^T x}}$$
 
