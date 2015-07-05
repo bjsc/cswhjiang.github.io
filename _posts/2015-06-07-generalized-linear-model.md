@@ -7,7 +7,7 @@ comments: True
 
 广义线性模型（Generalized Linear Models，不要和 General Linear Models 搞混）是 John Nelder 和 Robert Wedderburn 提出的 [1]。我们的任务是在给定一个训练数据集 $$D =\{(x_1,y_1), \cdots, (x_n,y_n) \}$$，要学习一个假设 $$h(x)$$ 能预测 $$y$$ 的值。在线性模型中我们用 $$h(x) = x^T\beta$$，在广义线性模型中我们用 $$h(x) = f(x^T \beta)$$，其中 $$f(\cdot)$$ 是非线性函数，称作激活函数（activation function），也称作响应函数（response function），它的反函数叫做连接函数（link function）。函数 $$f$$ 由给定 $$x$$ 时 $$y$$ 的分布决定。
 
-- - -
+* * *
 
 ## Exponential Family Distributions
 
