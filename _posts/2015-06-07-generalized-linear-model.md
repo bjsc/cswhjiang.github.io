@@ -24,7 +24,7 @@ $$
 - $$\eta$$ 叫做自然参数（也叫指数参数）
 - $$T(y)$$ 是充分统计量 （很多时候 $$T(y) = y$$，这时候的分布叫做经典形式（canonical form），这时候的 $$\eta$$ 叫做经典参数）。
 - $$a(\eta)$$ 是 log-partition function (也叫 normalization factor, cumulant generating function) 。它使得 $$p(y; \eta)$$ 是个分布。
-- $$b(y)$$ non-negative base measure (in many cases it is equal to 1).
+- $$b(y)$$ non-negative base measure (很多时候为 1).
 
 
 当给定 $$T, a, b$$ 的时候，参数 $$\eta$$ 就确定了一族的分布，不同的 $$\eta$$ 就定义了在这一族中不同的分布。 很多分布都是指数族分布，比如
@@ -47,7 +47,7 @@ $$
 -  能使得 $$a(\eta) < \infty $$ 成立的 $$\eta$$ 的集合称作 natural parameter space.
 -  每个指数族分布都有共轭分布。
 
-
+- - -
 ## Examples
 
 ### Gaussian distribution
