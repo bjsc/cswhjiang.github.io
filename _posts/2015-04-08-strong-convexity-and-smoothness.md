@@ -44,6 +44,7 @@ $$\alpha$$-strong convexity 的函数可以推出以下等价的结论（其中 
 
 4. $$\nabla^2 f(x) \succeq \alpha I$$.
 
+- - -
 
 ## $$ \beta$$-smoothness
 
@@ -76,7 +77,7 @@ $$ \left(\nabla f(x) - \nabla f(y)\right)^T(x-y) \geq \frac{\alpha\beta}{\alpha 
 
 
 
-
+- - -
 
 ## Reference
 1. Nesterov, Y. "Introductory lectures on convex optimization: a basic course. 2004."
