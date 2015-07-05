@@ -252,7 +252,7 @@ y \mid x \sim \textrm{Bernoulli}(\phi)
 $$
 根据　$$\eta =  \log(\frac{\phi}{1-\phi}) = \beta^T x $$，可以得到 $$\phi = \frac{1}{1+e^{-\beta^T x}}$$ 也就是　$$h(x)$$。
 
-log-likelihood 表示如下
+log-likelihood 表示如下：
 
 $$
 \begin{align}
