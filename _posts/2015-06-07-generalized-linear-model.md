@@ -28,7 +28,7 @@ $$
 
 
 当给定 $$T, a, b$$ 的时候，参数 $$\eta$$ 就确定了一族的分布，不同的 $$\eta$$ 就定义了在这一族中不同的分布。 很多分布都是指数族分布，比如
-Gaussian, multionmial, exponential, Dirichlet, Poisson, Gamma 等。不是指数族分布的分布包括: Cauchy, uniform 等。
+Gaussian, Multionmial, Dirichlet, Poisson, Gamma 分布等。不是指数族分布的分布包括: Cauchy, uniform 等。
 
 ## properties
 
