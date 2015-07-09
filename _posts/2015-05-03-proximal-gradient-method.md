@@ -11,7 +11,16 @@ $$
 \textrm{prox}_{f}(v) = \textrm{argmin}_{x} \left( f(x) + \frac{1}{2} \|x-v\|_2^2\right).
 $$
 
-我们会遇到针对函数 $$ \lambda f$$ 的 proximal operator。相似的，它的定义为
+它是由 Moreau 提出的对于投影的扩展。对于一个凸集 $$ C$$ 以及一点 $$y$$，要找它在凸集上的投影我们需要解如下的问题：
+
+$$
+\min_{x} l_C(x) + \frac{1}{2}\|x-y\|^2
+$$
+ 
+其中 $$l_C(x) $$  是一个凸集 $$C$$  的 indicator 函数， 当 $$x \in C$$ 时， $$l_C(x)=0 $$， 当 $$x \notin C$$  时， $$l_C(x)= \infty $$。
+Proximal operator 的定义就是把函数 $$l_C(x) $$ 换成了更一般的凸函数。
+
+通常我们会遇到针对函数 $$ \lambda f$$ 的 proximal operator。相似的，它的定义为
 
 $$
 \textrm{prox}_{\lambda f}(v) = \textrm{argmin}_{x} \left( f(x) + \frac{1}{2\lambda} \|x-v\|_2^2\right).

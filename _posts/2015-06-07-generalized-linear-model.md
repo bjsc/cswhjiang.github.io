@@ -240,7 +240,7 @@ log-likelihood 表示如下
 
 $$
 \begin{align}
-  l(\beta |D) &= \log \left( \Pi_{i} \frac{1} {\sqrt{2 \pi \sigma^2}} \exp \left\{-\frac{(y_i-  x_i^T \beta)^2}{2\sigma^2}\right\} \right) \nonumber \\
+  l(\beta \mid D) &= \log \left( \Pi_{i} \frac{1} {\sqrt{2 \pi \sigma^2}} \exp \left\{-\frac{(y_i-  x_i^T \beta)^2}{2\sigma^2}\right\} \right) \nonumber \\
 &= n \log(\frac{1}{\sqrt{2 \pi \sigma^2}})  - \sum_{i}  \frac{(y_i- x_i^T \beta)^2}{2\sigma^2} 
 \end{align}
 $$
