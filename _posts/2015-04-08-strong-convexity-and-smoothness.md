@@ -75,6 +75,8 @@ $$ \left(\nabla f(x) - \nabla f(y)\right)^T(x-y) \geq \frac{\alpha\beta}{\alpha 
 
 函数的  $$ \beta$$-smoothness 和  $$ \alpha$$-strong convexity 有对偶的关系。如果一个函数 $$f(x)$$是 $$ \beta$$-smooth 的，那么 $$f^*(x)$$ 是 $$\frac{1}{\beta}$$-strongly convex 的，其中 $$f^*(x) = \max_{y}(y^Tx - f(y)) $$ 是函数 $$f(x)$$ 的 convex conjugate 。
 
+- - -
+
 ## condition number
 
 把这两个度量放一起定义函数的条件数 (condition number)为： $$Q = \frac{\beta}{\alpha} $$。$$Q$$其实是函数 $$f(x) $$的 Hessian matrix 的条件数的上限。$$Q$$ 对在 $$ f(x)$$ 上的梯度下降的速度有很大影响， $$Q$$越小的目标函数越容易收敛。
