@@ -10,9 +10,9 @@ comments: True
 
 一个函数 $$ f: \mathcal{X} \mapsto \mathbb{R} $$ 是 $$ \alpha$$-strong convex 需要满足以下的条件：
 
-$$ f(x) - f(y) \leq \nabla f(x)^T(x-y) - \frac{\alpha}{2}\|x-y\|_2^2,$$
+$$ f(x) - f(y) \leq \nabla f(x)^T(x-y) - \frac{\alpha}{2}\|x-y\|_P^2,$$
 
-其实此定义对不可微分的函数也成立，只要把导数换成 subgradient。$$f(y) $$在 $$ x$$出的二阶近似为：
+其中 $$\|\cdot\|_{P} $$ 是 norm，例如 $$\ell_2$$-norm。其实此定义对不可微分的函数也成立，只要把导数换成 subgradient。$$f(y) $$在 $$ x$$出的二阶近似为：
 
 $$ f(y) \approx f(x) + \nabla f(x)^T(y-x) + (y-x)^T\nabla^2f(x)(y-x).$$
 
@@ -54,7 +54,11 @@ $$\alpha$$-strong convexity 的函数可以推出以下等价的结论（其中 
 
 $$ \|\nabla f(x) - \nabla f(y)\| \leq \beta \|x -y\|,$$
 
-那么我们称 $$ f(x)$$  是 $$ \beta$$-smooth 的。给定一个$$ \beta$$-smooth 的函数可以推出以下的等价的结论（其中 $$ \mu \in [0, 1]$$ 并且 $$f$$ 是凸函数）：
+那么我们称 $$ f(x)$$  是 $$ \beta$$-smooth 的。 更一般的表示为 
+
+$$ \|\nabla f(x) - \nabla f(y)\|_{D} \leq \beta \|x -y\|_{P},$$
+
+其中 $$\|\cdot\|_{P} $$ 是 norm， $$\|\cdot\|_{D} $$ 是 dual norm。给定一个$$ \beta$$-smooth 的函数可以推出以下的等价的结论（其中 $$ \mu \in [0, 1]$$ 并且 $$f$$ 是凸函数）：
 
 1. $$ 0 \leq f(y) - f(x) - \nabla f(x)^T (y-x) \leq \frac{\beta}{2} \|x-y\|_2^2$$ .
 
@@ -75,7 +79,7 @@ $$ \|\nabla f(x) - \nabla f(y)\| \leq \beta \|x -y\|,$$
 
 $$ \left(\nabla f(x) - \nabla f(y)\right)^T(x-y) \geq \frac{\alpha\beta}{\alpha + \beta} \|x-y\|^2 + \frac{1}{\alpha + \beta} \| \nabla f(x) - \nabla f(x)\|^2.$$
 
-函数的  $$ \beta$$-smoothness 和  $$ \alpha$$-strong convexity 有对偶的关系。如果一个函数 $$f(x)$$是 $$ \beta$$-smooth 的，那么 $$f^*(x)$$ 是 $$\frac{1}{\beta}$$-strongly convex 的，其中 $$f^*(x) = \max_{y}(y^Tx - f(y)) $$ 是函数 $$f(x)$$ 的 convex conjugate 。
+函数的  $$ \beta$$-smoothness 和  $$ \alpha$$-strong convexity 有对偶的关系。如果一个函数 $$f(x)$$是对于 norm $$\|\cotd\|_D$$ 的 $$ \beta$$-smooth 的，那么 $$f^*(x)$$ 是关于 norm $$\|\cdot\|_D$$ 的 $$\frac{1}{\beta}$$-strongly convex 的，其中 $$f^*(x) = \max_{y}(y^Tx - f(y)) $$ 是函数 $$f(x)$$ 的 convex conjugate 。
 
 - - -
 
