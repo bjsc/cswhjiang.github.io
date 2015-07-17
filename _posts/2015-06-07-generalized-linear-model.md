@@ -268,7 +268,7 @@ $$
 \min_{\beta} \sum_{i} \log (1+e^{-y_i \beta^T x_i})
 $$
 
-这个两个目标函数是等价的。在 liblinear 中为了避免在指数函数中处理类标，用如下等价的目标函数
+这个两个目标函数是等价的。在 liblinear 中为了避免在指数函数中处理类标，用另一个等价的目标函数
 
 $$
 \min_{\beta} \sum_{i} \log(1 + e^{-\beta^T x_i}) + \sum_{i: y_i = -1} \beta^T x_i

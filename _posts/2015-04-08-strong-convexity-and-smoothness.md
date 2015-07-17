@@ -20,7 +20,7 @@ $$ \alpha$$-strong convexity 的意思是要求 $$f(y)$$ 比当我们以 identit
 
 $$ f(x)  + \nabla f(x)^T(y-x) + \frac{\alpha}{2}\|x-y\|_2^2 .$$
 
-$$\alpha$$可以看做函数 curvature 的一种度量。对于线性函数，$$\alpha$$为0。在优化中，大的 $$ \alpha$$会有更好的 convergence rate 。 因为大的 $$ \alpha$$ 表示曲率大，因此表示梯度下降的步长大。
+$$\alpha$$可以看做函数 curvature 的一种度量。对于线性函数，$$\alpha$$为0。在优化中，大的 $$ \alpha$$会有更好的 convergence rate 。 因为大的 $$ \alpha$$ 表示曲率大，因此表示梯度下降的步长大。 Strongly convex 的函数一定是 strictly convex 的，但是反之不成立。 $$f(x) = x^4$$  是 strictly convex 但不是 strongly convex。 $$ f(x) = \\|x \\|$$ 是 convex，不是 strongly convex，因此也不是 strictly convex。 因此 strongly convex 函数是凸函数中有更好性质、更便于处理的一部分。
 
 
 $$\alpha$$-strong convexity 有如下的性质：
