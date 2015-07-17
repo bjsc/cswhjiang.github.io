@@ -79,7 +79,7 @@ $$ \|\nabla f(x) - \nabla f(y)\|_{D} \leq \beta \|x -y\|_{P},$$
 
 $$ \left(\nabla f(x) - \nabla f(y)\right)^T(x-y) \geq \frac{\alpha\beta}{\alpha + \beta} \|x-y\|^2 + \frac{1}{\alpha + \beta} \| \nabla f(x) - \nabla f(x)\|^2.$$
 
-函数的  $$ \beta$$-smoothness 和  $$ \alpha$$-strong convexity 有对偶的关系。如果一个函数 $$f(x)$$是对于 norm $$\|\cotd\|_D$$ 的 $$ \beta$$-smooth 的，那么 $$f^*(x)$$ 是关于 norm $$\|\cdot\|_D$$ 的 $$\frac{1}{\beta}$$-strongly convex 的，其中 $$f^*(x) = \max_{y}(y^Tx - f(y)) $$ 是函数 $$f(x)$$ 的 convex conjugate 。
+函数的  $$ \beta$$-smoothness 和  $$ \alpha$$-strong convexity 有对偶的关系。如果一个函数 $$f(x)$$是对于 norm $$\|\cdot\|_D$$ 的 $$ \beta$$-smooth 的，那么 $$f^*(x)$$ 是关于 norm $$\|\cdot\|_D$$ 的 $$\frac{1}{\beta}$$-strongly convex 的，其中 $$f^*(x) = \max_{y}(y^Tx - f(y)) $$ 是函数 $$f(x)$$ 的 convex conjugate 。
 
 - - -
 
