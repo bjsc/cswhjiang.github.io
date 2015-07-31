@@ -83,7 +83,7 @@ $$ \left(\nabla f(x) - \nabla f(y)\right)^T(x-y) \geq \frac{\alpha\beta}{\alpha 
 
 - - -
 
-## condition number
+## Condition Number
 
 把这两个度量放一起定义函数的条件数 (condition number)为： $$Q = \frac{\beta}{\alpha} $$。$$Q$$其实是函数 $$f(x) $$的 Hessian matrix 的条件数的上限。$$Q$$ 对在 $$ f(x)$$ 上的梯度下降的速度有很大影响， $$Q$$越小的目标函数越容易收敛。
 

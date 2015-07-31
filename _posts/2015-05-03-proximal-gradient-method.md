@@ -72,7 +72,7 @@ $$
 满足这个条件的 operator 被称为 firm nonexpensive operator。这样的 operator 是$$ \frac{1}{2}$$-averaged operator。总之，contraction 和 firmly nonexpensiveness 的 operator 是 averaged operator 的子集。 因此迭代地使用 proximal operator 会收敛到 fixed point。 
 
 
-### Inperpretations of Proximal oOperator
+### Inperpretations of Proximal Operator
 
 从 proximal operator 的定义可以看出， $$ \textrm{prox}_{\lambda f}(v)$$ 也是这个问题的解：
 
