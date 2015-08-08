@@ -7,6 +7,7 @@ comments: True
 这是关于 mirror descent 的不严谨的介绍。严谨的推导可以参考文献[2]。
 
 通常做迭代的空间是Hilber space。但是如果优化变量是在 Banach space $$ \mathcal{B}$$ 中就没有办法按照以前的步骤来了。这是因为 Banach space 的内积没有定义。这时候需要在其对偶空间 $$ \mathcal{B}^*$$ 上更新优化变量。对偶空间 $$ \mathcal{B}^*$$ 是线性函数（从 $$ \mathcal{B}$$ 到域 $$ F$$ ）的向量空间。可以参考维基百科的[定义](https://en.wikipedia.org/wiki/Dual_space)。目标函数的梯度 $$ \nabla f(x)$$ 是对偶空间 $$ \mathcal{B}^*$$ 中的，这时候可以在对偶空间上更新梯度，然后在投影回来就完成了对优化变量的更新。把 $$ \mathcal{B}$$ 中的元素映射成 $$ \mathcal{B}^*$$ 中的元素的函数 $$ \Phi$$ 叫做 mirror map，它是由 $$ \mathcal{B}$$ 上的一个凸开集到实数 $$ R$$ 上的一个函数 ，它需要符合以下三个条件：
+
 - $$ \Phi$$ 是 strictly convex 以及 differentiable 的。
 
 - $$ \Phi$$ 的梯度能取遍所有的 $$ \mathbb{R}^n$$。
