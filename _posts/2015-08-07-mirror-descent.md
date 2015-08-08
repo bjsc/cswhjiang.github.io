@@ -82,6 +82,7 @@ $$
 这里通常 $$ \nabla \Phi(y_{1})=0$$。
 
 MD 和 lazy MD 的 convergence rate 是 $$ O(1/\sqrt{t})$$。对于光滑函数可以加速达到 $$ O(1/t)$$，下面的 mirror prox 是其中的一种方法：
+
 $$
 \begin{align}
 \nabla \Phi(y_{t+1}') &= \nabla \Phi(x_t) - \eta \nabla f(x_t) \\
