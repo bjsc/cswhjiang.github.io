@@ -87,5 +87,5 @@ $$
 
 
 # Reference
-1. [Bregman divergence and mirror descent](http://users.cecs.anu.edu.au/~xzhang/teaching/bregman.pdf)
+1. [Xinhua Zhang's notes: Bregman Divergence and Mirror Descent](http://users.cecs.anu.edu.au/~xzhang/teaching/bregman.pdf)
 2. Bubeck, Sébastien. "Theory of convex optimization for machine learning." arXiv preprint arXiv:1405.4980 (2014).
