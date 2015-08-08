@@ -66,7 +66,7 @@ x_{t+1} &= argmin_{x} \ D_{\Phi}(x,y_{t+1}) \\
 &= argmin_{x} \ \Phi(x)  -  \nabla \Phi(y_t)^T x + \eta \nabla f(x_t)^T x \\
 &= argmin_{x} \ \Phi(x)  -  (\nabla \Phi(y_{t-1}) - \eta \nabla f(x_{t-1}))^T x + \eta \nabla f(x_t)^T x \\
 &= argmin_{x} \ \Phi(x)  -  \nabla \Phi(y_{t-1})^T x + \eta \nabla f(x_{t-1})^T x + \eta \nabla f(x_t)^T x \\
-& \cdots \\
+& \qquad \vdots \\
 &= argmin_{x} \ \Phi(x)  -  \nabla \Phi(y_{1})^T x + \eta \sum_{i}^{t} \nabla f(x_{i})^T x \\
 &= argmin_{x} \ \Phi(x)  + \eta \sum_{i}^{t} \nabla f(x_{i})^T x 
 \end{align}
