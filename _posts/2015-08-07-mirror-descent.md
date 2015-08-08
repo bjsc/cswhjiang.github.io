@@ -8,7 +8,9 @@ comments: True
 
 通常做迭代的空间是Hilber space。但是如果优化变量是在 Banach space $$ \mathcal{B}$$ 中就没有办法按照以前的步骤来了。这是因为 Banach space 的内积没有定义。这时候需要在其对偶空间 $$ \mathcal{B}^*$$ 上更新优化变量。对偶空间 $$ \mathcal{B}^*$$ 是线性函数（从 $$ \mathcal{B}$$ 到域 $$ F$$ ）的向量空间。可以参考维基百科的[定义](https://en.wikipedia.org/wiki/Dual_space)。目标函数的梯度 $$ \nabla f(x)$$ 是对偶空间 $$ \mathcal{B}^*$$ 中的，这时候可以在对偶空间上更新梯度，然后在投影回来就完成了对优化变量的更新。把 $$ \mathcal{B}$$ 中的元素映射成 $$ \mathcal{B}^*$$ 中的元素的函数 $$ \Phi$$ 叫做 mirror map，它是由 $$ \mathcal{B}$$ 上的一个凸开集到实数 $$ R$$ 上的一个函数 ，它需要符合以下三个条件：
 - $$ \Phi$$ 是 strictly convex 以及 differentiable 的。
+
 - $$ \Phi$$ 的梯度能去遍所有的 $$ \mathbb{R}^n$$。
+
 - $$ \Phi$$ 的梯度在其定义域的凸开集的边界上是 diverge 的，也就是 $$\lim_{x \to \partial{\mathcal{D}} } \|\Phi\| = + \infty$$
 
 通常称 $$\Phi $$ 把 primal space 的点投影到 dual space 中 ，其实是把  $$ \mathcal{B}$$ 中的点 $$ x$$ 映射成 $$ \nabla \Phi(x)$$ 。这样我们在 dual space 中更新梯度 $$ \nabla \Phi(y) = \nabla \Phi(x) - \eta \nabla f(x)$$，其中 $$ y$$ 是 primal space 中的点，这样我们就可以在 primal space 中更新优化变量了。当然，$$ y$$ 可能在目标函数的定义域 $$ \mathcal{X}$$ 之外，需要在 primal space 上投影回这个定义域，这个投影用的是 Bregman divergence 来做：
