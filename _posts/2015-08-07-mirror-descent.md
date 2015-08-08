@@ -62,7 +62,7 @@ $$
 \nabla \Phi(y_{t+1}) = \nabla \Phi(y_t) - \eta \nabla f(x_t)
 $$
 
-也就是把 $$ \Phi(x_t)$$ 改成了 $$ \Phi(y_t)$$，这相当与省略了一个投影的步骤，直接在上一次的 $$ y_t$$ 上继续更新。这称为 lazy mirror descent，也叫做 Nesterov's dual averaging。所以，这里的 dual 并不是指的目标问题的对偶问题。同样的，根据把 MD 化成 proximal gradient descent  的方法可以得到
+也就是把 $$ \Phi(x_t)$$ 改成了 $$ \Phi(y_t)$$，这相当于省略了一个投影的步骤，直接在上一次的 $$ y_t$$ 上继续更新。这称为 lazy mirror descent，也叫做 Nesterov's dual averaging。所以，这里的 dual 并不是指的目标问题的对偶问题。同样的，根据把 MD 化成 proximal gradient descent  的方法可以得到
 
 $$
 \begin{align}
