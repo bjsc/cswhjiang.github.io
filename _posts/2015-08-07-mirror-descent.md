@@ -14,7 +14,11 @@ comments: True
 
 - $$ \Phi$$ 的梯度在其定义域的凸开集的边界上是 diverge 的，也就是 $$\lim_{x \to \partial{\mathcal{D}} } \|\Phi\| = + \infty$$
 
-通常称 $$\Phi $$ 把 primal space 的点投影到 dual space 中 ，其实是把  $$ \mathcal{B}$$ 中的点 $$ x$$ 映射成 $$ \nabla \Phi(x)$$ 。这样我们在 dual space 中更新梯度 $$ \nabla \Phi(y) = \nabla \Phi(x) - \eta \nabla f(x)$$，其中 $$ y$$ 是 primal space 中的点，这样我们就可以在 primal space 中更新优化变量了。当然，$$ y$$ 可能在目标函数的定义域 $$ \mathcal{X}$$ 之外，需要在 primal space 上投影回这个定义域，这个投影用的是 Bregman divergence 来做：
+通常称 $$\Phi $$ 把 primal space 的点投影到 dual space 中 ，其实是把  $$ \mathcal{B}$$ 中的点 $$ x$$ 映射成 $$ \nabla \Phi(x)$$ 。这样我们在 dual space 中更新梯度
+
+ $$ \nabla \Phi(y) = \nabla \Phi(x) - \eta \nabla f(x)$$
+
+其中 $$ y$$ 是 primal space 中的点，这样我们就可以在 primal space 中更新优化变量了。当然，$$ y$$ 可能在目标函数的定义域 $$ \mathcal{X}$$ 之外，需要在 primal space 上投影回这个定义域，这个投影用的是 Bregman divergence 来做：
 
 $$
 \Pi_{\mathcal{X}}^{\Phi}(y)= argmin_{x \in \mathcal{X}\cap \mathcal{D} } D_{\Phi}(x,y)
