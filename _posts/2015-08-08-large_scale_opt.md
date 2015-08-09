@@ -1,10 +1,8 @@
 ---
 layout: post
-title: Large Scale Optimization Methods for Machine Learning
+title: Optimization Methods for Large Scale Machine Learning
 comments: True
 ---
-
-# Large Scale Optimization paper list for machine learning
 
 这是关于机器学习领域的大规模优化的论文列表，这个列表不一定完整，仅仅包含我认为重要的论文。
 
@@ -26,7 +24,6 @@ $$
 \sum_{t} \eta_t = \infty \  \textrm{and } \ \sum_{t} \eta_t^2 < \infty
 \end{align}
 $$
-
 SGD就可以收敛。SGD 每次迭代的时间和空间的复杂度都是 $$O(d) $$.
 
 - Conjugate Gradient (CG)：共轭梯度是 Magnus Hestenes 和 Eduard Stiefel 在1952年提出的[31]。CG 用来解 $$ Ax = b $$ 的，不错的材料是 [25]，ML 中不是经常用到。
