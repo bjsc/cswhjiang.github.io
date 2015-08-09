@@ -16,11 +16,9 @@ $$
 
 ## 2000 之前
 
-######  Full Gradient
-Full Gradient (FG) 的方法可以追溯到 Cauchy 1847 年的论文[29]。对于凸函数，FG 的 convergence rate 是 $$O(1/t)$$， 强凸函数可以达到线性收敛 $$O(\rho^t) $$，其中 $$\rho < 1 $$。  
+- Full Gradient (FG) 的方法可以追溯到 Cauchy 1847 年的论文[29]。对于凸函数，FG 的 convergence rate 是 $$O(1/t)$$， 强凸函数可以达到线性收敛 $$O(\rho^t) $$，其中 $$\rho < 1 $$。  
 
-######  Stochastic Gradient Descent
-SGD 于1951和1952年在文献[15，16]中提出。SGD 随机选择一个 $$ f_{i_{t}}$$  来作为梯度的近似 （$$ R(x)\equiv 0 $$ ），然后更新 $$ x_t = x_{t-1} - \eta_t \nabla f_{i_t}(x_{t-1})$$。 步长 $$ \eta_{t}$$ 需要在 步长$$t $$ 无穷大的时候趋近于0。 SGD 的 convergence rate 是  $$ O(1/\sqrt{t})$$。 [15] 中证明了只要 $$ \eta_t$$ 满足如下的条件：
+- Stochastic Gradient Descent (SGD) 于1951和1952年在文献[15，16]中提出。SGD 随机选择一个 $$ f_{i_{t}}$$  来作为梯度的近似 （$$ R(x)\equiv 0 $$ ），然后更新 $$ x_t = x_{t-1} - \eta_t \nabla f_{i_t}(x_{t-1})$$。 步长 $$ \eta_{t}$$ 需要在 步长$$t $$ 无穷大的时候趋近于0。 SGD 的 convergence rate 是  $$ O(1/\sqrt{t})$$。 [15] 中证明了只要 $$ \eta_t$$ 满足如下的条件：
 
 $$
 \begin{align}
