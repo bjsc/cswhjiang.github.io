@@ -75,6 +75,7 @@ $$
 其中 $$ D_{\Phi} $$ 是用函数 $$\Phi(x) $$ 定义的 Bregman divergence。关于 Mirror descent 总结的很好的材料是[张歆华](http://users.cecs.anu.edu.au/~xzhang/)的[note](http://users.cecs.anu.edu.au/~xzhang/teaching/bregman.pdf)。这个note的有些结论是来自 [24]. 
 
 - SGD with momentum：1988年 Hinton在文献 [13] 用如下的步骤来求解。
+
 $$
 \begin{align}
 \Delta x_t &= \gamma \Delta x_{t-1} - \eta_t \nabla f_{i_{t-1}}(x_{t-1}) \\
