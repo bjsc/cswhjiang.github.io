@@ -25,6 +25,7 @@ $$
 \sum_{t} \eta_t = \infty \  \textrm{and } \ \sum_{t} \eta_t^2 < \infty
 \end{align}
 $$ 
+
 SGD就可以收敛。SGD 每次迭代的时间和空间的复杂度都是 $$O(d) $$.
 
 - Conjugate Gradient (CG)：共轭梯度是 Magnus Hestenes 和 Eduard Stiefel 在1952年提出的[31]。CG 用来解 $$ Ax = b $$ 的，不错的材料是 [25]，ML 中不是经常用到。
