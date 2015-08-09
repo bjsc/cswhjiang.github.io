@@ -15,6 +15,7 @@ $$
 其中 $$ f(x)$$ 通常是光滑的，而  $$ R(x)$$ 通常不光滑。在这个note中为了方便用 $$ f(x)$$ 表示 $$ \frac{1}{n}\sum_{i}f_i(x)$$。 在机器学习中，这个问题的 $$ n$$ 和 $$ p$$ 通常都很大，我们主要关心它的 online learing 和 mini-batch 解法。 full gradient 的方法通常慢，但是 online 方法的很多新思想是从 full gradient 的方法中来的，因此 full gradient 的方法也会在这个 note 中提到。
 
 ## 2000 之前
+
 ######  Full Gradient
 Full Gradient (FG) 的方法可以追溯到 Cauchy 1847 年的论文[29]。对于凸函数，FG 的 convergence rate 是 $$O(1/t)$$， 强凸函数可以达到线性收敛 $$O(\rho^t) $$，其中 $$\rho < 1 $$。  
 
