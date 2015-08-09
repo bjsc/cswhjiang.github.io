@@ -19,13 +19,11 @@ $$
 - Full Gradient (FG) 的方法可以追溯到 Cauchy 1847 年的论文[29]。对于凸函数，FG 的 convergence rate 是 $$O(1/t)$$， 强凸函数可以达到线性收敛 $$O(\rho^t) $$，其中 $$\rho < 1 $$。  
 
 - Stochastic Gradient Descent (SGD) 于1951和1952年在文献[15，16]中提出。SGD 随机选择一个 $$ f_{i_{t}}$$  来作为梯度的近似 （$$ R(x)\equiv 0 $$ ），然后更新 $$ x_t = x_{t-1} - \eta_t \nabla f_{i_t}(x_{t-1})$$。 步长 $$ \eta_{t}$$ 需要在 步长$$t $$ 无穷大的时候趋近于0。 SGD 的 convergence rate 是  $$ O(1/\sqrt{t})$$。 [15] 中证明了只要 $$ \eta_t$$ 满足如下的条件：
-
-$$
+\\[
 \begin{align}
 \sum_{t} \eta_t = \infty \  \textrm{and } \ \sum_{t} \eta_t^2 < \infty
 \end{align}
-$$
-
+\\]
 SGD就可以收敛。SGD 每次迭代的时间和空间的复杂度都是 $$O(d) $$.
 
 - Conjugate Gradient (CG)：共轭梯度是 Magnus Hestenes 和 Eduard Stiefel 在1952年提出的[31]。CG 用来解 $$ Ax = b $$ 的，不错的材料是 [25]，ML 中不是经常用到。
