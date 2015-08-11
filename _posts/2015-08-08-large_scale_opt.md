@@ -4,7 +4,7 @@ title: Optimization Methods for Large Scale Machine Learning
 comments: True
 ---
 
-这是关于机器学习领域的大规模优化的论文列表，这个列表不一定完整，仅仅包含我认为重要的论文。
+这是关于机器学习领域的大规模优化的论文列表，为了方便我查阅和回忆。 这个列表不一定完整，仅仅包含我认为重要的论文。
 
 在机器学习领域，我们关心的问题表示如下
 
@@ -12,7 +12,7 @@ $$
 \min_{x} \frac{1}{n} f_i(x) + R(x)
 $$
 
-其中 $$ f(x)$$ 通常是光滑的，而  $$ R(x)$$ 通常不光滑。在这个note中为了方便用 $$ f(x)$$ 表示 $$ \frac{1}{n}\sum_{i}f_i(x)$$。 在机器学习中，这个问题的 $$ n$$ 和 $$ p$$ 通常都很大，我们主要关心它的 online learing 和 mini-batch 解法。 full gradient 的方法通常慢，但是 online 方法的很多新思想是从 full gradient 的方法中来的，因此 full gradient 的方法也会在这个 note 中提到。
+其中 $$ f(x)$$ 通常是光滑的，而  $$ R(x)$$ 通常不光滑。在这个note中为了方便用 $$ f(x)$$ 表示 $$ \frac{1}{n}\sum_{i}f_i(x)$$。 在机器学习中，这个问题的 $$ n$$ 和 $$ p$$ 通常都很大，我们主要关心它的基于梯度的 online learing 和 mini-batch 解法，以及 coordinate descent 方法。 full gradient 的方法通常慢，但是 online 方法的很多新思想是从 full gradient 的方法中来的，因此 full gradient 的方法也会在这个 note 中提到。
 
 ## 2000 之前
 
@@ -95,15 +95,24 @@ $$
 x_{t+1}= argmin_{x} \ \Phi(x)  + \eta \sum_{i}^{t} \nabla f(x_{i})^T x 
 $$
 
-- Forward-backward splitting [28] 其实就是 proximal gradient method。
+- Forward-backward splitting （FOBOS） [28] 其实就是 proximal gradient method。
+
+
 
 - FISTA [9] 其实是 proximal gradient method 在当正则项是 $$ \ell_1$$-norm的时候的 Nesterov 加速版本，convergence rate 是 $$ O(1/t^2)$$
+
+- sub(L)BFGS [32] 将 (L)BFGS 的应用扩展到非光滑的函数。
 
 - Regularized dual averging (RDA) [6] 是在2010年由 MSR 的 Lin Xiao 提出的。RDA 是一种改进的 lazy mirror descent 的方法， RDA 的步骤如下：
 
 $$
 x_{t+1} = argmin_{x} \   \frac{1}{t}\sum_{j=1}^t \nabla f(x_j)^T x  + R(x)+ \frac{\beta_t}{t}\Phi(x)
 $$
+
+
+- [37] SCD， ICML 2009年会议提出。
+
+- Stochastic Accelerated GradiEnt (SAGE) [39] 是受 Nesterov 的加速方法启发的一种加速方法，它每个步骤维护三个变量（Nesterov加速维护两个）。
 
 ## 2011 
 - ADAGRAD [11] 着眼于函数的 condition number， 让每个dimension有不同的 learning rate。更新过程为
@@ -114,29 +123,56 @@ $$
 
 其中 $$ G_t = \sum_i^t g_ig_i^T $$。
 
+
+- [38]
+
 ## 2012 
 - ADADELTA [12] 于2012年提出，是结合了 AdaGrad 和冲量的一种方法。据说在神经网络中效果不错。
 
 - Stochastic Average Gradient（SAG）[4,10] 的前提是 $$ R(x)\equiv 0 $$。采用固定步长的SAG对于convex 函数的 convergence rate 是 $$ O(1/t)$$， strongly-convex 的 convergence rate 是线性收敛。SAG 记录历史的梯度，每次的梯度都是更新一个在随机选择的样本处的梯度然后求平均的梯度。作者提供了[代码](http://www.cs.ubc.ca/~schmidtm/Software/SAG.html)。
 
+- [36] 
+
+- feature clustering [35]
 
 ## 2013
-- Prox-SAG[10]
+- Stochastic Dual Coordinate Ascent (SDCA) [8] 针对的是没有不光滑的正则项的目标函数，原问题定义如下：
 
-- SDCA [8]
+$$
+P(w) = \frac{1}{n} \sum_{i=1}^n \phi(w^T x_i) + \frac{\lambda}{2} \|w\|^2
+$$
 
-- SVRG [1]: 当 $$ R(x)\equiv 0 $$时，用在所有数据上重新计算梯度的方法来减小梯度的方差。 
+它的对偶问题为：
+
+$$
+D(\alpha) = \frac{1}{n} \sum_{i=1}^n -\phi^*(-\alpha_i) -\frac{\lambda}{2} \|\frac{1}{\lambda n} \sum_{\alpha_i x_i}\|^2
+$$
+
+用 Stochastic Coordinate Ascent 来解这个对偶问题。
+
+- Stochastic Variance Reduced Gradient（SVRG） [1]: 一开始提出来的时候还是针对正则项是光滑函数的情况。 SVRG 用在所有数据上重新计算梯度的方法来减小梯度的方差。作者 Rie Johnson 的主页提供[代码](http://riejohnson.com/svrg_download.html) 
 
 - [5] 是 SVRG 的扩展
 
+- [40] 中分析了用新的框架分析 SCD 中的 non-uniform sampling 问题，并提出一个最有的对于坐标的采样分布。这篇文章有2015年的journal版。非均匀采样对于 SCD 和 SGD 都是很自然的扩展。
+
 - Prox-full-gradient [3]: 分析了 proximal gradient method 的加速版本
 
+- [41] 中分析了对于非光滑的目标函数的 $$\alpha$$-suffix averaging 和 polynomial-decay averaging 影响。 
+
+
 ## 2014
-- Prox-SDCA[7]
+- Prox-SDCA [7]
 
 - Prox-SVRG [2] 是 SVRG 的扩展，它能处理带有 $$ R(x)$$ 的问题，以及用了 non-uniform 采样。
 
 - mini-batch SGD 为了减小 SGD 的梯度的方差以及分布式 SGD 的通信代价，可以用多个样本来求梯度，但是mini-batch 的 size 如果太大会减小 convergence rate。
+
+- Adaptive moment estimation (Adam) [33]
+
+- SFO [34]
+
+- Acc-Prox-SVRG [42] 是一种 mini-batch 的方法，它同时采用 Nesterov 加速和 SVRG 的 varicande reduction 的技术来加速。
 
 ## 2015
 
@@ -179,3 +215,14 @@ $$
 29. Cauchy, Augustin. "Méthode générale pour la résolution des systemes d’équations simultanées." Comp. Rend. Sci. Paris 25.1847 (1847): 536-538.
 30. Nesterov, Yurii. "A method of solving a convex programming problem with convergence rate O (1/k2)." Soviet Mathematics Doklady. Vol. 27. No. 2. 1983.
 31. Hestenes, Magnus Rudolph, and Eduard Stiefel. "Methods of conjugate gradients for solving linear systems." (1952).
+32. Yu, Jin, et al. "A quasi-Newton approach to non-smooth convex optimization." Proceedings of the 25th international conference on Machine learning. ACM, 2008.
+33. Kingma, Diederik, and Jimmy Ba. "Adam: A method for stochastic optimization." arXiv preprint arXiv:1412.6980 (2014).
+34. Sohl-dickstein, Jascha, Ben Poole, and Surya Ganguli. "Fast large-scale optimization by unifying stochastic gradient and quasi-Newton methods." Proceedings of the 31st International Conference on Machine Learning (ICML-14). 2014.
+35. Scherrer, Chad, et al. "Feature clustering for accelerating parallel coordinate descent." Advances in Neural Information Processing Systems. 2012.
+36. Scherrer, Chad, et al. "Scaling Up Coordinate Descent Algorithms for Large $\ ell_1 $ Regularization Problems." Proceedings of the 29th International Conference on Machine Learning (ICML-12). 2012.
+37. Shalev-Shwartz, Shai, and Ambuj Tewari. "Stochastic methods for l1-regularized loss minimization." The Journal of Machine Learning Research 12 (2011): 1865-1892.
+38. Moulines, Eric, and Francis R. Bach. "Non-asymptotic analysis of stochastic approximation algorithms for machine learning." Advances in Neural Information Processing Systems. 2011.
+39. Hu, Chonghai, Weike Pan, and James T. Kwok. "Accelerated gradient methods for stochastic optimization and online learning." Advances in Neural Information Processing Systems. 2009.
+40. Richtárik, Peter, and Martin Takáč. "On optimal probabilities in stochastic coordinate descent methods." arXiv preprint arXiv:1310.3438 (2013).
+41. Shamir, Ohad, and Tong Zhang. "Stochastic Gradient Descent for Non-smooth Optimization: Convergence Results and Optimal Averaging Schemes." Proceedings of the 30th International Conference on Machine Learning (ICML-13). 2013.
+42. Nitanda, Atsushi. "Stochastic proximal gradient descent with acceleration techniques." Advances in Neural Information Processing Systems. 2014.
