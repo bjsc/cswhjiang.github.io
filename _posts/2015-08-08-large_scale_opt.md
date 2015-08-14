@@ -4,7 +4,7 @@ title: Optimization Methods for Large Scale Machine Learning
 comments: True
 ---
 
-这是关于机器学习领域的大规模优化的论文列表，为了方便我查阅和回忆。 这个列表不一定完整，仅仅包含我认为重要的论文。
+这是关于机器学习领域的大规模优化的论文列表，为了方便查阅和回忆。 这个列表不一定完整，仅仅包含我认为重要的论文。
 
 在机器学习领域，我们关心的问题表示如下
 
@@ -95,8 +95,9 @@ $$
 x_{t+1}= argmin_{x} \ \Phi(x)  + \eta \sum_{i}^{t} \nabla f(x_{i})^T x 
 $$
 
-- Forward-backward splitting （FOBOS） [28] 其实就是 proximal gradient method。
+- Natural gradient [44] 
 
+- Forward-backward splitting （FOBOS） [28] 其实就是 proximal gradient method。
 
 
 - FISTA [9] 其实是 proximal gradient method 在当正则项是 $$ \ell_1$$-norm的时候的 Nesterov 加速版本，convergence rate 是 $$ O(1/t^2)$$
@@ -126,6 +127,8 @@ $$
 
 - [38]
 
+- [48] 是关于 mirror descent 的理论一点的分析。在[48] 中作者证明了只要 mirror map 的函数合适，mirror descent总会有 near-optimal regret，这样的函数一定是存在的，只是没那么容易找到。
+
 ## 2012 
 - ADADELTA [12] 于2012年提出，是结合了 AdaGrad 和冲量的一种方法。据说在神经网络中效果不错。
 
@@ -134,6 +137,8 @@ $$
 - [36] 
 
 - feature clustering [35]
+
+- Optimal Regularized Dual Averaging (ORDA) [49] 采用两种技术：1. 梯度的带权平均，越老的梯度权重越小。2.每次在平均的结果上又前进了一步。
 
 ## 2013
 - Stochastic Dual Coordinate Ascent (SDCA) [8] 针对的是没有不光滑的正则项的目标函数，原问题定义如下：
@@ -160,6 +165,9 @@ $$
 
 - [41] 中分析了对于非光滑的目标函数的 $$\alpha$$-suffix averaging 和 polynomial-decay averaging 影响。 
 
+- leaning rate [45]
+
+- Stochastic Majorization-minimization [47] 是针对随机MM的优化算法。迭代用的 approximate surrogate  是当前函数和前一个迭代的加权和，可以扩展到非凸的目标函数。 
 
 ## 2014
 - Prox-SDCA [7]
@@ -174,9 +182,11 @@ $$
 
 - Acc-Prox-SVRG [42] 是一种 mini-batch 的方法，它同时采用 Nesterov 加速和 SVRG 的 varicande reduction 的技术来加速。
 
+- [46] 
+
 ## 2015
 
-
+-  Probabilistic line search [43]：随机梯度下降中的梯度是有噪音的，因此作者 Bayesian Optimization 来解决，是当前方法的一个补充。
 
 
 
@@ -226,3 +236,10 @@ $$
 40. Richtárik, Peter, and Martin Takáč. "On optimal probabilities in stochastic coordinate descent methods." arXiv preprint arXiv:1310.3438 (2013).
 41. Shamir, Ohad, and Tong Zhang. "Stochastic Gradient Descent for Non-smooth Optimization: Convergence Results and Optimal Averaging Schemes." Proceedings of the 30th International Conference on Machine Learning (ICML-13). 2013.
 42. Nitanda, Atsushi. "Stochastic proximal gradient descent with acceleration techniques." Advances in Neural Information Processing Systems. 2014.
+43. Mahsereci, Maren, and Philipp Hennig. "Probabilistic Line Searches for Stochastic Optimization." arXiv preprint arXiv:1502.02846 (2015).
+44. Amari, Shun-Ichi, Hyeyoung Park, and Kenji Fukumizu. "Adaptive method of realizing natural gradient learning for multilayer perceptrons." Neural Computation 12.6 (2000): 1399-1409.
+45. Schaul, Tom, Sixin Zhang, and Yann Lecun. "No more pesky learning rates." Proceedings of the 30th International Conference on Machine Learning (ICML-13). 2013.
+46. McMahan, Brendan, and Matthew Streeter. "Delay-Tolerant Algorithms for Asynchronous Distributed Online Learning." Advances in Neural Information Processing Systems. 2014.
+47. Mairal, Julien. "Stochastic majorization-minimization algorithms for large-scale optimization." Advances in Neural Information Processing Systems. 2013.
+48. Srebro, Nati, Karthik Sridharan, and Ambuj Tewari. "On the universality of online mirror descent." Advances in neural information processing systems. 2011.
+49. Chen, Xi, Qihang Lin, and Javier Pena. "Optimal regularized dual averaging methods for stochastic optimization." Advances in Neural Information Processing Systems. 2012.
