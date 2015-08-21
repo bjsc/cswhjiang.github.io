@@ -115,6 +115,9 @@ $$
 
 - Stochastic Accelerated GradiEnt (SAGE) [39] 是受 Nesterov 的加速方法启发的一种加速方法，它每个步骤维护三个变量（Nesterov加速维护两个）。
 
+
+- [53]  The tradeoffs of large scale learning 
+
 ## 2011 
 - ADAGRAD [11] 着眼于函数的 condition number， 让每个dimension有不同的 learning rate。更新过程为
 
@@ -138,7 +141,7 @@ $$
 
 - feature clustering [35]
 
-- Optimal Regularized Dual Averaging (ORDA) [49] 采用两种技术：1. 梯度的带权平均，越老的梯度权重越小。2.每次在平均的结果上又前进了一步。
+- Optimal Regularized Dual Averaging (ORDA) [49] 采用两种技术：1. 梯度的带权平均，越老的梯度权重越小。2.每次在平均的结果上又前进了一步，和 mirror prox 有点类似。
 
 ## 2013
 - Stochastic Dual Coordinate Ascent (SDCA) [8] 针对的是没有不光滑的正则项的目标函数，原问题定义如下：
@@ -184,11 +187,23 @@ $$
 
 - [46] 
 
+- [51] SAGA
+
+- [52] batch complexity
+
+- [54] 把 randomized Kaczmarz 算法看作SGD，分析对样本用非均匀采样的影响。
+
+- Mini-batch randomized block coordinate descent (MRBCD) [55]  在一个mini-batch 上计算部分的梯度。 
+
 ## 2015
 
--  Probabilistic line search [43]：随机梯度下降中的梯度是有噪音的，因此作者 Bayesian Optimization 来解决，是当前方法的一个补充。
+- Probabilistic line search [43]：随机梯度下降中的梯度是有噪音的，因此作者 Bayesian Optimization 来解决，是当前方法的一个补充。
 
+- [50] 作者提出 Fncremental First-order Oracle (IFO) 复杂度框架来分析算法的， IFO 考虑的目标函数是由多个函数的和组成的。
 
+- Stochastic Dual Newton Ascent (SDNA) [56]
+
+- ESGD [57]
 
 
 
@@ -243,3 +258,11 @@ $$
 47. Mairal, Julien. "Stochastic majorization-minimization algorithms for large-scale optimization." Advances in Neural Information Processing Systems. 2013.
 48. Srebro, Nati, Karthik Sridharan, and Ambuj Tewari. "On the universality of online mirror descent." Advances in neural information processing systems. 2011.
 49. Chen, Xi, Qihang Lin, and Javier Pena. "Optimal regularized dual averaging methods for stochastic optimization." Advances in Neural Information Processing Systems. 2012.
+50. Agarwal, Alekh, and Leon Bottou. "A lower bound for the optimization of finite sums." ICMl 2015.
+51. Defazio, Aaron, Francis Bach, and Simon Lacoste-Julien. "SAGA: A fast incremental gradient method with support for non-strongly convex composite objectives." Advances in Neural Information Processing Systems. 2014.
+52. Zhang, Yuchen, and Lin Xiao. "Stochastic primal-dual coordinate method for regularized empirical risk minimization." arXiv preprint arXiv:1409.3257 (2014).
+53. Bousquet, Olivier, and Léon Bottou. "The tradeoffs of large scale learning." Advances in neural information processing systems. 2008.
+54. Needell, Deanna, Rachel Ward, and Nati Srebro. "Stochastic gradient descent, weighted sampling, and the randomized Kaczmarz algorithm." Advances in Neural Information Processing Systems. 2014.
+55. Zhao, Tuo, et al. "Accelerated Mini-batch Randomized Block Coordinate Descent Method." Advances in neural information processing systems. 2014.
+56. Qu, Zheng, et al. "SDNA: Stochastic Dual Newton Ascent for Empirical Risk Minimization." arXiv preprint arXiv:1502.02268 (2015).
+57. Dauphin, Yann N., et al. "RMSProp and equilibrated adaptive learning rates for non-convex optimization." arXiv preprint arXiv:1502.04390 (2015).
