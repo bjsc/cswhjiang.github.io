@@ -203,7 +203,7 @@ $$
 
 - Stochastic Dual Newton Ascent (SDNA) [56]
 
-- ESGD [57]
+- ESGD [57] 从鞍点对非凸的神经网络的优化的影响解释了 RMSProp 为什么起作用。
 
 
 
