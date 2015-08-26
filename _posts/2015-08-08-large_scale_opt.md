@@ -26,7 +26,7 @@ $$
 \end{align}
 $$ 
 
-SGD就可以收敛。SGD 每次迭代的时间和空间的复杂度都是 $$O(d) $$.
+SGD 就可以收敛。SGD 每次迭代的时间和空间的复杂度都是 $$O(d) $$.
 
 - Conjugate Gradient (CG)：共轭梯度是 Magnus Hestenes 和 Eduard Stiefel 在1952年提出的[31]。CG 用来解 $$ Ax = b $$ 的，不错的材料是 [25]，ML 中不是经常用到。
 
@@ -180,8 +180,6 @@ $$
 - Probabilistic line search [43]：随机梯度下降中的梯度是有噪音的，因此作者 Bayesian Optimization 来解决，是当前方法的一个补充。
 
 - [50] 作者提出 Fncremental First-order Oracle (IFO) 复杂度框架来分析算法的， IFO 考虑的目标函数是由多个函数的和组成的。
-
-- Stochastic Dual Newton Ascent (SDNA) [56]
 
 - Equilibrated SGD [57] 从鞍点对非凸的神经网络的优化的影响的角度解释了 RMSProp 为什么起作用，提出了一个基于 Hessian 矩阵特征值的绝对值的可以逃离鞍点的算法。
 
