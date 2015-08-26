@@ -168,13 +168,8 @@ $$
 
 - mini-batch SGD 为了减小 SGD 的梯度的方差以及分布式 SGD 的通信代价，可以用多个样本来求梯度，但是mini-batch 的 size 如果太大会减小 convergence rate。
 
-- Adaptive moment estimation (Adam) [33]
-
-
 - Acc-Prox-SVRG [42] 是一种 mini-batch 的方法，它同时采用 Nesterov 加速和 SVRG 的 varicande reduction 的技术来加速。
 
-
-- [52] batch complexity
 
 - [54] 把 randomized Kaczmarz 算法看作SGD，分析对样本用非均匀采样的影响。
 
