@@ -32,11 +32,11 @@ $$D = diag(|H|) = diag(\sqrt{H^2})$$
 
 这个同样不好算。因此[2]中用
 
-$$D = diag(|H|^{-1}) \approx \sqrt{diag(H^2)}$$ 
+$$D = diag(|H|) \approx \sqrt{diag(H^2)}$$ 
 
 来近似。这个近似要比 
 
- $$D = diag(|H|^{-1}) \approx \sqrt{diag(H)^2} = |diag(H)|$$ 
+ $$D = diag(|H|) \approx \sqrt{diag(H)^2} = |diag(H)|$$ 
 
 要好一点（这个又叫做 Jacobi preconditioner）。$$\sqrt{diag(H^2)}$$的对角线的元素其实就是 $$H$$ 的行向量的模，这就是 [2] 的 title 中 equilibrated 的来源，这个preconditoiner 的本质是对 Hessian matrix 做了个“归一化”。$$H$$ 的行向量的模仍然不好算，因此[2] 中用 $$D = \sqrt{E[(Hv)^2]} $$ 来近似，其中 $$v$$ 是一个高斯分布的随机向量。在 Theano 中可以用 R-operator 来求 $$Hv$$。用这个理论可以部分的解释 Hinton 的 RMSprop。
 
