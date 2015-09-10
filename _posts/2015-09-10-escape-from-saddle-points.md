@@ -18,6 +18,8 @@ $$
 
 我们可以在一个 toy 函数上验证 absolute Hessian maxtix 的行为。下图是函数 $$f(x) = x^THx$$ （$$H$$ 不是正定的）上普通的梯度下降（红色）、牛顿方向（蓝色）和 absolute Hessian maxtix 做 preconditioning  matrix 而找到的方向（绿色），其中紫红色的点是起始点。可以看出：1)牛顿方向不一定是下降方向，2)牛顿法可以被 saddle points 吸引，3)absolute Hessian maxtix 对应的方向有逃离鞍点的作用。因此 absolute Hessian maxtix 是个很好的选择。图的代码见[这里](https://gist.github.com/cswhjiang/2281e0476dbb9c3ee999)。
 
+{% include figure.html src="/figures/2015-09-10-escape-from-saddle-points-a.png" caption="The Old Bailey Online Homepage" %}
+
 ![各种方向的比较 1](/figures/2015-09-10-escape-from-saddle-points-a.png)
 ![各种方向的比较 2](/figures/2015-09-10-escape-from-saddle-points-b.png)
 
