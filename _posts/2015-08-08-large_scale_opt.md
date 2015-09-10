@@ -26,7 +26,7 @@ $$
 \end{align}
 $$ 
 
-SGD 就可以收敛。SGD 每次迭代的时间和空间的复杂度都是 $$O(d) $$.
+SGD就可以收敛。SGD 每次迭代的时间和空间的复杂度都是 $$O(d) $$.
 
 - Conjugate Gradient (CG)：共轭梯度是 Magnus Hestenes 和 Eduard Stiefel 在1952年提出的[31]。CG 用来解 $$ Ax = b $$ 的，不错的材料是 [25]，ML 中不是经常用到。
 
@@ -95,6 +95,8 @@ $$
 x_{t+1}= argmin_{x} \ \Phi(x)  + \eta \sum_{i}^{t} \nabla f(x_{i})^T x 
 $$
 
+- Natural gradient [44] 
+
 - Forward-backward splitting （FOBOS） [28] 其实就是 proximal gradient method。
 
 
@@ -108,6 +110,8 @@ $$
 x_{t+1} = argmin_{x} \   \frac{1}{t}\sum_{j=1}^t \nabla f(x_j)^T x  + R(x)+ \frac{\beta_t}{t}\Phi(x)
 $$
 
+
+- [37] SCD， ICML 2009年会议提出。
 
 - Stochastic Accelerated GradiEnt (SAGE) [39] 是受 Nesterov 的加速方法启发的一种加速方法，它每个步骤维护三个变量（Nesterov加速维护两个）。
 
@@ -124,6 +128,8 @@ $$
 其中 $$ G_t = \sum_i^t g_ig_i^T $$。
 
 
+- [38]
+
 - [48] 是关于 mirror descent 的理论一点的分析。在[48] 中作者证明了只要 mirror map 的函数合适，mirror descent总会有 near-optimal regret，这样的函数一定是存在的，只是没那么容易找到。
 
 ## 2012 
@@ -131,6 +137,9 @@ $$
 
 - Stochastic Average Gradient（SAG）[4,10] 的前提是 $$ R(x)\equiv 0 $$。采用固定步长的SAG对于convex 函数的 convergence rate 是 $$ O(1/t)$$， strongly-convex 的 convergence rate 是线性收敛。SAG 记录历史的梯度，每次的梯度都是更新一个在随机选择的样本处的梯度然后求平均的梯度。作者提供了[代码](http://www.cs.ubc.ca/~schmidtm/Software/SAG.html)。
 
+- [36] 
+
+- feature clustering [35]
 
 - Optimal Regularized Dual Averaging (ORDA) [49] 采用两种技术：1. 梯度的带权平均，越老的梯度权重越小。2.每次在平均的结果上又前进了一步，和 mirror prox 有点类似。
 
@@ -151,7 +160,7 @@ $$
 
 - Stochastic Variance Reduced Gradient（SVRG） [1]: 一开始提出来的时候还是针对正则项是光滑函数的情况。 SVRG 用在所有数据上重新计算梯度的方法来减小梯度的方差。作者 Rie Johnson 的主页提供[代码](http://riejohnson.com/svrg_download.html) 
 
-- [5] 是 SVRG 的扩展。
+- [5] 是 SVRG 的扩展
 
 - [40] 中分析了用新的框架分析 SCD 中的 non-uniform sampling 问题，并提出一个最有的对于坐标的采样分布。这篇文章有2015年的journal版。非均匀采样对于 SCD 和 SGD 都是很自然的扩展。
 
@@ -159,17 +168,28 @@ $$
 
 - [41] 中分析了对于非光滑的目标函数的 $$\alpha$$-suffix averaging 和 polynomial-decay averaging 影响。 
 
+- leaning rate [45]
 
 - Stochastic Majorization-minimization [47] 是针对随机MM的优化算法。迭代用的 approximate surrogate  是当前函数和前一个迭代的加权和，可以扩展到非凸的目标函数。 
 
 ## 2014
+- Prox-SDCA [7]
 
 - Prox-SVRG [2] 是 SVRG 的扩展，它能处理带有 $$ R(x)$$ 的问题，以及用了 non-uniform 采样。
 
 - mini-batch SGD 为了减小 SGD 的梯度的方差以及分布式 SGD 的通信代价，可以用多个样本来求梯度，但是mini-batch 的 size 如果太大会减小 convergence rate。
 
+- Adaptive moment estimation (Adam) [33]
+
+- SFO [34]
+
 - Acc-Prox-SVRG [42] 是一种 mini-batch 的方法，它同时采用 Nesterov 加速和 SVRG 的 varicande reduction 的技术来加速。
 
+- [46] 
+
+- [51] SAGA
+
+- [52] batch complexity
 
 - [54] 把 randomized Kaczmarz 算法看作SGD，分析对样本用非均匀采样的影响。
 
@@ -180,6 +200,8 @@ $$
 - Probabilistic line search [43]：随机梯度下降中的梯度是有噪音的，因此作者 Bayesian Optimization 来解决，是当前方法的一个补充。
 
 - [50] 作者提出 Fncremental First-order Oracle (IFO) 复杂度框架来分析算法的， IFO 考虑的目标函数是由多个函数的和组成的。
+
+- Stochastic Dual Newton Ascent (SDNA) [56]
 
 - Equilibrated SGD [57] 从鞍点对非凸的神经网络的优化的影响的角度解释了 RMSProp 为什么起作用，提出了一个基于 Hessian 矩阵特征值的绝对值的可以逃离鞍点的算法。
 
