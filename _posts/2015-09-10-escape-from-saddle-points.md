@@ -4,7 +4,7 @@ title: How to escape from saddle points?
 comments: True
 ---
 
-在神经网络尤其是深度神经网络中，鞍点的数量比局部最小值的数量要多很多。鞍点会让 gradient descent 收敛更慢（鞍点附近的梯度太小），甚至会收敛到鞍点。因此如何利用二阶信息来逃离鞍点有必要。然而针对凸问题而设计的牛顿法并不适合这样的场景。牛顿法会被鞍点吸引，牛顿方向甚至不是下降方向，因此不适合 deep learning 的优化。普通的 gradient descent 都会比牛顿法要好。一个比较容易想到的方法是把 Hessian matrix 的负特征值给删掉，仅仅保留正的特征值，但是这种方法不能利用负的特征值的方向。在负的特征值的特征向量对应的下降的方向有可能是下降很快的方向（对于任意的特征向量 $$q$$, $$-q$$ 也是特征向量，和梯度的内积为负的那个才是下降的方向）。我们的问题是有没有更好的、所有特征向量都能用上的方法。在[2]中作者提出用 absolute Hessian matrix 作为 preconditioning  matrix，absolute Hessian matrix 的定义为
+在神经网络尤其是深度神经网络中，鞍点的数量比局部最小值的数量要多很多。鞍点会让 gradient descent 收敛更慢（鞍点附近的梯度太小），甚至会收敛到鞍点。因此如何利用二阶信息来逃离鞍点有必要。然而针对凸问题而设计的牛顿法并不适合这样的场景。牛顿法会被鞍点吸引，牛顿方向甚至不是下降方向，因此不适合 deep learning 的优化。普通的 gradient descent 都会比牛顿法要好。一个比较容易想到的方法是把 Hessian matrix 的负特征值给删掉，仅仅保留正的特征值，但是这种方法不能利用负特征值对应的特征向量的方向。在负的特征值的特征向量对应的下降的方向有可能是下降很快的方向（对于任意的特征向量 $$q$$, $$-q$$ 也是特征向量，和梯度的内积为负的那个才是下降的方向）。我们的问题是有没有更好的、所有特征向量都能用上的方法。在[2]中作者提出用 absolute Hessian matrix 作为 preconditioning  matrix，absolute Hessian matrix 的定义为
 
 $$
 |H| = \sum_i |\lambda_i| q_iq_i^T
