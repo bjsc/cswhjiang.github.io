@@ -22,7 +22,6 @@ $$
 {% include figure.html src="/figures/2015-09-10-escape-from-saddle-points-b.png" caption="图2：不同方向的比较（不同的起始点）。" %}
 
 
-
 由于计算 absolute Hessian matrix 的复杂度太大，我们仅仅考虑其对角线来近似，同样的近似方法也被用来近似 Hessian matrix（[2]中没有给出近似程度的好坏的证明）。因此我们的目标本来是找 
 
 $$D^{-1} = |H|^{-1}$$
@@ -31,11 +30,11 @@ $$D^{-1} = |H|^{-1}$$
 
 $$D = diag(|H|) = diag(\sqrt{H^2})$$
 
-这个同样不好算。因此[2]中用
+这个同样不好算。因此[2]中用（$$H^2$$的对角线）
 
 $$D = diag(|H|) \approx \sqrt{diag(H^2)}$$ 
 
-来近似。这个近似要比 
+来近似。这个近似要比 （$$H$$的对角线）
 
  $$D = diag(|H|) \approx \sqrt{diag(H)^2} = |diag(H)|$$ 
 
