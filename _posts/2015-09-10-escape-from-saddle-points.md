@@ -4,7 +4,7 @@ title: How to escape from saddle points?
 comments: True
 ---
 
-在神经网络尤其是深度神经网络中，鞍点的数量比局部最小值的数量要多很多。鞍点会让 gradient descent 收敛更慢（鞍点附近的梯度太小），甚至会收敛到鞍点。因此如何利用二阶信息来逃离鞍点有必要。然而针对凸问题而设计的牛顿法并不适合这样的场景。牛顿法会被鞍点吸引，牛顿方向甚至不是下降方向，因此不适合 deep learning 的优化。普通的 gradient descent 都会比牛顿法要好。一个比较容易想到的方法是把 Hessian matrix 的负特征值给删掉，仅仅保留正的特征值，但是这种方法不能利用负的特征值的方向。在负的特征值的特征向量对应的下降的方向有可能是下降很快的方向（对于任意的特征向量 $$q$$, $$-q$$ 也是特征向量，和梯度的内积为负的那个才是下降的方向）。我们的问题是有没有更好的、所有特征向量都能用上的方法。在[2]中作者提出用 absolute Hessian maxtix 作为 preconditioning  matrix，absolute Hessian maxtix 的定义为
+在神经网络尤其是深度神经网络中，鞍点的数量比局部最小值的数量要多很多。鞍点会让 gradient descent 收敛更慢（鞍点附近的梯度太小），甚至会收敛到鞍点。因此如何利用二阶信息来逃离鞍点有必要。然而针对凸问题而设计的牛顿法并不适合这样的场景。牛顿法会被鞍点吸引，牛顿方向甚至不是下降方向，因此不适合 deep learning 的优化。普通的 gradient descent 都会比牛顿法要好。一个比较容易想到的方法是把 Hessian matrix 的负特征值给删掉，仅仅保留正的特征值，但是这种方法不能利用负的特征值的方向。在负的特征值的特征向量对应的下降的方向有可能是下降很快的方向（对于任意的特征向量 $$q$$, $$-q$$ 也是特征向量，和梯度的内积为负的那个才是下降的方向）。我们的问题是有没有更好的、所有特征向量都能用上的方法。在[2]中作者提出用 absolute Hessian matrix 作为 preconditioning  matrix，absolute Hessian matrix 的定义为
 
 $$
 |H| = \sum_i |\lambda_i| q_iq_i^T
@@ -16,14 +16,14 @@ $$
 \theta = \theta - \eta |H|^{-1} \nabla f(\theta)
 $$
 
-我们可以在一个 toy 函数上验证 absolute Hessian maxtix 的行为。下图是函数 $$f(x) = x^THx$$ （$$H$$ 不是正定的）上各种方法的轨迹。可以看出：1)牛顿方向不一定是下降方向，2)牛顿法可以被 saddle points 吸引，3)absolute Hessian maxtix 对应的方向有逃离鞍点的作用。因此 absolute Hessian maxtix 是个很好的选择。图的代码见[这里](https://gist.github.com/cswhjiang/2281e0476dbb9c3ee999)。
+我们可以在一个 toy 函数上验证 absolute Hessian matrix 的行为。下图是函数 $$f(x) = x^THx$$ （$$H$$ 不是正定的）上各种方法的轨迹。可以看出：1)牛顿方向不一定是下降方向，2)牛顿法可以被 saddle points 吸引，3)absolute Hessian matrix 对应的方向有逃离鞍点的作用。因此 absolute Hessian matrix 是个很好的选择。图的代码见[这里](https://gist.github.com/cswhjiang/2281e0476dbb9c3ee999)。
 
-{% include figure.html src="/figures/2015-09-10-escape-from-saddle-points-a.png" caption="图1：不同方向的比较。其中红色是普通的梯度下降、蓝色是牛顿方向，绿色是 absolute Hessian maxtix 做 preconditioning  matrix 而找到的方向，紫红色的点是起始点。" %}
+{% include figure.html src="/figures/2015-09-10-escape-from-saddle-points-a.png" caption="图1：不同方向的比较。其中红色是普通的梯度下降、蓝色是牛顿方向，绿色是 absolute Hessian matrix 做 preconditioning  matrix 而找到的方向，紫红色的点是起始点。" %}
 {% include figure.html src="/figures/2015-09-10-escape-from-saddle-points-b.png" caption="图2：不同方向的比较（不同的起始点）。" %}
 
 
 
-由于计算 absolute Hessian maxtix 的复杂度太大，我们仅仅考虑其对角线来近似，同样的近似方法也被用来近似 Hessian matrix（[2]中没有给出近似程度的好坏的证明）。因此我们的目标本来是找 
+由于计算 absolute Hessian matrix 的复杂度太大，我们仅仅考虑其对角线来近似，同样的近似方法也被用来近似 Hessian matrix（[2]中没有给出近似程度的好坏的证明）。因此我们的目标本来是找 
 
 $$D^{-1} = |H|^{-1}$$
 
