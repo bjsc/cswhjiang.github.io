@@ -22,9 +22,7 @@ $$
 ![nag和cm的比较](/figures/2015-09-10-escape-from-saddle-points-b.png)
 
 
-由于计算 absolute Hessian maxtix 的复杂度太大，我们仅仅考虑其对角线来近似，同样的近似方法也被用来近似 Hessian matrix（[2]中没有给出近似程度的好坏的证明）。因此我们的目标本来是找  
-
-$$D^{-1} = |H|^{-1}$$
+由于计算 absolute Hessian maxtix 的复杂度太大，我们仅仅考虑其对角线来近似，同样的近似方法也被用来近似 Hessian matrix（[2]中没有给出近似程度的好坏的证明）。因此我们的目标本来是找 $$D^{-1} = |H|^{-1}$$
 
 但是不好算，因此我们考虑用对角阵 $$D^{-1} = diag(|H|^{-1}) = diag({sqrt{H^2}}^{-1})$$，这个同样不好算。因此用 $$D^{-1} = diag(|H|^{-1}) \approx {sqrt{diag(H^2)}}^{-1}$$ 来近似。这个近似要比  $$D^{-1} = diag(|H|^{-1}) \approx {sqrt{diag(H)^2}}^{-1}$$ 要好一点。
 
