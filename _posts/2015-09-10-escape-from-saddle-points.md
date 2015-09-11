@@ -46,4 +46,4 @@ $$D = diag(|H|) \approx \sqrt{diag(H^2)}$$
 
 # Reference
 1. Yann Dauphin, Razvan Pascanu, Caglar Gulcehre, Kyunghyun Cho, Surya Ganguli, Yoshua Bengio. "Identifying and attacking the saddle point problem in high-dimensional non-convex optimization." Advances in Neural Information Processing Systems. 2014.
-2. Yann N. Dauphin, Harm de Vries, Yoshua Bengio. "Equilibrated adaptive learning rates for non-convex optimization." arXiv preprint arXiv:1502.04390 (2015).
+2. Yann N. Dauphin, Harm de Vries, Yoshua Bengio. "Equilibrated adaptive learning rates for non-convex optimization." Advances in Neural Information Processing Systems. 2015
