@@ -1,0 +1,28 @@
+markdown: kramdown
+
+# Permalinks
+permalink:        pretty
+relative_permalinks: true
+
+# Setup
+title:            Wenhao Jiang's Blog
+tagline:          The personal website of Wenhao Jiang
+url:              https://cswhjiang.github.io
+
+paginate:         1
+baseurl:          /
+author:
+  name:           Wenhao Jiang
+  url:            https://twitter.com/cswhjiang
+
+
+# Custom vars
+version:          1.0.0
+github:
+  repo:           https://github.com/cswhjiang/cswhjiang.github.io
+
+# jwh add these lines
+pages_list:       
+  About: '/about'
+  Archive: '/archive'
+  Feed: '/atom.xml'
