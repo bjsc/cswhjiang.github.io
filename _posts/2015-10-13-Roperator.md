@@ -62,7 +62,7 @@ Except the final layer, the error term $$\delta^{(l)}$$ can be computed as
 
 $$
 \begin{align}
-\delta^{(l)}\_{i} = {h^{(l)}}'(z^{(l)}\_i)\sum_j^{s_{l+1}} w_{ji}^{(l)} \delta^{(l+1)}_{j}
+\delta^{(l)}_{i} = {h^{(l)}}'(z^{(l)}_i)\sum_j^{s_{l+1}} w_{ji}^{(l)} \delta^{(l+1)}_{j}
 \end{align}
 $$
 
@@ -70,7 +70,7 @@ For the final layer, the error term is
 
 $$
 \begin{align}
-\delta^{(l+1)}\_{i} = \frac{\partial{loss}}{\partial{a^{(l+1)}_i}} {h^{(l+1)}}'(z^{(l+1)}\_i)
+\delta^{(l+1)}_{i} = \frac{\partial{loss}}{\partial{a^{(l+1)}_i}} {h^{(l+1)}}'(z^{(l+1)}_i)
 \end{align}
 $$
 
@@ -78,8 +78,8 @@ With error terms, we can express the gradient by
 
 $$
 \begin{align}
-\frac{\partial{E}}{\partial{W^{(l)}\_{ij}}} &= a^{(l)}\_j\delta^{(l+1)}\_i \\
-\frac{\partial{E}}{\partial{b^{(l)}_{i}}} &= \delta^{(l+1)}\_i
+\frac{\partial{E}}{\partial{W^{(l)}_{ij}}} &= a^{(l)}_j\delta^{(l+1)}_i \\
+\frac{\partial{E}}{\partial{b^{(l)}_{i}}} &= \delta^{(l+1)}_i
 \end{align}
 $$
 
@@ -91,22 +91,22 @@ $$
 \begin{align}
 R_{v}\left\\{\frac{\partial{E}} {\partial{W^{(l)}_{ij}}} \right\\}&＝R_v \\{a^{(l)}_j\delta^{(l+1)}_i \\} \\
 &= R_v \\{a^{(l)}_j \\} \delta^{(l+1)}_i + a^{(l)}_j R_v \\{\delta^{(l+1)}_i \\} \\
-R\_{v} \left\\{\frac{\partial{E}} {\partial{b^{(l)}\_{i}}} \right\\}&＝ R_v \\{\delta^{(l+1)}_i \\}
+R_{v} \left\\{\frac{\partial{E}} {\partial{b^{(l)}_{i}}} \right\\}&＝ R_v \\{\delta^{(l+1)}_i \\}
 \end{align}
 $$
 
-For the first layer $$a^{(1)} = x$$ and $R_v \\{a^{(l)}\_j \\} =0$. In order to compute $$Hv$$, we need to know $$R_{v}\\{a^{(l)}_j \\}$$  and $$R_v \\{\delta^{(l)}_i \\}$$. By applying R-operator to the terms in back-propagation, we have 
+For the first layer $$a^{(1)} = x$$ and $R_v \\{a^{(l)}_j \\} =0$. In order to compute $$Hv$$, we need to know $$R_{v}\\{a^{(l)}_j \\}$$  and $$R_v \\{\delta^{(l)}_i \\}$$. By applying R-operator to the terms in back-propagation, we have 
 
 $$
 \begin{align}
-R_v\\{z_j^{(l+1)}\\} &= R_v\\{  \sum_i w_{ji}^{(l)}a_i^{(l)} + b^{(l)}\_j \\}\\
-&= \sum_i  R_v\\{w_{ji}^{(l)} \\}a_i^{(l)} + \sum_i w_{ji}^{(l)} R_v\\{ a_i^{(l)}\\}  + R_v\\{ b^{(l)}\_j \\}\\
-&= \sum_i v_{ji}^{(l)} a_i^{(l)} + \sum_i w_{ji}^{(l)} R_v\\{ a_i^{(l)}\\} + v^{(l)}\_j\\
+R_v\\{z_j^{(l+1)}\\} &= R_v\\{  \sum_i w_{ji}^{(l)}a_i^{(l)} + b^{(l)}_j \\}\\
+&= \sum_i  R_v\\{w_{ji}^{(l)} \\}a_i^{(l)} + \sum_i w_{ji}^{(l)} R_v\\{ a_i^{(l)}\\}  + R_v\\{ b^{(l)}_j \\}\\
+&= \sum_i v_{ji}^{(l)} a_i^{(l)} + \sum_i w_{ji}^{(l)} R_v\\{ a_i^{(l)}\\} + v^{(l)}_j\\
 R_v\\{a_j^{(l+1)}\\} &= R_v\\{ h^{(l+1)}(z_j^{(l+1)})\\}  \\
 &= {h^{(l+1)}}'(z_j^{(l+1)}) R_v\\{  z_j^{(l+1)}\\} \\
-R_v\\{\delta^{(l)}\_i\\} &= R_v \left\\{{h^{(l)}}'(z^{(l)}\_i)\sum_j^{s_{l+1}} w_{ji}^{(l)} \delta^{(l+1)}_{j} \right\\} \\
-&= {h^{(l)}}\'\'(z^{(l)}\_i) R_v\\{z^{(l)}\_i\\}   \sum\_j^{s\_{l+1}} w\_{ji}^{(l)} \delta^{(l+1)}\_{j} \\
-& \quad + {h^{(l)}}'(z^{(l)}\_i)\sum\_j^{s\_{l+1}} v\_{ji}^{(l)} \delta^{(l+1)}\_j  +  {h^{(l)}}'(z^{(l)}\_i)\sum\_j^{s\_{l+1}} w\_{ji}^{(l)} R\_v \left\\{\delta^{(l+1)}\_j \right\\} 
+R_v\\{\delta^{(l)}_i\\} &= R_v \left\\{{h^{(l)}}'(z^{(l)}_i)\sum_j^{s_{l+1}} w_{ji}^{(l)} \delta^{(l+1)}_{j} \right\\} \\
+&= {h^{(l)}}\'\'(z^{(l)}_i) R_v\\{z^{(l)}_i\\}   \sum_j^{s_{l+1}} w_{ji}^{(l)} \delta^{(l+1)}_{j} \\
+& \quad + {h^{(l)}}'(z^{(l)}_i)\sum_j^{s_{l+1}} v_{ji}^{(l)} \delta^{(l+1)}_j  +  {h^{(l)}}'(z^{(l)}_i)\sum_j^{s_{l+1}} w_{ji}^{(l)} R_v \left\\{\delta^{(l+1)}_j \right\\} 
 \end{align}
 $$
 
@@ -114,12 +114,12 @@ For the final layer,
 
 $$
 \begin{align}
-& R_{v} \\{ \delta^{(l+1)}\_{i} \\} \\
-=& R_{v} \left\\{ \frac{\partial{loss}}{\partial{a^{(l+1)}\_i}} {h^{(l+1)}}'(z^{(l+1)}\_i) \right\\} \\
-=& \frac{\partial{loss}}{\partial{a^{(l+1)}\_i}} R_{v} \left\\{ {h^{(l+1)}}'(z^{(l+1)}\_i) \right\\} 
-+ R_{v} \left\\{ \frac{\partial{loss}}{\partial{a^{(l+1)}_i}} \right\\} {h^{(l+1)}}'(z^{(l+1)}\_i) \\
-=&  \frac{\partial{loss}}{\partial{a^{(l+1)}\_i}} {h^{(l+1)}}\'\'(z^{(l+1)}\_i)  R\_{v} \left\\{ z^{(l+1)}\_i \right\\} + \frac{\partial^2{loss}}{\partial{{a^{(l+1)}_i}}^2} 
-R\_{v} \left\\{   a^{(l+1)}\_i   \right\\} {h^{(l+1)}}'(z^{(l+1)}\_i)
+& R_{v} \\{ \delta^{(l+1)}_{i} \\} \\
+=& R_{v} \left\\{ \frac{\partial{loss}}{\partial{a^{(l+1)}_i}} {h^{(l+1)}}'(z^{(l+1)}_i) \right\\} \\
+=& \frac{\partial{loss}}{\partial{a^{(l+1)}_i}} R_{v} \left\\{ {h^{(l+1)}}'(z^{(l+1)}_i) \right\\} 
++ R_{v} \left\\{ \frac{\partial{loss}}{\partial{a^{(l+1)}_i}} \right\\} {h^{(l+1)}}'(z^{(l+1)}_i) \\
+=&  \frac{\partial{loss}}{\partial{a^{(l+1)}_i}} {h^{(l+1)}}\'\'(z^{(l+1)}_i)  R_{v} \left\\{ z^{(l+1)}_i \right\\} + \frac{\partial^2{loss}}{\partial{{a^{(l+1)}_i}}^2} 
+R_{v} \left\\{   a^{(l+1)}_i   \right\\} {h^{(l+1)}}'(z^{(l+1)}_i)
 \end{align}
 $$
 
