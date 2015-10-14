@@ -98,12 +98,6 @@ $$
 For the first layer $$a^{(1)} = x$$ and $R_v \{a^{(l)}_j \} =0$. In order to compute $$Hv$$, we need to know $$R_{v}\{a^{(l)}_j \}$$  and $$R_v \{\delta^{(l)}_i \}$$. By applying R-operator to the terms in back-propagation, we have 
 
 $$
-R_v\{\delta^{(l)}_i\} &= R_v \left\{ {h^{(l)}}'(z^{(l)}_i)\sum_j^{s_{l+1}} w_{ji}^{(l)} \delta^{(l+1)}_{j} \right\}
-$$
-
-test
-
-$$
 \begin{align}
 R_v\{z_j^{(l+1)}\} &= R_v\{  \sum_i w_{ji}^{(l)}a_i^{(l)} + b^{(l)}_j \}\\
 &= \sum_i  R_v\{w_{ji}^{(l)} \}a_i^{(l)} + \sum_i w_{ji}^{(l)} R_v\{ a_i^{(l)}\}  + R_v\{ b^{(l)}_j \}\\
