@@ -138,6 +138,7 @@ a_i = \log \frac{e^{z_i}}{\sum_j e^{z_j}}
 $$
 
 Therefore, 
+
 $$
 \begin{align}
 R\{a_i\} &= R\left\{\log \frac{e^{z_i}}{\sum_j e^{z_j}}\right\}  \\\\
@@ -157,11 +158,13 @@ R\{a_i\} &=-\frac{1}{ \sum_j e^{z_j} } \left(\sum_j e^{z_j} R\{z_j\} \right) +  
 $$
 
 For the backward step, 
+
 $$
 \delta_i^{(l)} = \sum_j\frac{\partial{a_j}}{\partial{z_i}}\delta_j^{(l+1)}
 $$
 
 Since we know 
+
 $$
 \begin{align}
 \frac{\partial{a_j}}{\partial{z_i}} = -p_i \\
@@ -185,6 +188,7 @@ $$
 
 
 We have 
+
 $$
 \begin{align}
 & R\{\delta_i^{(l)}\}\\
