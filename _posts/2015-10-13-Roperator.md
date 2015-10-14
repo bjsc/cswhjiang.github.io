@@ -116,18 +116,6 @@ R_v\{\delta^{(l)}_i\} &= R_v \left\{ {h^{(l)}}'(z^{(l)}_i)\sum_j^{s_{l+1}} w_{ji
 \end{align}
 $$
 
-$$
-\begin{align}
-R_v\{z_j^{(l+1)}\} &= R_v\{  \sum_i w_{ji}^{(l)}a_i^{(l)} + b^{(l)}_j \}\\
-&= \sum_i  R_v\{w_{ji}^{(l)} \}a_i^{(l)} + \sum_i w_{ji}^{(l)} R_v\{ a_i^{(l)}\}  + R_v\{ b^{(l)}_j \}\\
-&= \sum_i v_{ji}^{(l)} a_i^{(l)} + \sum_i w_{ji}^{(l)} R_v\{ a_i^{(l)}\} + v^{(l)}_j\\
-R_v\{a_j^{(l+1)}\} &= R_v\{ h^{(l+1)}(z_j^{(l+1)})\}  \\
-&= {h^{(l+1)}}'(z_j^{(l+1)}) R_v\{  z_j^{(l+1)}\} \\
-R_v\{\delta^{(l)}_i\} &= R_v \left\{{h^{(l)}}'(z^{(l)}_i)\sum_j^{s_{l+1}} w_{ji}^{(l)} \delta^{(l+1)}_{j} \right\} \\
-&= {h^{(l)}}''(z^{(l)}_i) R_v\{z^{(l)}_i\}   \sum_j^{s_{l+1}} w_{ji}^{(l)} \delta^{(l+1)}_{j} \\
-& \quad + {h^{(l)}}'(z^{(l)}_i)\sum_j^{s_{l+1}} v_{ji}^{(l)} \delta^{(l+1)}_j  +  {h^{(l)}}'(z^{(l)}_i)\sum_j^{s_{l+1}} w_{ji}^{(l)} R_v \left\{\delta^{(l+1)}_j \right\} 
-\end{align}
-$$
 
 For the final layer, 
 
