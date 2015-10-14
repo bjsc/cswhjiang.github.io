@@ -125,7 +125,7 @@ R_{v} \left\{   a^{(l+1)}_i   \right\} {h^{(l+1)}}'(z^{(l+1)}_i)
 $$
 
 
-This is a general form. There is no activation function in the last layer. If it is the case, just set $$h''=0, h'=I$$
+This is a general form. There is no activation function in the last layer. If it is the case, just set $$h''=0, h'=I$$.
 
 
 Therefore, each layer pass $$R_v\{ a^{(l)}\}$$ (for the first layer, it is just the zero vector) to next layer in the forward step, and pass $$R_v\{ \delta^{(l)}\}$$ to the previous layer in the backward step. They depend on $$R_v\{ z^{(l)}\}$$. Following the above procedure, we can compute $$Hv$$, which is similar to the computation of gradient.
