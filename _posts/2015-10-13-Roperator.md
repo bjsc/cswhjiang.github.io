@@ -5,7 +5,7 @@ comments: True
 ---
 
 ## What is R-operator?
-The R-operator in neural network is used to compute the product of Hessian matrix $$H$$ and a vector $$v$$. The time complexity is $$O(n)$$, which is lower than ordinary matrix vector product. Because it use back-propagation without computing the results directly.
+The R-operator in neural network is used to compute the product of Hessian matrix $$H$$ and a vector $$v$$. The time complexity is $$O(n)$$, which is lower than ordinary matrix vector product. Because it use back-propagation and does not compute the results directly.
 
 
 We use $$w$$ to denote the parameters and $$g$$ to denote gradient vector, and the Hessian matrix could be expressed as $$H = \nabla(g)$$. Therefore
