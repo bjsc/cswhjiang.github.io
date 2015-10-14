@@ -46,6 +46,7 @@ Our goal is to use the above properties to compute $$R_{v} \{\nabla E(w)\}$$, th
 
 
 ## How to compute $$Hv$$ using R-operator
+
 ### Back-propagation
 
 We use the same notations with  [UFLDL](http://deeplearning.stanford.edu/wiki/index.php/Neural_Networks) . We denote  $$a^{(l)}$$ as the input of the $$l$$-th layer, $$h^{(l+1)}$$ as the activation function and $$s_l$$ as the number of nodes in layer $$l$$. Hence,  $$a^{(1)}$$ is the original input $$x$$. The forward step of the $$l$$-th layer can be expressed as 
@@ -206,7 +207,7 @@ $$
 $$
 
 
-
+You can find torch implementation in the `rop` branch of [nn](https://github.com/cswhjiang/nn)
 
 ## Reference
 1. Pearlmutter, Barak A. "Fast exact multiplication by the Hessian." Neural computation 6.1 (1994): 147-160.
