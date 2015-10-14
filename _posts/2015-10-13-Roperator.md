@@ -207,7 +207,7 @@ $$
 $$
 
 
-You can find torch implementation in the `rop` branch of [nn](https://github.com/cswhjiang/nn)
+You can find torch implementation in the `rop` branch of [nn](https://github.com/cswhjiang/nn) on my github.
 
 ## Reference
 1. Pearlmutter, Barak A. "Fast exact multiplication by the Hessian." Neural computation 6.1 (1994): 147-160.
