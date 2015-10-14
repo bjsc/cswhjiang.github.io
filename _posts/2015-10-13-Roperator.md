@@ -118,7 +118,8 @@ $$
 =& R_{v} \left\{ \frac{\partial{loss}}{\partial{a^{(l+1)}_i}} {h^{(l+1)}}'(z^{(l+1)}_i) \right\} \\
 =& \frac{\partial{loss}}{\partial{a^{(l+1)}_i}} R_{v} \left\{ {h^{(l+1)}}'(z^{(l+1)}_i) \right\} 
 + R_{v} \left\{ \frac{\partial{loss}}{\partial{a^{(l+1)}_i}} \right\} {h^{(l+1)}}'(z^{(l+1)}_i) \\
-=&  \frac{\partial{loss}}{\partial{a^{(l+1)}_i}} {h^{(l+1)}}''(z^{(l+1)}_i)  R_{v} \left\{ z^{(l+1)}_i \right\} + \frac{\partial^2{loss}}{{\partial{{a^{(l+1)}_i}}}^2} 
+=&  \frac{\partial{loss}}{\partial{a^{(l+1)}_i}} {h^{(l+1)}}''(z^{(l+1)}_i)  R_{v} \left\{ z^{(l+1)}_i \right\} + \frac{\partial^2{loss}}{ 
+{\partial{{a^{(l+1)}\_i}}}^2   } 
 R_{v} \left\{   a^{(l+1)}_i   \right\} {h^{(l+1)}}'(z^{(l+1)}_i)
 \end{align}
 $$
