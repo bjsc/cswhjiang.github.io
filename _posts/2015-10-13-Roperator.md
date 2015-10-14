@@ -1,6 +1,6 @@
 ---
 layout: post
-title: R-operator in Neural Networks?
+title: R-operator in Neural Networks
 comments: True
 ---
 
@@ -45,15 +45,15 @@ $$
 Our goal is to use the above properties to compute $$R_{v} \\{\nabla E(w)\\}$$, the method we seek is to use back-propagation.
 
 
-## How to compute R-operator
-### Backpropagation
+## How to compute $$Hv$$ using R-operator
+### Back-propagation
 
-We use the same notations with  [UFLDL](http://deeplearning.stanford.edu/wiki/index.php/Neural_Networks) . We denote  $$a^{(l)}$$ as the input of the $$l$$ layer, $$h^{(l+1)}$$ as the activation function and $$s_l$$ as the number of nodes in layer $$l$$. Hence,  $$a^{(1)}$$ is the original input $$x$$. The forward step of the $$l$$-th layer can be expressed as 
+We use the same notations with  [UFLDL](http://deeplearning.stanford.edu/wiki/index.php/Neural_Networks) . We denote  $$a^{(l)}$$ as the input of the $$l$$-th layer, $$h^{(l+1)}$$ as the activation function and $$s_l$$ as the number of nodes in layer $$l$$. Hence,  $$a^{(1)}$$ is the original input $$x$$. The forward step of the $$l$$-th layer can be expressed as 
 
 
 $$
 \begin{align}
-z_j^{(l+1)} &= \sum_i w_{ji}^{(l)}a_i^{(l)} + b^{(l)}_j \\\\ 
+z_j^{(l+1)} &= \sum_i w_{ji}^{(l)}a_i^{(l)} + b^{(l)}_j \\
 a_j^{(l+1)} &= h^{(l+1)}(z_j^{(l+1)})
 \end{align}
 $$
@@ -78,7 +78,7 @@ With error terms, we can express the gradient by
 
 $$
 \begin{align}
-\frac{\partial{E}}{\partial{W^{(l)}\_{ij}}} &= a^{(l)}\_j\delta^{(l+1)}\_i \\\\
+\frac{\partial{E}}{\partial{W^{(l)}\_{ij}}} &= a^{(l)}\_j\delta^{(l+1)}\_i \\
 \frac{\partial{E}}{\partial{b^{(l)}_{i}}} &= \delta^{(l+1)}\_i
 \end{align}
 $$
@@ -89,8 +89,8 @@ According the computation of gradients, we have
 
 $$
 \begin{align}
-R_{v}\left\\{\frac{\partial{E}} {\partial{W^{(l)}_{ij}}} \right\\}&＝R_v \\{a^{(l)}_j\delta^{(l+1)}_i \\} \\\\
-&= R_v \\{a^{(l)}_j \\} \delta^{(l+1)}_i + a^{(l)}_j R_v \\{\delta^{(l+1)}_i \\} \\\\
+R_{v}\left\\{\frac{\partial{E}} {\partial{W^{(l)}_{ij}}} \right\\}&＝R_v \\{a^{(l)}_j\delta^{(l+1)}_i \\} \\
+&= R_v \\{a^{(l)}_j \\} \delta^{(l+1)}_i + a^{(l)}_j R_v \\{\delta^{(l+1)}_i \\} \\
 R\_{v} \left\\{\frac{\partial{E}} {\partial{b^{(l)}\_{i}}} \right\\}&＝ R_v \\{\delta^{(l+1)}_i \\}
 \end{align}
 $$
@@ -99,13 +99,13 @@ For the first layer $$a^{(1)} = x$$ and $R_v \\{a^{(l)}\_j \\} =0$. In order to 
 
 $$
 \begin{align}
-R_v\\{z_j^{(l+1)}\\} &= R_v\\{  \sum_i w_{ji}^{(l)}a_i^{(l)} + b^{(l)}\_j \\}\\\\
-&= \sum_i  R_v\\{w_{ji}^{(l)} \\}a_i^{(l)} + \sum_i w_{ji}^{(l)} R_v\\{ a_i^{(l)}\\}  + R_v\\{ b^{(l)}\_j \\}\\\\
-&= \sum_i v_{ji}^{(l)} a_i^{(l)} + \sum_i w_{ji}^{(l)} R_v\\{ a_i^{(l)}\\} + v^{(l)}\_j\\\\
-R_v\\{a_j^{(l+1)}\\} &= R_v\\{ h^{(l+1)}(z_j^{(l+1)})\\}  \\\\
-&= {h^{(l+1)}}'(z_j^{(l+1)}) R_v\\{  z_j^{(l+1)}\\} \\\\
-R_v\\{\delta^{(l)}\_i\\} &= R_v \left\\{{h^{(l)}}'(z^{(l)}\_i)\sum_j^{s_{l+1}} w_{ji}^{(l)} \delta^{(l+1)}_{j} \right\\} \\\\
-&= {h^{(l)}}\'\'(z^{(l)}\_i) R_v\\{z^{(l)}\_i\\}   \sum\_j^{s\_{l+1}} w\_{ji}^{(l)} \delta^{(l+1)}\_{j} \\\\
+R_v\\{z_j^{(l+1)}\\} &= R_v\\{  \sum_i w_{ji}^{(l)}a_i^{(l)} + b^{(l)}\_j \\}\\
+&= \sum_i  R_v\\{w_{ji}^{(l)} \\}a_i^{(l)} + \sum_i w_{ji}^{(l)} R_v\\{ a_i^{(l)}\\}  + R_v\\{ b^{(l)}\_j \\}\\
+&= \sum_i v_{ji}^{(l)} a_i^{(l)} + \sum_i w_{ji}^{(l)} R_v\\{ a_i^{(l)}\\} + v^{(l)}\_j\\
+R_v\\{a_j^{(l+1)}\\} &= R_v\\{ h^{(l+1)}(z_j^{(l+1)})\\}  \\
+&= {h^{(l+1)}}'(z_j^{(l+1)}) R_v\\{  z_j^{(l+1)}\\} \\
+R_v\\{\delta^{(l)}\_i\\} &= R_v \left\\{{h^{(l)}}'(z^{(l)}\_i)\sum_j^{s_{l+1}} w_{ji}^{(l)} \delta^{(l+1)}_{j} \right\\} \\
+&= {h^{(l)}}\'\'(z^{(l)}\_i) R_v\\{z^{(l)}\_i\\}   \sum\_j^{s\_{l+1}} w\_{ji}^{(l)} \delta^{(l+1)}\_{j} \\
 & \quad + {h^{(l)}}'(z^{(l)}\_i)\sum\_j^{s\_{l+1}} v\_{ji}^{(l)} \delta^{(l+1)}\_j  +  {h^{(l)}}'(z^{(l)}\_i)\sum\_j^{s\_{l+1}} w\_{ji}^{(l)} R\_v \left\\{\delta^{(l+1)}\_j \right\\} 
 \end{align}
 $$
@@ -114,10 +114,10 @@ For the final layer,
 
 $$
 \begin{align}
-& R_{v} \\{ \delta^{(l+1)}\_{i} \\} \\\\
-=& R_{v} \left\\{ \frac{\partial{loss}}{\partial{a^{(l+1)}\_i}} {h^{(l+1)}}'(z^{(l+1)}\_i) \right\\} \\\\
+& R_{v} \\{ \delta^{(l+1)}\_{i} \\} \\
+=& R_{v} \left\\{ \frac{\partial{loss}}{\partial{a^{(l+1)}\_i}} {h^{(l+1)}}'(z^{(l+1)}\_i) \right\\} \\
 =& \frac{\partial{loss}}{\partial{a^{(l+1)}\_i}} R_{v} \left\\{ {h^{(l+1)}}'(z^{(l+1)}\_i) \right\\} 
-+ R_{v} \left\\{ \frac{\partial{loss}}{\partial{a^{(l+1)}_i}} \right\\} {h^{(l+1)}}'(z^{(l+1)}\_i) \\\\
++ R_{v} \left\\{ \frac{\partial{loss}}{\partial{a^{(l+1)}_i}} \right\\} {h^{(l+1)}}'(z^{(l+1)}\_i) \\
 =&  \frac{\partial{loss}}{\partial{a^{(l+1)}\_i}} {h^{(l+1)}}\'\'(z^{(l+1)}\_i)  R\_{v} \left\\{ z^{(l+1)}\_i \right\\} + \frac{\partial^2{loss}}{\partial{{a^{(l+1)}_i}}^2} 
 R\_{v} \left\\{   a^{(l+1)}\_i   \right\\} {h^{(l+1)}}'(z^{(l+1)}\_i)
 \end{align}
@@ -141,9 +141,9 @@ Therefore,
 $$
 \begin{align}
 R\\{a_i\\} &= R\left\\{\log \frac{e^{z_i}}{\sum_j e^{z_j}}\right\\}  \\\\
-&= \frac{\sum_j e^{z_j}}{e^{z_i}} R\left\\{ \frac{e^{z_i}}{\sum_j e^{z_j}} \right\\} \\\\
-R\left\\{ \frac{e^{z_i}}{\sum_j e^{z_j}} \right\\} &= e^{z_i} R\left\\{\frac{1}{\sum_j e^{z_j}} \right\\} + R\\{e^{z_i}\\}\frac{1}{\sum_j e^{z_j}} \\\\
-&= -\frac{e^{z_i}}{\left(\sum_j e^{z_j}\right)^2} R\\{\sum_j e^{z_j}\\} + e^{z_i} R\\{z_i\\}\frac{1}{\sum_j e^{z_j}} \\\\
+&= \frac{\sum_j e^{z_j}}{e^{z_i}} R\left\\{ \frac{e^{z_i}}{\sum_j e^{z_j}} \right\\} \\
+R\left\\{ \frac{e^{z_i}}{\sum_j e^{z_j}} \right\\} &= e^{z_i} R\left\\{\frac{1}{\sum_j e^{z_j}} \right\\} + R\\{e^{z_i}\\}\frac{1}{\sum_j e^{z_j}} \\
+&= -\frac{e^{z_i}}{\left(\sum_j e^{z_j}\right)^2} R\\{\sum_j e^{z_j}\\} + e^{z_i} R\\{z_i\\}\frac{1}{\sum_j e^{z_j}} \\
 &=-\frac{e^{z_i}}{\left(\sum_j e^{z_j}\right)^2} \left(\sum_j e^{z_j} R\\{z_j\\} \right) +  R\\{z_i\\}\frac{e^{z_i}}{\sum_j e^{z_j}}
 \end{align}
 $$
@@ -164,8 +164,8 @@ $$
 Since we know 
 $$
 \begin{align}
-\frac{\partial{a_j}}{\partial{z_i}} = -p_i \\\\
-\frac{\partial{a_i}}{\partial{z_i}} = 1-p_i \\\\
+\frac{\partial{a_j}}{\partial{z_i}} = -p_i \\
+\frac{\partial{a_i}}{\partial{z_i}} = 1-p_i \\
 \end{align}
 $$
 
@@ -173,12 +173,12 @@ and
 
 $$
 \begin{align}
-R\\{p_i\\} &=R\\{ \frac{e^{z_i}}{\sum_j e^{z_j}}\\} \\\\
-&=\frac{R\\{e^{z_i}\\}}{\sum_j e^{z_j}} + e^{z_i} R\\{\frac{1}{\sum_j e^{z_j}}\\} \\\\
-&=e^{z_i} R\\{z_i\\} \frac{1}{\sum_j e^{z_j}} -\frac{ e^{z_i}}{(\sum_j e^{z_j})^2} R\\{\sum_j e^{z_j}\\}  \\\\
-&=e^{z_i} R\\{z_i\\} \frac{1}{\sum_j e^{z_j}} -\frac{ e^{z_i}}{(\sum_j e^{z_j})^2} \sum_jR\\{ e^{z_j}\\}  \\\\
-&=e^{z_i} R\\{z_i\\} \frac{1}{\sum_j e^{z_j}} -\frac{ e^{z_i}}{(\sum_j e^{z_j})^2} \sum_je^{z_j} R\\{ z_j\\}  \\\\
-&=p_i R\\{z_i\\}  - p_i \sum_j p_j R\\{ z_j\\}  \\\\
+R\\{p_i\\} &=R\\{ \frac{e^{z_i}}{\sum_j e^{z_j}}\\} \\
+&=\frac{R\\{e^{z_i}\\}}{\sum_j e^{z_j}} + e^{z_i} R\\{\frac{1}{\sum_j e^{z_j}}\\} \\
+&=e^{z_i} R\\{z_i\\} \frac{1}{\sum_j e^{z_j}} -\frac{ e^{z_i}}{(\sum_j e^{z_j})^2} R\\{\sum_j e^{z_j}\\}  \\
+&=e^{z_i} R\\{z_i\\} \frac{1}{\sum_j e^{z_j}} -\frac{ e^{z_i}}{(\sum_j e^{z_j})^2} \sum_jR\\{ e^{z_j}\\}  \\
+&=e^{z_i} R\\{z_i\\} \frac{1}{\sum_j e^{z_j}} -\frac{ e^{z_i}}{(\sum_j e^{z_j})^2} \sum_je^{z_j} R\\{ z_j\\}  \\
+&=p_i R\\{z_i\\}  - p_i \sum_j p_j R\\{ z_j\\}  \\
 \end{align}
 $$
 
@@ -186,14 +186,14 @@ $$
 We have 
 $$
 \begin{align}
-R\\{\delta_i^{(l)}\\}\\\\
-&=  R\left\\{ \sum_j\frac{\partial{a_j}}{\partial{z_i}}\delta_j^{(l+1)} \right\\} \\\\
-&= \sum_j R\left\\{\frac{\partial{a_j}}{\partial{z_i}}\delta_j^{(l+1)}  \right\\} \\\\
-&=\sum_j \left( R\left\\{\frac{\partial{a_j}}{\partial{z_i}}  \right\\}\delta_j^{(l+1)} + \frac{\partial{a_j}}{\partial{z_i}} R\left\\{\delta_j^{(l+1)}  \right\\} \right) \\\\
-&=\sum_j \left( -R\\{p_i\\}\delta_j^{(l+1)} + \frac{\partial{a_j}}{\partial{z_i}} R\left\\{\delta_j^{(l+1)}  \right\\} \right) \\\\
-&=-R\\{p_i\\}\sum_j  \delta_j^{(l+1)} + \sum_j \left(\frac{\partial{a_j}}{\partial{z_i}} R\left\\{\delta_j^{(l+1)}  \right\\} \right) \\\\
-&=-R\\{ \frac{e^{z_i}}{\sum_j e^{z_j}}\\}\sum_j  \delta_j^{(l+1)} + \sum_j \left(\frac{\partial{a_j}}{\partial{z_i}} R\left\\{\delta_j^{(l+1)}  \right\\} \right) \\\\
-&=- p_i\left( R\\{z_i\\}  -  \sum_k p_k R\\{ z_k\\}\right)\sum_j  \delta_j^{(l+1)} + \sum_j \left(\frac{\partial{a_j}}{\partial{z_i}} R\left\\{\delta_j^{(l+1)}  \right\\} \right) \\\\ 
+& R\\{\delta_i^{(l)}\\}\\
+&=  R\left\\{ \sum_j\frac{\partial{a_j}}{\partial{z_i}}\delta_j^{(l+1)} \right\\} \\
+&= \sum_j R\left\\{\frac{\partial{a_j}}{\partial{z_i}}\delta_j^{(l+1)}  \right\\} \\
+&=\sum_j \left( R\left\\{\frac{\partial{a_j}}{\partial{z_i}}  \right\\}\delta_j^{(l+1)} + \frac{\partial{a_j}}{\partial{z_i}} R\left\\{\delta_j^{(l+1)}  \right\\} \right) \\
+&=\sum_j \left( -R\\{p_i\\}\delta_j^{(l+1)} + \frac{\partial{a_j}}{\partial{z_i}} R\left\\{\delta_j^{(l+1)}  \right\\} \right) \\
+&=-R\\{p_i\\}\sum_j  \delta_j^{(l+1)} + \sum_j \left(\frac{\partial{a_j}}{\partial{z_i}} R\left\\{\delta_j^{(l+1)}  \right\\} \right) \\
+&=-R\\{ \frac{e^{z_i}}{\sum_j e^{z_j}}\\}\sum_j  \delta_j^{(l+1)} + \sum_j \left(\frac{\partial{a_j}}{\partial{z_i}} R\left\\{\delta_j^{(l+1)}  \right\\} \right) \\
+&=- p_i\left( R\\{z_i\\}  -  \sum_k p_k R\\{ z_k\\}\right)\sum_j  \delta_j^{(l+1)} + \sum_j \left(\frac{\partial{a_j}}{\partial{z_i}} R\left\\{\delta_j^{(l+1)}  \right\\} \right) \\
 &= -p_i\left( R\\{z_i\\}  -  \sum_k p_k R\\{ z_k\\}\right)\sum_j  \delta_j^{(l+1)} - p_i \sum_j  R\left\\{ \delta_j^{(l+1)} \right\\} + R\left\\{\delta_i^{(l+1)} \right\\} 
 \end{align}
 $$
