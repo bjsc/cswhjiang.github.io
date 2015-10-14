@@ -23,7 +23,7 @@ $$
 Hv = \frac{\nabla f(w + rv) - \nabla f(w)}{r} + O(r)
 $$
 
-It is an easy way compute $$Hv$$, but it is not stable. Hence R-operator is needed here. The R-operator [1] with respect to $$v$$ is defined as
+It is an easy way to compute $$Hv$$, but it is not stable. Hence R-operator is needed here. The R-operator [1] with respect to $$v$$ is defined as
 
 $$
 R_{v}\{f(w)\} = \frac{\partial{f(w+r v)}}{\partial{r}} \big|_{r=0}
@@ -42,7 +42,7 @@ R\left\{ \frac{d f(w)}{dt} \right\} &= \frac{d R\{f(w)\}}{dt}
 \end{align}
 $$
 
-Our goal is to use the above properties to compute $$R_{v} \{\nabla E(w)\}$$, the method use is back-propagation.
+Our goal is to use the above properties to compute $$R_{v} \{\nabla E(w)\}$$, the method used is back-propagation.
 
 
 ## How to compute $$Hv$$ using R-operator
@@ -86,7 +86,7 @@ $$
 
 ### R-operator
 
-According the computation of gradients, we have 
+According to the computation of gradients, we have 
 
 $$
 \begin{align}
@@ -126,10 +126,10 @@ R_{v} \left\{   a^{(l+1)}_i   \right\} {h^{(l+1)}}'(z^{(l+1)}_i)
 $$
 
 
-This is a general form. There is no activation function in the last layer. If it is the case, just set $$h''=0, h'=I$$.
+This is a general form. There might be no activation function in the last layer. If it is the case, just set $$h''=0, h'=I$$.
 
 
-Therefore, each layer pass $$R_v\{ a^{(l)}\}$$ (for the first layer, it is just the zero vector) to next layer in the forward step, and pass $$R_v\{ \delta^{(l)}\}$$ to the previous layer in the backward step. They depend on $$R_v\{ z^{(l)}\}$$. Following the above procedure, we can compute $$Hv$$, which is similar to the computation of gradient.
+Therefore, each layer pass $$R_v\{ a^{(l)}\}$$ (for the first layer, it is just the zero vector) to the next layer in the forward step, and pass $$R_v\{ \delta^{(l)}\}$$ to the previous layer in the backward step. They depend on $$R_v\{ z^{(l)}\}$$. Following the above procedure, we can compute $$Hv$$, which is similar to the computation of gradient.
 
 
 
@@ -207,7 +207,7 @@ $$
 $$
 
 
-You can find torch implementation in the `rop` branch of [nn](https://github.com/cswhjiang/nn) on my github and example [here](https://github.com/cswhjiang/nn/blob/rop/doc/rop.md).
+You can find torch implementation in the `rop` branch of repository [nn](https://github.com/cswhjiang/nn) on my github and example [here](https://github.com/cswhjiang/nn/blob/rop/doc/rop.md).
 
 ## Reference
 1. Pearlmutter, Barak A. "Fast exact multiplication by the Hessian." Neural computation 6.1 (1994): 147-160.
