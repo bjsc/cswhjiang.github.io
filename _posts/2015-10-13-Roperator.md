@@ -1,10 +1,8 @@
 ---
 layout: post
-title: How to escape from saddle points?
+title: R-operator in Neural Networks?
 comments: True
 ---
-
-# R-operator in Neural Networks
 
 ## What is R-operator?
 The R-operator in neural network is used to compute the product of Hessian matrix $$H$$ and a vector $$v$$. The time complexity is $$O(n)$$, which is lower than ordinary matrix vector product. Because it use back-propagation without computing the results directly.
