@@ -136,7 +136,7 @@ Therefore, each layer pass $$R_v\{ a^{(l)}\}$$ (for the first layer, it is just 
 It is easy to get the steps for linear layer. Here, we show how to obtain the forward and backward steps of LogSoftMax layer. For the LogSoftMax layer,  the input is denoted as $$z_j$$ and the output $$a_i$$ is computed by 
 
 $$
-a_i = \log \frac{e^{z_i}}{\sum_j e^{z_j}}
+a_i = \log p_i =\log \frac{e^{z_i}}{\sum_j e^{z_j}}
 $$
 
 Therefore, 
