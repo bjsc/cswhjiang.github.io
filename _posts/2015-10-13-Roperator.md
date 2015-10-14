@@ -23,13 +23,13 @@ $$
 Hv = \frac{\nabla f(w + rv) - \nabla f(w)}{r} + O(r)
 $$
 
-It is an easy way compute $$Hv$$, but this way is not stable. Hence R-operator is needed here. The R-operator [1] with respect to $$v$$ is defined as
+It is an easy way compute $$Hv$$, but it is not stable. Hence R-operator is needed here. The R-operator [1] with respect to $$v$$ is defined as
 
 $$
 R_{v}\{f(w)\} = \frac{\partial{f(w+r v)}}{\partial{r}} \big|_{r=0}
 $$
 
-Hence $$Hv = R_{v} \{\nabla E(w)\}$$. It is obvious that $$R_v\{w\} = v$$
+Hence $$Hv = R_{v} \{\nabla E(w)\}$$. It is obvious that $$R_v\{w\} = v$$.
 Moreover, R-operator has following properties:
 
 $$
@@ -42,7 +42,7 @@ R\left\{ \frac{d f(w)}{dt} \right\} &= \frac{d R\{f(w)\}}{dt}
 \end{align}
 $$
 
-Our goal is to use the above properties to compute $$R_{v} \{\nabla E(w)\}$$, the method we seek is to use back-propagation.
+Our goal is to use the above properties to compute $$R_{v} \{\nabla E(w)\}$$, the method use is back-propagation.
 
 
 ## How to compute $$Hv$$ using R-operator
@@ -95,7 +95,7 @@ R_{v} \left\{\frac{\partial{E}} {\partial{b^{(l)}_{i}}} \right\}&＝ R_v \{\delt
 \end{align}
 $$
 
-For the first layer $$a^{(1)} = x$$ and $R_v \{a^{(l)}_j \} =0$. In order to compute $$Hv$$, we need to know $$R_{v}\{a^{(l)}_j \}$$  and $$R_v \{\delta^{(l)}_i \}$$. By applying R-operator to the terms in back-propagation, we have 
+For the first layer $$a^{(1)} = x$$ and $$R_v \{a^{(l)}_j \} =0$$. In order to compute $$Hv$$, we need to know $$R_{v}\{a^{(l)}_j \}$$  and $$R_v \{\delta^{(l)}_i \}$$. By applying R-operator to the terms in back-propagation, we have 
 
 $$
 \begin{align}
@@ -128,12 +128,12 @@ $$
 This is a general form. There is no activation function in the last layer. If it is the case, just set $$h''=0, h'=I$$
 
 
-Therefore, each layer pass $$R_v\{ a^{(l)}\}$$ (for the first layer, it is just the zero vector) to next layer (forward step), and pass $$R_v\{ \delta^{(l)}\}$$ to the previous layer. They depend on $$R_v\{ z^{(l)}\}$$. Following the above procedure, we can compute $$Hv$$, which is similar to the computation of gradient.
+Therefore, each layer pass $$R_v\{ a^{(l)}\}$$ (for the first layer, it is just the zero vector) to next layer in the forward step, and pass $$R_v\{ \delta^{(l)}\}$$ to the previous layer in the backward step. They depend on $$R_v\{ z^{(l)}\}$$. Following the above procedure, we can compute $$Hv$$, which is similar to the computation of gradient.
 
 
 
 ### Example: Log-softmax layer
-It is easy to get the steps for linear layer. Here, we show how to perform the forward and backward step of LogSoftMax layer. For the LogSoftMax layer, the denote the input as $$z_j$$ and the output $$a_i$$ is
+It is easy to get the steps for linear layer. Here, we show how to obtain the forward and backward steps of LogSoftMax layer. For the LogSoftMax layer,  the input is denoted as $$z_j$$ and the output $$a_i$$ is computed by 
 
 $$
 a_i = \log \frac{e^{z_i}}{\sum_j e^{z_j}}
@@ -189,7 +189,7 @@ R\{p_i\} &=R\{ \frac{e^{z_i}}{\sum_j e^{z_j}}\} \\
 $$
 
 
-We have 
+Finally, we have 
 
 $$
 \begin{align}
