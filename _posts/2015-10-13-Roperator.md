@@ -194,14 +194,14 @@ We have
 $$
 \begin{align}
 & R\{\delta_i^{(l)}\}\\
-&=  R\left\{ \sum_j\frac{\partial{a_j}}{\partial{z_i}}\delta_j^{(l+1)} \right\} \\
-&= \sum_j R\left\{\frac{\partial{a_j}}{\partial{z_i}}\delta_j^{(l+1)}  \right\} \\
-&=\sum_j \left( R\left\{\frac{\partial{a_j}}{\partial{z_i}}  \right\}\delta_j^{(l+1)} + \frac{\partial{a_j}}{\partial{z_i}} R\left\{\delta_j^{(l+1)}  \right\} \right) \\
-&=\sum_j \left( -R\{p_i\}\delta_j^{(l+1)} + \frac{\partial{a_j}}{\partial{z_i}} R\left\{\delta_j^{(l+1)}  \right\} \right) \\
-&=-R\{p_i\}\sum_j  \delta_j^{(l+1)} + \sum_j \left(\frac{\partial{a_j}}{\partial{z_i}} R\left\{\delta_j^{(l+1)}  \right\} \right) \\
-&=-R\{ \frac{e^{z_i}}{\sum_j e^{z_j}}\}\sum_j  \delta_j^{(l+1)} + \sum_j \left(\frac{\partial{a_j}}{\partial{z_i}} R\left\{\delta_j^{(l+1)}  \right\} \right) \\
-&=- p_i\left( R\{z_i\}  -  \sum_k p_k R\{ z_k\}\right)\sum_j  \delta_j^{(l+1)} + \sum_j \left(\frac{\partial{a_j}}{\partial{z_i}} R\left\{\delta_j^{(l+1)}  \right\} \right) \\
-&= -p_i\left( R\{z_i\}  -  \sum_k p_k R\{ z_k\}\right)\sum_j  \delta_j^{(l+1)} - p_i \sum_j  R\left\{ \delta_j^{(l+1)} \right\} + R\left\{\delta_i^{(l+1)} \right\} 
+=&  R\left\{ \sum_j\frac{\partial{a_j}}{\partial{z_i}}\delta_j^{(l+1)} \right\} \\
+=& \sum_j R\left\{\frac{\partial{a_j}}{\partial{z_i}}\delta_j^{(l+1)}  \right\} \\
+=&\sum_j \left( R\left\{\frac{\partial{a_j}}{\partial{z_i}}  \right\}\delta_j^{(l+1)} + \frac{\partial{a_j}}{\partial{z_i}} R\left\{\delta_j^{(l+1)}  \right\} \right) \\
+=&\sum_j \left( -R\{p_i\}\delta_j^{(l+1)} + \frac{\partial{a_j}}{\partial{z_i}} R\left\{\delta_j^{(l+1)}  \right\} \right) \\
+=&-R\{p_i\}\sum_j  \delta_j^{(l+1)} + \sum_j \left(\frac{\partial{a_j}}{\partial{z_i}} R\left\{\delta_j^{(l+1)}  \right\} \right) \\
+=&-R\{ \frac{e^{z_i}}{\sum_j e^{z_j}}\}\sum_j  \delta_j^{(l+1)} + \sum_j \left(\frac{\partial{a_j}}{\partial{z_i}} R\left\{\delta_j^{(l+1)}  \right\} \right) \\
+=&- p_i\left( R\{z_i\}  -  \sum_k p_k R\{ z_k\}\right)\sum_j  \delta_j^{(l+1)} + \sum_j \left(\frac{\partial{a_j}}{\partial{z_i}} R\left\{\delta_j^{(l+1)}  \right\} \right) \\
+=& -p_i\left( R\{z_i\}  -  \sum_k p_k R\{ z_k\}\right)\sum_j  \delta_j^{(l+1)} - p_i \sum_j  R\left\{ \delta_j^{(l+1)} \right\} + R\left\{\delta_i^{(l+1)} \right\} 
 \end{align}
 $$
 
