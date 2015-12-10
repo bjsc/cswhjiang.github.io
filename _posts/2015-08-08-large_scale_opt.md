@@ -95,10 +95,9 @@ $$
 x_{t+1}= argmin_{x} \ \Phi(x)  + \eta \sum_{i}^{t} \nabla f(x_{i})^T x 
 $$
 
-- Natural gradient [44] 
+- Natural gradient [44] 是一种直接求近似的 Fisher information matrix 的逆的 online learning优化算法。
 
 - Forward-backward splitting （FOBOS） [28] 其实就是 proximal gradient method。
-
 
 - FISTA [9] 其实是 proximal gradient method 在当正则项是 $$ \ell_1$$-norm的时候的 Nesterov 加速版本，convergence rate 是 $$ O(1/t^2)$$
 
@@ -111,12 +110,20 @@ x_{t+1} = argmin_{x} \   \frac{1}{t}\sum_{j=1}^t \nabla f(x_j)^T x  + R(x)+ \fra
 $$
 
 
-- [37] SCD， ICML 2009年会议提出。
+- [37] 提出了 $$\ell_1$$-norm 做正则项的 Stochastic Coordinate Descent （SCD） 解法。最初是在 ICML 2009年会议提出。它将 $$x$$ 扩展为 $$\hat{x} = [x, -x]$$，这样问题就变为
+
+$$
+\begin{align}
+\min_{w \in R^{2d}} &\ \frac{1}{n} \sum_{i=1}^{n} L(<\hat{x}_i,w>,y_i) + \lambda \sum_{i = 1}^{2d} w_i \\
+\textrm{s.t.} & \ w_i \geq 0
+\end{align}
+$$
+
+后来的算法也有采用类似的处理方法。
 
 - Stochastic Accelerated GradiEnt (SAGE) [39] 是受 Nesterov 的加速方法启发的一种加速方法，它每个步骤维护三个变量（Nesterov加速维护两个）。
 
-
-- [53]  The tradeoffs of large scale learning 
+- 针对大规模的机器学习问题，[53] 将 test error 分解为 三个部分： approximation error、 estimation error 和 optimization error。因此大规模机器学习是这三个方面的 tradeoff。
 
 ## 2011 
 - ADAGRAD [11] 着眼于函数的 condition number， 让每个dimension有不同的 learning rate。更新过程为
@@ -133,7 +140,7 @@ $$
 - [48] 是关于 mirror descent 的理论一点的分析。在[48] 中作者证明了只要 mirror map 的函数合适，mirror descent总会有 near-optimal regret，这样的函数一定是存在的，只是没那么容易找到。
 
 ## 2012 
-- ADADELTA [12] 于2012年提出，是结合了 AdaGrad 和冲量的一种方法。据说在神经网络中效果不错。
+- ADADELTA [12] 于2012年提出，是结合了 AdaGrad 和冲量的一种优化方法，所用的技巧是随着迭代指数下降的加权平均。在神经网络中效果不错。
 
 - Stochastic Average Gradient（SAG）[4,10] 的前提是 $$ R(x)\equiv 0 $$。采用固定步长的SAG对于convex 函数的 convergence rate 是 $$ O(1/t)$$， strongly-convex 的 convergence rate 是线性收敛。SAG 记录历史的梯度，每次的梯度都是更新一个在随机选择的样本处的梯度然后求平均的梯度。作者提供了[代码](http://www.cs.ubc.ca/~schmidtm/Software/SAG.html)。
 
@@ -195,6 +202,8 @@ $$
 
 - Mini-batch randomized block coordinate descent (MRBCD) [55]  在一个mini-batch 上计算部分的梯度。 
 
+- Adam [58] 是 Adagrad 和 RMSProp 结合起来的一种方法。Adam 有可能是针对 DL 优化当前最好的方法。
+
 ## 2015
 
 - Probabilistic line search [43]：随机梯度下降中的梯度是有噪音的，因此作者 Bayesian Optimization 来解决，是当前方法的一个补充。
@@ -205,7 +214,9 @@ $$
 
 - Equilibrated SGD [57] 从鞍点对非凸的神经网络的优化的影响的角度解释了 RMSProp 为什么起作用，提出了一个基于 Hessian 矩阵特征值的绝对值的可以逃离鞍点的算法。
 
+- [59]
 
+- [60] EASGD
 
 
 # Reference
@@ -266,3 +277,8 @@ $$
 55. Zhao, Tuo, et al. "Accelerated Mini-batch Randomized Block Coordinate Descent Method." Advances in neural information processing systems. 2014.
 56. Qu, Zheng, et al. "SDNA: Stochastic Dual Newton Ascent for Empirical Risk Minimization." arXiv preprint arXiv:1502.02268 (2015).
 57. Dauphin, Yann N., et al. "RMSProp and equilibrated adaptive learning rates for non-convex optimization." arXiv preprint arXiv:1502.04390 (2015).
+58. Kingma, Diederik, and Jimmy Ba. "Adam: A method for stochastic optimization." arXiv preprint arXiv:1412.6980 (2014).
+59. Reddi, Sashank J., et al. "On Variance Reduction in Stochastic Gradient Descent and its Asynchronous Variants." arXiv preprint arXiv:1506.06840 (2015).
+60. Zhang, Sixin, Anna Choromanska, and Yann LeCun. "Deep learning with Elastic Averaging SGD." arXiv preprint arXiv:1412.6651 (2014).
+
+
